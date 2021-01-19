@@ -18,7 +18,7 @@ DNA evidence has long been considered the gold standard for human identification
 ## Installation
 
 STRspy requires following third party tools that has to be installed prior to run the program.
-
+gnu parallel
 samtools
 bedtools
 minimap2
@@ -34,11 +34,13 @@ USAGE: bash scripts/STRspy_Parallel_v0.1.sh <input_reads_dir(fastq/bam dir)> <is
 
 ## EXAMPLE:
 
-echo "#In case of bam input dir"
-echo "bash scripts/STRspy_Parallel_v0.1.sh example/test_dir yes example/str_fa example/str_bed NULL output_dir"
+### In case of bam input dir
 
-echo "#In case of fastq input dir"
-echo "bash scripts/STRspy_Parallel_v0.1.sh example/test_dir no example/str_fa example/str_bed example/ref_genome/hg19.fa output_dir"
+bash scripts/STRspy_Parallel_v0.1.sh example/test_dir yes example/str_fa example/str_bed NULL output_dir
+
+### In case of fastq input dir
+
+bash scripts/STRspy_Parallel_v0.1.sh example/test_dir no example/str_fa example/str_bed example/ref_genome/hg19.fa output_dir
 
 ## Positional arguments
 
