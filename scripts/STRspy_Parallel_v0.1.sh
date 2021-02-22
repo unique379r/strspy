@@ -239,7 +239,7 @@ if [[ "$is_input_bam" == "yes" ]]; then
 	type="bam"
 	mkdir -p $output_dir/GenomicMappingStats
 	if [[ -e "${bam[0]}" ]]; then
-		echo -e "#Summerizing the mapped and unmapped reads and their percentage"
+		echo -e "#Summerizing the mapped, unmapped reads and their percentage"
 		get_cov $input_reads_dir $output_dir/GenomicMappingStats $region_bed
 		echo -e "#Done"
 	else
