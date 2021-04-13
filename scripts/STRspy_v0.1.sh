@@ -4,7 +4,7 @@
 
 # MIT License
 
-# Copyright (c) 2020 unique379
+# Copyright (c) 2020 unique379r
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -165,7 +165,7 @@ source /hgsc_software/xAtlas/env
 xatlas="/hgsc_software/xAtlas/xatlas-0.2.1/xatlas"
 #genome="/stornext/snfs5/next-gen/scratch/fritz/projects/saumik_test/forensic_project/motifs/third_approach/hs37d5_mainchr.fa"
 region_bed="/stornext/snfs5/next-gen/scratch/rupesh/ProjectFritz/forensic-project/extra/regions.sort.named.bed"
-mkdir -p $output_dir/{Intersected_regions,IntersectMappedReads,Countings,SNVcalls}
+mkdir -p $output_dir/{IntersectedRegions,IntersectMappedReads,Countings,SNVcalls}
 #"==================================================================================================================================="
 
 ## general function to get total, mapped and unmapped reads and their percentage from a bam
@@ -264,13 +264,13 @@ if [[ $read_type == "$type" ]]; then
 			echo -e "Working for:" $bam_name $bed_name
 			##Intersect regions from bed vs bam
 			echo -e "#Started Intersecting regions from bed vs bam and creating fastq reads..."
-			$bedtools intersect -a "${bamfile}" -b "${bedfile}" > $output_dir/Intersected_regions/"$bam_name"_"$bed_name".bam
+			$bedtools intersect -a "${bamfile}" -b "${bedfile}" > $output_dir/IntersectedRegions/"$bam_name"_"$bed_name".bam
 			## bam to fastq
-			$bedtools bamtofastq -i $output_dir/Intersected_regions/"$bam_name"_"$bed_name".bam -fq $output_dir/Intersected_regions/"$bam_name"_"$bed_name".bam.fq
-			rm $output_dir/Intersected_regions/"$bam_name"_"$bed_name".bam
+			$bedtools bamtofastq -i $output_dir/IntersectedRegions/"$bam_name"_"$bed_name".bam -fq $output_dir/IntersectedRegions/"$bam_name"_"$bed_name".bam.fq
+			rm $output_dir/IntersectedRegions/"$bam_name"_"$bed_name".bam
 			echo -e "#Done.\n"
 			echo -e "#Mapping fastq to motif fasta...\n"
-			$minimap --MD -L -ax map-ont $motif_fasta_dir/"$bed_fname".fa $output_dir/Intersected_regions/"$bam_name"_"$bed_name".bam.fq -o $output_dir/IntersectMappedReads/"$bed_fname"_"$bam_name"_alignment.sam
+			$minimap --MD -L -ax map-ont $motif_fasta_dir/"$bed_fname".fa $output_dir/IntersectedRegions/"$bam_name"_"$bed_name".bam.fq -o $output_dir/IntersectMappedReads/"$bed_fname"_"$bam_name"_alignment.sam
 			echo -e "#Done.\n"
 			echo -e "#sam to bam + sort + index..."
 			$samtools view -S -b $output_dir/IntersectMappedReads/"$bed_fname"_"$bam_name"_alignment.sam -o $output_dir/IntersectMappedReads/"$bed_fname"_"$bam_name"_alignment.bam

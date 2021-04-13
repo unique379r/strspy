@@ -1,7 +1,7 @@
 # strspy
 ![](STRspyLogo.png)
 
-STRspy: A pipeline to detect regions of short tandem repeats in a given sample.
+STRspy: A pipeline to detect regions of short tandem repeats in Long Read.
 
 ## Overview
 
@@ -9,59 +9,99 @@ DNA evidence has long been considered the gold standard for human identification
 
 ## Key Features
 
-1. Input either fastq (raw reads) or bam (pre-aligned reads)
-2. Reports raw allelic counts along with Normalized counts
-3. Find top two significant Alleles (filtering set to 0.6)
+1. Input either fastq (raw reads usually from ONT) or bam (pre-aligned reads usually froom PacBio)
+2. Reports raw counts of allele along with its Normalized counts by its maximum value
+3. Find top two significant Alleles (filtering threshold set by user such as 0.4)
 4. Detects Small variants such as SNP and Indels
-5. Plots and reports mapping summary and region of overlaps 
+5. Reports mapping summary and STR region of overlaps
+6. Stutters analysis for simple motifs of STRs
 
 ## Installation
 
-STRspy requires following third party tools that has to be installed prior to run the program.
+STRspy includes the installation of the following third-party software before it can be used.
+
 gnu parallel
 samtools
 bedtools
 minimap2
 xatlas
 
-Note: Installation script is avaible to install third party tools. 
+### Clone the repository
+
+`git clone git@github.com:unique379r/strspy.git`
+
+`cd strspy`
+
+### Create an environment
+
+`bash setup/STRspy_setup.sh -h`
+
+### Activate the environment
+
+`conda activate strspy_env`
+
+### Set up configuration
+
+`SAMTOOLS=$(which samtools)
+echo -e "SAMTOOLS="$SAMTOOLS > UserToolsConfig.txt
+BEDTOOLS=$(which bedtools)
+echo -e "BEDTOOLS="$BEDTOOLS >> UserToolsConfig.txt
+XATLAS=$(which xatlas)
+echo -e "XATLAS="$XATLAS >> UserToolsConfig.txt
+PARALLEL=$(which parallel)
+echo -e "PARALLEL="$PARALLEL >> UserToolsConfig.txt
+MINIMAP=$(which minimap2)
+echo -e "MINIMAP="$MINIMAP >> UserToolsConfig.txt`
+
+### deativate the environment
+
+`conda deactivate`
 
 ## Quickstart
 
-bash scripts/STRspy_Parallel_v0.1.sh -h
+Modify the configfiles describing your data `config/InputConfig.txt`
 
-USAGE: bash scripts/STRspy_Parallel_v0.1.sh <input_reads_dir(fastq/bam dir)> <is_input_bam(yes/no)> <motif_fasta_dir> <motif_bed_dir> <genome_fa> <output_dir>
+## Run STRspy
 
-## EXAMPLE:
+`cd strspy`
 
-### In case of bam input dir
+`bash ./STRspy_v1_run.sh -h`
 
-bash scripts/STRspy_Parallel_v0.1.sh example/test_dir yes example/str_fa example/str_bed NULL output_dir
-
-### In case of fastq input dir
-
-bash scripts/STRspy_Parallel_v0.1.sh example/test_dir no example/str_fa example/str_bed example/ref_genome/hg19.fa output_dir
-
-## Positional arguments
-
-fastq/bams : A dir must have either fastq (Oxford nanopore reads) or bam (pre-aligned reads)
-
-is_input_bam: User must say if given inputs are bam or fastq
-
-motif_fasta_dir: A dir contains Fasta files for each STR region of interest (assimung it has flanking regions of 500bp)
-
-motif_bed_dir: A dir contains Bed files for each STR region of interest
-
-genome fasta : Genome fasta (hg19/hg38) must provide in case of fastq input. 
-
-output_dir : A empty diectory to write the results
+`USAGE: bash ./STRspy_v1_run.sh config/InputConfig.txt config/ToolsConfig.txt`
 
 
-# Test Run
+## InputConfig.txt
 
-## bam input
-bash scripts/STRspy_Parallel_v0.1.sh example/test_dir yes example/str_bed example/str_fa NULL out_dir
+INPUT_DIR	: A dir must have either fastq (Oxford nanopore reads) or bam (aligned reads such as from PacBio)
 
-## fastq input
-bash scripts/STRspy_Parallel_v0.1.sh example/test_dir yes example/str_bed example/str_fa example/ref_genome/chr22.fa out_dir
+INPUT_BAM	: Given inputs are bam or fastq (yes or no)
+
+STR_FASTA	: A dir contains Fasta files for each STR region of interest [assimung it has flanking regions (+/-) of 500bp]
+
+STR_BED 	: A dir contains Bed files for each STR region of interest [assimung it has flanking regions (+/-) of 500bp]
+
+GENOME_FASTA: Genome fasta (hg19/hg38) must provide in case of fastq input.
+
+REGION_BED	: All STr bed has to concatnated inot single bed file to calculate the coverage of it from the aligment sample file.
+
+NORM_CUTOFF	: A normalization threshold is required to select top two allles of a STR
+
+OUTPUT_DIR : A empty directory to write the results
+
+## ToolsConfig.txt
+
+BEDTOOLS 	=	../user/path/bedtools
+
+MINIMAP 	=	../user/path/minimap2
+
+SAMTOOLS 	=	../user/path/samtools
+
+XATLAS 		=	../user/path/xatlas
+
+PARALLEL 	=	../user/path/parallel
+
+
+## Contacts
+bioinforupesh200 DOT au AT gmail DOT com
+rupesh DOT kesharwani AT bcm DOT edu
 

@@ -5,7 +5,7 @@
 
 # MIT License
 
-# Copyright (c) 2020 unique379
+# Copyright (c) 2020 unique379r
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -33,22 +33,24 @@ is_input_bam="$2" ## yes or no
 motif_fasta_dir="$3" ## str_bed
 motif_bed_dir="$4" ## str_fasta
 genome_fa="$5" ## ref_fasta
-filter_threshold="$6"
-output_dir="$7" ## results dir
+region_bed="$6"
+filter_threshold="$7"
+output_dir="$8" ## results dir
+tools_config="$9"
 
 print_USAGE()
 {
-echo -e "USAGE: bash ./STRspy.sh <input_reads_dir(fastq/sorted_bam dir)> <is_input_bam(yes/no)> <motif_fasta_dir> <motif_bed_dir> <genome_fa> <filter_threshold> <output_dir>\n"
-echo "EXAMPLE:"
+echo -e "USAGE: bash ./STRspy_Parallel_v0.1.sh <input_reads_dir(fastq/sorted_bam dir)> <is_input_bam(yes/no)> <motif_fasta_dir> <motif_bed_dir> <genome_fa> <region_bed> <filter_threshold> <output_dir> <tools_config>\n"
+echo "EXAMPLE (positional arguments = counts => 9):"
 echo "#In case of bam input dir"
-echo "bash ./STRspy.sh example/test_dir yes example/str_fa example/str_bed NULL 0.4 output_dir"
+echo "bash ./STRspy_Parallel_v0.1.sh example/test_dir yes example/str_fa example/str_bed NULL region_bed 0.4 output_dir tools_config.txt"
 echo "#In case of fastq input dir"
-echo "bash ./STRspy.sh example/test_dir no example/str_fa example/str_bed example/ref_fasta/hg19.fa 0.4 output_dir"
+echo "bash ./STRspy_Parallel_v0.1.sh example/test_dir no example/str_fa example/str_bed example/ref_fasta/hg19.fa region_bed 0.4 output_dir tools_config.txt"
 echo -e "\n"
 }
 
 # checking input arguments
-if [[ $# -ne 7 ]]; then
+if [[ $# -ne 9 ]]; then
 	echo "#ERROR: Please privide all and correct inputs"
 	echo -e "\n"
 	print_USAGE
@@ -75,6 +77,14 @@ elif [[ ! -d "$motif_bed_dir" ]]; then
 	echo -e "\n#Input directory "$motif_bed_dir" does not exist !!\n"
 	print_USAGE
 	exit 1;
+elif [[ ! -f "$region_bed" ]]; then
+	echo -e "\n#Input region_bed "$region_bed" does not exist !!\n"
+	print_USAGE
+	exit 1;
+elif [[ ! -f "$tools_config" ]]; then
+	echo -e "\n#Input tools_config "$tools_config" does not exist !!\n"
+	print_USAGE
+	exit 1;
 elif [[ "$is_input_bam" != "yes" ]] && [[ "$is_input_bam" != "no" ]] ; then
 	echo -e "\n#Input read type should only be: yes or no, analysis halted.. !!\n"
 	echo -e "\n"
@@ -94,10 +104,12 @@ else
 		read_type="fastq"
 		 echo "Input type: fastq"
 	fi 
-	echo "Motif/STR fasta dir:" "$motif_fasta_dir"
-	echo "Motif/STR bed dir:" "$motif_bed_dir"
+	echo -e "Motif/STR fasta dir:" "$motif_fasta_dir"
+	echo -e "Motif/STR bed dir:" "$motif_bed_dir"
+	echo -e "region_bed:" "$region_bed"
 	echo -e "Output dir:" "$output_dir"
 fi
+
 
 #### checking bam/fastq files existence
 if [[ "$is_input_bam" == "yes" ]]; then
@@ -159,15 +171,23 @@ if [[ "$is_input_bam" == "yes" ]] && [[ -f "$genome_fa" ]]; then
 fi
 
 #"==================================================================================================================================="
-## reference genome and tools
-bedtools="/hgsc_software/bedtools/latest/bin/bedtools"
-minimap="/stornext/snfs5/next-gen/scratch/rupesh/Apps/envs/NanoPacks/bin/minimap2"
-samtools="/stornext/snfs5/next-gen/scratch/rupesh/Apps/envs/rasflow/bin/samtools"
-source /hgsc_software/xAtlas/env
-xatlas="/hgsc_software/xAtlas/xatlas-0.2.1/xatlas"
-parallel="/stornext/snfs5/next-gen/scratch/rupesh/Apps/bin/parallel"
-#genome="/stornext/snfs5/next-gen/scratch/fritz/projects/saumik_test/forensic_project/motifs/third_approach/hs37d5_mainchr.fa"
-region_bed="/stornext/snfs5/next-gen/scratch/rupesh/ProjectFritz/forensic-project/extra/regions.sort.named.bed"
+####################   Tools Path from tool config   ###################
+
+BEDTOOLS=$(cat $tools_config | grep -w '^BEDTOOLS' | cut -d '=' -f2)
+MINIMAP=$(cat $tools_config | grep -w '^MINIMAP' | cut -d '=' -f2)
+SAMTOOLS=$(cat $tools_config | grep -w '^SAMTOOLS' | cut -d '=' -f2)
+XATLAS=$(cat $tools_config | grep -w '^XATLAS' | cut -d '=' -f2)
+PARALLEL=$(cat $tools_config | grep -w '^PARALLEL' | cut -d '=' -f2)
+
+######Set of tool user path######
+bedtools=$BEDTOOLS
+minimap=$MINIMAP
+samtools=$SAMTOOLS
+#source /hgsc_software/xAtlas/env
+xatlas=$XATLAS
+parallel=$PARALLEL
+
+#"==================================================================================================================================="
 mkdir -p $output_dir/{IntersectedRegions,IntersectMappedReads,Countings,SNVcalls}
 #"==================================================================================================================================="
 
@@ -213,7 +233,7 @@ if [[ $read_type == "fastq" ]]; then
 	## bam index
 	$parallel -X "$samtools index {}" ::: $output_dir/GenomeMapping/*.sorted.bam
 	## remove temp sam and bam
-	#rm -rf $output_dir/GenomeMapping/*.sam $output_dir/GenomeMapping/*.minimap.bam
+	rm -rf $output_dir/GenomeMapping/*.sam $output_dir/GenomeMapping/*.minimap.bam
 	echo -e "#Done."
 fi
 
@@ -248,64 +268,62 @@ if [[ "$is_input_bam" == "yes" ]]; then
 	fi
 fi
 
-# #"==================================================================="
-# ## step2 : Mapping to STR.fa + conting + normalization + SNV calling
-# #"==================================================================="
-# if [[ $read_type == "$type" ]]; then
-# 	echo -e "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
-# 	echo -e "#Spying on STR for a given samples...."
-# 	## create a inner and outer loop
-# 	for bamfile in "${bam[@]}"; do
-# 		bam_name="${bamfile##*/}"
-# 		for bedfile in "${strbed[@]}"; do
-# 			bed_name="${bedfile##*/}"
-# 			bed_fname=$(basename $bed_name .bed)
-# 			echo -e "Working for:" $bam_name $bed_name
-# 			##Intersect regions from bed vs bam
-# 			echo -e "#Started Intersecting regions from bed vs bam and creating fastq reads..."
-# 			$bedtools intersect -a "${bamfile}" -b "${bedfile}" > $output_dir/IntersectedRegions/"$bam_name"_"$bed_name".bam
-# 			## bam to fastq
-# 			$bedtools bamtofastq -i $output_dir/IntersectedRegions/"$bam_name"_"$bed_name".bam -fq $output_dir/IntersectedRegions/"$bam_name"_"$bed_name".bam.fq
-# 			rm $output_dir/IntersectedRegions/"$bam_name"_"$bed_name".bam
-# 			echo -e "#Done.\n"
-# 			echo -e "#Mapping fastq to motif fasta...\n"
-# 			$minimap --MD -L -ax map-ont $motif_fasta_dir/"$bed_fname".fa $output_dir/IntersectedRegions/"$bam_name"_"$bed_name".bam.fq -o $output_dir/IntersectMappedReads/"$bed_fname"_"$bam_name"_alignment.sam
-# 			echo -e "#Done.\n"
-# 			echo -e "#sam to bam + sort + index..."
-# 			$samtools view -S -b $output_dir/IntersectMappedReads/"$bed_fname"_"$bam_name"_alignment.sam -o $output_dir/IntersectMappedReads/"$bed_fname"_"$bam_name"_alignment.bam
-# 			$samtools sort -o $output_dir/IntersectMappedReads/"$bed_fname"_"$bam_name"_alignment.sorted.bam $output_dir/IntersectMappedReads/"$bed_fname"_"$bam_name"_alignment.bam
-# 			$samtools index $output_dir/IntersectMappedReads/"$bed_fname"_"$bam_name"_alignment.sorted.bam
-# 			rm -rf $output_dir/IntersectMappedReads/"$bed_fname"_"$bam_name"_alignment.sam $output_dir/IntersectMappedReads/"$bed_fname"_"$bam_name"_alignment.bam
-# 			## SNV calling by xatlas
-# 			echo -e "#SNV calling by xatlas...\n"
-# 			$xatlas \
-# 			-r $motif_fasta_dir/"$bed_fname".fa \
-# 			-i $output_dir/IntersectMappedReads/"$bed_fname"_"$bam_name"_alignment.sorted.bam \
-# 			-s $output_dir/SNVcalls/"$bed_fname"_"$bam_name" \
-# 			-p $output_dir/SNVcalls/"$bed_fname"_"$bam_name"
-# 			echo -e "#Counting Alleles..."
-# 			$samtools view -q 1 -F 4 $output_dir/IntersectMappedReads/"$bed_fname"_"$bam_name"_alignment.sorted.bam | cut -f 3 | sort | uniq -c | sed -e 's/^ *//;s/ /\t/' | \
-# 			grep -v '*' | sort -nr -k1,1 > $output_dir/Countings/"$bed_fname"_"$bam_name"_Allele_freqs.txt
-# 			echo -e "#Normalize with maximum value of Allele counts.."
-# 			awk 'FNR==NR{max=($1+0>max)?$1:max;next} {print $2"\t"$1"\t"$1/max}' $output_dir/Countings/"$bed_fname"_"$bam_name"_Allele_freqs.txt \
-# 			$output_dir/Countings/"$bed_fname"_"$bam_name"_Allele_freqs.txt > temp && mv temp $output_dir/Countings/"$bed_fname"_"$bam_name"_Allele_freqs.txt 
-# 			## header
-# 			sed -i '1iSTR\tRawCounts\tNormalizedCounts' $output_dir/Countings/"$bed_fname"_"$bam_name"_Allele_freqs.txt
-# 			## get top two by getting top two
-# 			#sed '1d' $output_dir/Countings/"$bed_fname"_"$bam_name"_Allele_freqs.txt | head -n 2 | tr '_' ' ' | sed 's/\]/] /g' | awk '{print $1"\t"$(NF-2)"\t"$NF}' > $output_dir/Countings/"$bed_fname"_"$bam_name"_Toptwo.txt
-# 			echo -e "#get top two Alleles by filtering norm value <=" $filter_threshold
-# 			sed '1d' $output_dir/Countings/"$bed_fname"_"$bam_name"_Allele_freqs.txt | awk  -v f="$filter_threshold" '$3>=f' | tr '_' ' ' | sed 's/\]/] /g' | awk '{print $1"\t"$(NF-2)"\t"$NF}' | sort -r -k3,3 | head -n 2 > $output_dir/Countings/"$bed_fname"_"$bam_name"_Toptwo.txt
-# 			## header
-# 			sed -i '1iLocus\tAllele\tNormalizedCounts' $output_dir/Countings/"$bed_fname"_"$bam_name"_Toptwo.txt
-# 			echo -e "#Done.\n"
-# 		done
-# 	done
-# fi
+#"==================================================================="
+## step2 : Mapping to STR.fa + conting + normalization + SNV calling
+#"==================================================================="
+if [[ $read_type == "$type" ]]; then
+	echo -e "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+	echo -e "#Spying on STR for a given samples...."
+	## create a inner and outer loop
+	for bamfile in "${bam[@]}"; do
+		bam_name="${bamfile##*/}"
+		for bedfile in "${strbed[@]}"; do
+			bed_name="${bedfile##*/}"
+			bed_fname=$(basename $bed_name .bed)
+			echo -e "Working for:" $bam_name $bed_name
+			##Intersect regions from bed vs bam
+			echo -e "#Started Intersecting regions from bed vs bam and creating fastq reads..."
+			$bedtools intersect -a "${bamfile}" -b "${bedfile}" > $output_dir/IntersectedRegions/"$bam_name"_"$bed_name".bam
+			## bam to fastq
+			$bedtools bamtofastq -i $output_dir/IntersectedRegions/"$bam_name"_"$bed_name".bam -fq $output_dir/IntersectedRegions/"$bam_name"_"$bed_name".bam.fq
+			rm $output_dir/IntersectedRegions/"$bam_name"_"$bed_name".bam
+			echo -e "#Done.\n"
+			echo -e "#Mapping fastq to motif fasta...\n"
+			$minimap --MD -L -ax map-ont $motif_fasta_dir/"$bed_fname".fa $output_dir/IntersectedRegions/"$bam_name"_"$bed_name".bam.fq -o $output_dir/IntersectMappedReads/"$bed_fname"_"$bam_name"_alignment.sam
+			echo -e "#Done.\n"
+			echo -e "#sam to bam + sort + index..."
+			$samtools view -S -b $output_dir/IntersectMappedReads/"$bed_fname"_"$bam_name"_alignment.sam -o $output_dir/IntersectMappedReads/"$bed_fname"_"$bam_name"_alignment.bam
+			$samtools sort -o $output_dir/IntersectMappedReads/"$bed_fname"_"$bam_name"_alignment.sorted.bam $output_dir/IntersectMappedReads/"$bed_fname"_"$bam_name"_alignment.bam
+			$samtools index $output_dir/IntersectMappedReads/"$bed_fname"_"$bam_name"_alignment.sorted.bam
+			rm -rf $output_dir/IntersectMappedReads/"$bed_fname"_"$bam_name"_alignment.sam $output_dir/IntersectMappedReads/"$bed_fname"_"$bam_name"_alignment.bam
+			## SNV calling by xatlas
+			echo -e "#SNV calling by xatlas...\n"
+			$xatlas \
+			-r $motif_fasta_dir/"$bed_fname".fa \
+			-i $output_dir/IntersectMappedReads/"$bed_fname"_"$bam_name"_alignment.sorted.bam \
+			-s $output_dir/SNVcalls/"$bed_fname"_"$bam_name" \
+			-p $output_dir/SNVcalls/"$bed_fname"_"$bam_name"
+			echo -e "#Counting Alleles..."
+			$samtools view -q 1 -F 4 $output_dir/IntersectMappedReads/"$bed_fname"_"$bam_name"_alignment.sorted.bam | cut -f 3 | sort | uniq -c | sed -e 's/^ *//;s/ /\t/' | \
+			grep -v '*' | sort -nr -k1,1 > $output_dir/Countings/"$bed_fname"_"$bam_name"_Allele_freqs.txt
+			echo -e "#Normalize with maximum value of Allele counts.."
+			awk 'FNR==NR{max=($1+0>max)?$1:max;next} {print $2"\t"$1"\t"$1/max}' $output_dir/Countings/"$bed_fname"_"$bam_name"_Allele_freqs.txt \
+			$output_dir/Countings/"$bed_fname"_"$bam_name"_Allele_freqs.txt > temp && mv temp $output_dir/Countings/"$bed_fname"_"$bam_name"_Allele_freqs.txt 
+			## header
+			sed -i '1iSTR\tRawCounts\tNormalizedCounts' $output_dir/Countings/"$bed_fname"_"$bam_name"_Allele_freqs.txt
+			## get top two by getting top two
+			echo -e "#get top two Alleles by filtering norm value <=" $filter_threshold
+			sed '1d' $output_dir/Countings/"$bed_fname"_"$bam_name"_Allele_freqs.txt | awk  -v f="$filter_threshold" '$3>=f' | tr '_' ' ' | sed 's/\]/] /g' | awk '{print $1"\t"$(NF-2)"\t"$NF}' | sort -r -k3,3 | head -n 2 > $output_dir/Countings/"$bed_fname"_"$bam_name"_Toptwo.txt
+			## header
+			sed -i '1iLocus\tAllele\tNormalizedCounts' $output_dir/Countings/"$bed_fname"_"$bam_name"_Toptwo.txt
+			echo -e "#Done.\n"
+		done
+	done
+fi
 
 echo -e "All Done.\n"
 duration=$SECONDS
 echo "$(($duration / 60)) minutes and $(($duration % 60)) seconds elapsed."
 echo -e "\n#The log file also has created in your working directory\n"
 
-) 2>&1) | tee -a "$7"/STRspyLogParallel.log
-
+) 2>&1) | tee -a "$8"/STRspyLogParallel.log
