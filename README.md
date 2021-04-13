@@ -1,11 +1,11 @@
 # strspy
 ![](STRspyLogo.png)
 
-STRspy: A pipeline to detect regions of short tandem repeats in Long Read.
+STRspy: a novel alignment and quantification-based state-of-the-art method, short tandem repeat (STR) detection calling tool designed specifically for long-read sequencing reads such as from Oxford nanopore technology (ONT) and PacBio.
 
 ## Overview
 
-DNA evidence has long been considered the gold standard for human identification in forensic investigations. Most often, DNA typing exploits the high variability of short tandem repeat (STR) sequences to differentiate between individuals at the genetic level. Comparison of STR profiles can be used for human identification in a wide range of forensic cases including homicides, sexual assaults, missing persons, and mass disaster victims. The number of contiguous repeat units present at a given microsatellite locus varies significantly among individuals, and thus make them useful for human identification purposes. Here, we are presents a complete pipeline i.e STRspy to identify STRs in a long read samples i.e. Oxford nanopore sequencing reads.
+DNA evidence has long been considered the gold standard for human identification in forensic investigations. Most often, DNA typing exploits the high variability of short tandem repeat (STR) sequences to differentiate between individuals at the genetic level. Comparison of STR profiles can be used for human identification in a wide range of forensic cases including homicides, sexual assaults, missing persons, and mass disaster victims. The number of contiguous repeat units present at a given microsatellite locus varies significantly among individuals, and thus make them useful for human identification purposes. Here, we are presents a complete pipeline i.e STRspy to identify STRs in a long read samples i.e. Oxford nanopore sequencing reads and Pacbio reads.
 
 ## Key Features
 
