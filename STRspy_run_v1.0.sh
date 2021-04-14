@@ -54,7 +54,7 @@ echo -e "\n"
 echo -e "#Please Provide File Inputs (positional arguments = counts => 2) !!"
 echo -e "\n"
 echo -e "USAGE:
-bash ./STRspy_run_v1.0.sh InputConfig.txt ToolsConfig.txt"
+bash ./STRspy_run_v1.0.sh config/InputConfig.txt config/ToolsConfig.txt"
 echo -e "\n"
 }
 ## check file input
