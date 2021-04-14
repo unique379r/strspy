@@ -62,7 +62,7 @@ xatlas
 
 `echo -e "MINIMAP="$MINIMAP >> UserToolsConfig.txt`
 
-### deativate the environment
+### deactivate the environment
 
 `conda deactivate`
 
