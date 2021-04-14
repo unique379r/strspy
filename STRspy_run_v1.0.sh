@@ -29,11 +29,10 @@ set -a
 # author: Rupesh Kesharwani <bioinrupesh2009 DOT au AT gmail DOT com>
 # # ====================================================================================================================#
 
-# # Usage: bash ./STRspy.sh InputConfig.txt
+# Usage: bash ./STRspy_run_v1.0.sh InputConfig.txt ToolsConfig.txt
 
-					########################################################
-################### WE REQUEST YOU TO PLEASE DO NOT TOUCH BELOW THIS LINE ####################
-					########################################################
+#################################### WE REQUEST YOU TO PLEASE DO NOT TOUCH BELOW THIS LINE ##############################
+
 echo -e "\n"
 print_softInfo ()
 {
