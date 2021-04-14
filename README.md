@@ -21,9 +21,13 @@ DNA evidence has long been considered the gold standard for human identification
 STRspy includes the installation of the following third-party software before it can be used.
 
 gnu parallel
+
 samtools
+
 bedtools
+
 minimap2
+
 xatlas
 
 ### Clone the repository
@@ -42,25 +46,9 @@ xatlas
 
 ### Set up configuration
 
-`SAMTOOLS=$(which samtools)`
+`bash setup/MakeToolConfig.sh`
 
-`echo -e "SAMTOOLS="$SAMTOOLS > UserToolsConfig.txt`
-
-`BEDTOOLS=$(which bedtools)`
-
-`echo -e "BEDTOOLS="$BEDTOOLS >> UserToolsConfig.txt`
-
-`XATLAS=$(which xatlas)`
-
-`echo -e "XATLAS="$XATLAS >> UserToolsConfig.txt`
-
-`PARALLEL=$(which parallel)`
-
-`echo -e "PARALLEL="$PARALLEL >> UserToolsConfig.txt`
-
-`MINIMAP=$(which minimap2)`
-
-`echo -e "MINIMAP="$MINIMAP >> UserToolsConfig.txt`
+`mv UserToolsConfig.txt config/`
 
 ### deactivate the environment
 
@@ -81,9 +69,11 @@ Modify the configfiles describing your data `config/InputConfig.txt`
 
 ## InputConfig.txt
 
-INPUT_DIR	: A dir must have either fastq (Oxford nanopore reads) or bam (aligned reads such as from PacBio)
+INPUT_DIR	: A dir must have either fastq (Oxford nanopore genomic reads) or bam (aligned genomic reads such as from PacBio)
 
 INPUT_BAM	: Given inputs are bam or fastq (yes or no)
+
+READ_TYPE	: Sequencing Technology (ont or pb)
 
 STR_FASTA	: A dir contains Fasta files for each STR region of interest [assimung it has flanking regions (+/-) of 500bp]
 
