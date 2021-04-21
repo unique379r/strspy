@@ -62,9 +62,9 @@ Modify the configfiles describing your data `config/InputConfig.txt`
 
 `cd strspy`
 
-`bash ./STRspy_v1_run.sh -h`
+`bash ./STRspy_run_v1.0.sh -h`
 
-`USAGE: bash ./STRspy_v1_run.sh config/InputConfig.txt config/ToolsConfig.txt`
+`USAGE: bash ./STRspy_run_v1.0.sh config/InputConfig.txt config/ToolsConfig.txt`
 
 
 ## InputConfig.txt
