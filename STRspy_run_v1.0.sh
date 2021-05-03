@@ -77,7 +77,7 @@ if [ ! -s $InputConfig ]; then
 fi
 
 ## Extract parameters from the given file
-clear
+#clear
 echo -e "\n"
 echo -e "########################################################"
 echo -e "#################   Input Parameters   #################"
@@ -127,12 +127,20 @@ echo -e "#PARALLEL 			:" $PARALLEL
 #### Analysis begins ###
 ########################
 
+
 if [[ -f "./scripts/STRspy_Parallel_v1.0.sh" ]]; then
 	echo -e "\n"
-	echo -e "\t\t  ~ ~ ~ ~ Running STRspy_Parallel_v1.0.sh ~ ~ ~ ~	 "
+	echo -e "\t\t  ~ ~ ~ ~ Running STRspy ~ ~ ~ ~	 "
 	#echo -e "\t\tAnalysis date:" `date`
 	echo -e "\n"
-	bash ./scripts/STRspy_Parallel_v0.1.sh $INPUT_DIR $INPUT_BAM $READ_TYPE $STR_FASTA $STR_BED $GENOME_FASTA $REGION_BED $NORM_CUTOFF $OUTPUT_DIR $ToolsConfig
+	##############################
+	## nested loop version STRspy
+	#bash scripts/STRspy_v1.0.sh "$INPUT_DIR" "$INPUT_BAM" "$READ_TYPE" "$STR_FASTA" "$STR_BED" "$GENOME_FASTA" "$REGION_BED" "$NORM_CUTOFF" "$OUTPUT_DIR" "$ToolsConfig" 
+	#bash scripts/STRspy_v1.0.sh "$INPUT_DIR" "$INPUT_BAM" "$READ_TYPE" "$STR_FASTA" "$STR_BED" "$GENOME_FASTA" "$REGION_BED" "$NORM_CUTOFF" "$OUTPUT_DIR" "$ToolsConfig"
+	##############################
+	## parallel version of STRspy
+	#bash scripts/STRspy_Parallel_v1.0.sh "$INPUT_DIR" "$INPUT_BAM" "$READ_TYPE" "$STR_FASTA" "$STR_BED" "$GENOME_FASTA" "$REGION_BED" "$NORM_CUTOFF" "$OUTPUT_DIR" "$ToolsConfig"
+	bash scripts/STRspy_Parallel_v1.0.sh "$INPUT_DIR" "$INPUT_BAM" "$READ_TYPE" "$STR_FASTA" "$STR_BED" "$GENOME_FASTA" "$REGION_BED" "$NORM_CUTOFF" "$OUTPUT_DIR" "$ToolsConfig"
 	#echo -e "#Analysis finished.\n" `date`
 else
 	echo -e "please make sure you are in the same directory of STRspy

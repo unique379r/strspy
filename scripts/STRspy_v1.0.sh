@@ -40,12 +40,12 @@ tools_config="${10}" ## tools config
 
 print_USAGE()
 {
-echo -e "USAGE: bash ./STRspy_v1.0.sh <input_reads_dir(fastq/bam dir)> <is_input_bam(yes/no)> <ReadType(ont/pb)> <motif_fasta_dir> <motif_bed_dir> <region_bed> <filter_threshold> <output_dir> <tools_config>\n"
+echo -e "USAGE: bash ./STRspy_v1.0.sh <input_reads_dir(fastq/bam dir)> <is_input_bam(yes/no)> <ReadType(ont/pb)> <motif_fasta_dir> <motif_bed_dir> <genome_fa> <region_bed> <filter_threshold> <output_dir> <tools_config>\n"
 echo "EXAMPLE (positional arguments = counts => 10):"
 echo "#In case of bam input dir"
-echo "bash ./STRspy_v1.0.sh example/test_dir yes pb example/str_fa example/str_bed NULL region_bed 0.4 output_dir tools_config.tx"
+echo "bash ./STRspy_v1.0.sh example/test_dir yes pb example/str_fa example/str_bed NULL region_bed 0.4 output_dir tools_config.txt"
 echo "#In case of fastq input dir"
-echo "bash ./STRspy_v1.0.sh example/test_dir no ont example/str_fa example/str_bed example/ref_fasta/hg19.fa region_bed 0.4 output_dir tools_config.tx"
+echo "bash ./STRspy_v1.0.sh example/test_dir no ont str_fa str_bed ref_fasta/hg19.fa region_bed 0.4 output_dir tools_config.txt"
 echo -e "\n"
 }
 
@@ -268,21 +268,21 @@ if [[ "$is_input_bam" == "no" ]]; then
 	fi
 fi
 
-## get cov info in case of bam provided
-#### checking bam files existence
-if [[ "$is_input_bam" == "yes" ]]; then
-	bam=($input_reads_dir/*.bam)
-	type="bam"
-	mkdir -p $output_dir/GenomicMappingStats
-	if [[ -e "${bam[0]}" ]]; then
-		echo -e "#Summerizing the mapped and unmapped reads and their percentage"
-		get_cov $input_reads_dir $output_dir/GenomicMappingStats $region_bed
-		echo -e "#Done"
-	else
-		echo -e "\n#ERROR: Provided Genomic bams are not found !!\n"
-		exit 1;
-	fi
-fi
+# ## get cov info in case of bam provided
+# #### checking bam files existence
+# if [[ "$is_input_bam" == "yes" ]]; then
+# 	bam=($input_reads_dir/*.bam)
+# 	type="bam"
+# 	mkdir -p $output_dir/GenomicMappingStats
+# 	if [[ -e "${bam[0]}" ]]; then
+# 		echo -e "#Summerizing the mapped and unmapped reads and their percentage"
+# 		get_cov $input_reads_dir $output_dir/GenomicMappingStats $region_bed
+# 		echo -e "#Done"
+# 	else
+# 		echo -e "\n#ERROR: Provided Genomic bams are not found !!\n"
+# 		exit 1;
+# 	fi
+# fi
 
 # #"==================================================================="
 # ## step2 : mapping to STR.fa + conting + normalization + SNV calling
@@ -290,7 +290,7 @@ fi
 
 if [[ $read_type == "$type" ]]; then
 	echo -e "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
-	echo -e "#Spying on STR for a given samples...."
+	echo -e "#Spying on STR for a given samples(skipped mapping since bam was provided)...."
 	## create a inner and outer loop
 	for bamfile in "${bam[@]}"; do
 		bam_name="${bamfile##*/}"

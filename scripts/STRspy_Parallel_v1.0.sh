@@ -234,25 +234,37 @@ if [[ $read_type == "fastq" ]]; then
 	mkdir -p $output_dir/GenomeMapping
 	echo -e "#fastq map to genome.."
 	if [[ "$readtype" == "ont" ]]; then
-		$parallel -X "$minimap --MD -L -t 1 -ax map-ont $genome {} -o $output_dir/GenomeMapping/{/.}.minimap.sam" :::  $input_reads_dir/*.fastq
+		$parallel -j5 "$minimap --MD -L -t 1 -ax map-ont $genome {} -o $output_dir/GenomeMapping/{/.}.minimap.sam" :::  $input_reads_dir/*.fastq
 	elif [[ "$readtype" == "pb" ]]; then
-		$parallel -X "$minimap --MD -L -t 1 -ax map-pb $genome {} -o $output_dir/GenomeMapping/{/.}.minimap.sam" :::  $input_reads_dir/*.fastq
+		$parallel -j5 "$minimap --MD -L -t 1 -ax map-pb $genome {} -o $output_dir/GenomeMapping/{/.}.minimap.sam" :::  $input_reads_dir/*.fastq
 	else
 		echo -e "#Provided Read type is not known"
 		exit 1;
 	fi
-	## sam2bam
-	echo -e "#sam to bam.."
-	$parallel -X "$samtools view -S -b {} -o $output_dir/GenomeMapping/{/.}.bam" ::: $output_dir/GenomeMapping/*.sam
-	## bam2sortedbam and index
-	echo -e "#bam sort and index.."
-	$parallel -X "$samtools sort -o $output_dir/GenomeMapping/{/.}.sorted.bam {}" ::: $output_dir/GenomeMapping/*.minimap.bam
-	## bam index
-	$parallel -X "$samtools index {}" ::: $output_dir/GenomeMapping/*.sorted.bam
-	## remove temp sam and bam
-	rm -rf $output_dir/GenomeMapping/*.sam $output_dir/GenomeMapping/*.minimap.bam
-	echo -e "#Done."
 fi
+
+#### checking sam files existence
+if [[ "$is_input_bam" == "no" ]]; then
+	type="fastq"
+	sam=($output_dir/GenomeMapping/*.minimap.sam)
+	if [[ -e "${sam[0]}" ]]; then
+		## sam2bam
+		echo -e "#sam to bam.."
+		$parallel -j5 "$samtools view -S -b {} -o $output_dir/GenomeMapping/{/.}.bam" ::: $output_dir/GenomeMapping/*.sam
+		## bam2sortedbam and index
+		echo -e "#bam sort and index.."
+		$parallel -j5 "$samtools sort -o $output_dir/GenomeMapping/{/.}.sorted.bam {}" ::: $output_dir/GenomeMapping/*.minimap.bam
+		## bam index
+		$parallel -j5 "$samtools index {}" ::: $output_dir/GenomeMapping/*.sorted.bam
+		## remove temp sam and bam
+		rm -rf $output_dir/GenomeMapping/*.sam $output_dir/GenomeMapping/*.minimap.bam
+		echo -e "#Done."
+	else
+		echo -e "\n#ERROR: Minimap sams from fastq inputs are not found !!\n"
+		exit 1;
+	fi
+fi
+
 
 #### checking bam files existence
 if [[ "$is_input_bam" == "no" ]]; then
