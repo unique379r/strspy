@@ -38,7 +38,7 @@ xatlas
 
 ### Create an environment
 
-`bash setup/STRspy_setup.sh -h`
+`bash setup/STRspy_setup.sh`
 
 ### Activate the environment
 

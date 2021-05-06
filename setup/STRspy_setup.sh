@@ -26,7 +26,7 @@
 # SOFTWARE.
 # author: Rupesh Kesharwani <bioinrupesh2009 DOT au AT gmail DOT com>
 
-clear
+#clear
 
 
 # This file is part of STRspy.
@@ -54,7 +54,7 @@ fi
 #########################
 #### Install Programs ###
 #########################
-clear
+#clear
 echo -e "checking if strspy_env is already present...."
 if hash conda >/dev/null 2>&1; then
 	ENV=$(conda info --envs | grep ^strspy_env | awk '{print $1}')
