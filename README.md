@@ -20,15 +20,15 @@ DNA evidence has long been considered the gold standard for human identification
 
 STRspy includes the installation of the following third-party software before it can be used.
 
-gnu parallel
+`gnu parallel >=20210222`
 
-samtools
+`samtools >=v1.12`
 
-bedtools
+`bedtools >=v2.30.0`
 
-minimap2
+`minimap2 >=v2.18-r1015`
 
-xatlas
+`xatlas >=v0.2.1`
 
 ### Clone the repository
 

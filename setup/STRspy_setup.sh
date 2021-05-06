@@ -37,7 +37,7 @@ echo -e "\t\t\t\t#### Welcome to the installation of third-party software for ST
 echo -e "\t\t\t\t\t\t\t#### Before to Run this script ####"
 echo -e "\n"
 echo -e "#Make sure internet connection works properly in your privileges."
-echo -e "# bash ./STRspy_PackagesInstall.v0.1.sh"
+echo -e "# bash ./STRspy_setup.sh"
 echo -n "Continue ? (y/n) : "
 read ans
 if [[ "${ans}" != "y" ]] && [[ "${ans}" != "Y" ]]; then
@@ -69,11 +69,11 @@ else
 fi
 
 # ## required tools to run STRspy ##
-# ## 1. bedtools
-# ## 2. minimap2
-# ## 3. samtools
-# ## 4. xatlas
-# ## 5. gnu parallel
+# ## 1. bedtools >=v2.30.0
+# ## 2. minimap2 >=v2.18-r1015
+# ## 3. samtools >=v1.12
+# ## 4. xatlas >=v0.2.1
+# ## 5. gnu parallel >=20210222
 
 if hash conda >/dev/null 2>&1; then
 	echo -e "\n"
