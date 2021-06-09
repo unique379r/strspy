@@ -102,6 +102,17 @@ PARALLEL 	=	../user/path/parallel
 ## Note
 One may encounter with a bug that using wrapper (`STRspy_run_v1.0.sh`), STRspy parallel version may not able to communicate properly with "gnu parallel" and exit the workfow without mapping or further steps of the analysis. Solution to this, the user may either run the script directly from scripts/STRspy_v1.0.sh in the STRspy dir or modify the STRspy_run_v1.0.sh script and allow the nested loop version of the workflow, but bear in mind that this is a little slower than the parallel version.
 
+## References
+Aaron R. Quinlan, Ira M. Hall, BEDTools: a flexible suite of utilities for comparing genomic features, Bioinformatics, Volume 26, Issue 6, 15 March 2010, Pages 841–842, https://doi.org/10.1093/bioinformatics/btq033
+
+Li, H. (2018). Minimap2: pairwise alignment for nucleotide sequences. Bioinformatics, 34:3094-3100. doi:10.1093/bioinformatics/bty191
+
+Heng Li, Bob Handsaker, Alec Wysoker, Tim Fennell, Jue Ruan, Nils Homer, Gabor Marth, Goncalo Abecasis, Richard Durbin, 1000 Genome Project Data Processing Subgroup, The Sequence Alignment/Map format and SAMtools, Bioinformatics, Volume 25, Issue 16, 15 August 2009, Pages 2078–2079, https://doi.org/10.1093/bioinformatics/btp352
+
+Jesse Farek, Daniel Hughes, Adam Mansfield, Olga Krasheninina et al (2018). xAtlas: Scalable small variant calling across heterogeneous next-generation sequencing experiments. bioRxiv; doi: https://doi.org/10.1101/295071
+
+O. Tange (2018): GNU Parallel 2018, March 2018, https://doi.org/10.5281/zenodo.1146014.
+
 ## Contacts
 bioinforupesh200 DOT au AT gmail DOT com
 rupesh DOT kesharwani AT bcm DOT edu
