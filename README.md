@@ -66,6 +66,9 @@ Modify the configfiles describing your data `config/InputConfig.txt`
 
 `USAGE: bash ./STRspy_run_v1.0.sh config/InputConfig.txt config/ToolsConfig.txt`
 
+## Run with test datasets
+
+Download the data provided `testset.tar.gz` here, however pre-computed results `test_results.tar.gz` are also avaiable for the reproducibility purposes. The test data should finish less than 25 Sec (via simple terminal use) to generate the results.
 
 ## InputConfig.txt
 
