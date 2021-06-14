@@ -132,7 +132,7 @@ One may encounter with a bug that using wrapper (`STRspy_run_v1.0.sh`), STRspy p
 
 ## Evaluation
 
-STRspy has been evaluated on 2 datasets including 30cycle and 15cycle. Please have a look plots bellow the benchmarking of the datasets we used. For more details please have a look our paper (Courtney L. Halla*, Rupesh K. Kesharwanib et al. 2021; Accurate profiling of forensic autosomal STRs using the Oxford Nanopore Technologies MinION device.)
+STRspy has been evaluated on 2 datasets including 30cycle and 15cycle. Please have a look plots bellow the benchmarking of the datasets we used. For more details please have a look our paper (Courtney L. Halla*, Rupesh K. Kesharwani et al. 2021; Accurate profiling of forensic autosomal STRs using the Oxford Nanopore Technologies MinION device; Forensic Science International: Genetics)
 
 ## Benchmarking of the datasets (30cycle and 15cycle)
 ![](Heatmap15-30X.jpeg)
