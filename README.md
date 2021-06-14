@@ -18,6 +18,20 @@ DNA evidence has long been considered the gold standard for human identification
 
 ## Installation
 
+1.1 Install Miniconda
+
+Download Miniconda installer from here: https://docs.conda.io/en/latest/miniconda.html and Install it to your laptop or server.
+
+### Conda under linux environment
+
+`wget https://repo.anaconda.com/miniconda/Miniconda3-py39_4.9.2-Linux-x86_64.sh`
+
+`bash Miniconda3-py39_4.9.2-Linux-x86_64.sh`
+
+Follow the instructions directed by the miniconda script
+
+1.2 Install STRspy 
+
 STRspy includes the installation of the following third-party software before it can be used.
 
 `gnu parallel >=20210222`
@@ -66,9 +80,19 @@ Modify the configfiles describing your data `config/InputConfig.txt`
 
 `USAGE: bash ./STRspy_run_v1.0.sh config/InputConfig.txt config/ToolsConfig.txt`
 
-## Run with test datasets
+## Running with test datasets
 
-Download the data provided `testset.tar.gz` here, however pre-computed results `test_results.tar.gz` are also avaiable for the reproducibility purposes. The test data should finish less than 25 Sec (via simple terminal use) to generate the results.
+The testset is provided `testset.tar.gz` with the package for the quick start, however pre-computed results `test_results.tar.gz` are also avaiable for the reproducibility purposes. The test data should finish less than 25 Sec (via simple terminal use) to generate the results.
+
+### Extracting tar.gz Files
+
+`tar -xvf testset.tar.gz`
+
+### Note: don't forgter to change the config files & run the commands as instructed above
+
+Compare your test results with pre-computed outputs here
+
+`tar -xvf test_results.tar.gz`
 
 ## InputConfig.txt
 
@@ -103,7 +127,15 @@ XATLAS 		=	../user/path/xatlas
 PARALLEL 	=	../user/path/parallel
 
 ## Note
+
 One may encounter with a bug that using wrapper (`STRspy_run_v1.0.sh`), STRspy parallel version may not able to communicate properly with "gnu parallel" and exit the workfow without mapping or further steps of the analysis. Solution to this, the user may either run the script directly from scripts/STRspy_v1.0.sh in the STRspy dir or modify the STRspy_run_v1.0.sh script and allow the nested loop version of the workflow, but bear in mind that this is a little slower than the parallel version.
+
+## Evaluation
+
+STRspy has been evaluated on 2 datasets including 30cycle and 15cycle. Please have a look plots bellow the benchmarking of the datasets we used. For more details please have a look our paper (Courtney L. Halla*, Rupesh K. Kesharwanib et al. 2021; Accurate profiling of forensic autosomal STRs using the Oxford Nanopore Technologies MinION device.)
+
+## Benchmakring of the datasets (30cycle and 15cycle)
+![](Heatmap15-30X.jpeg)
 
 ## References
 Aaron R. Quinlan, Ira M. Hall, BEDTools: a flexible suite of utilities for comparing genomic features, Bioinformatics, Volume 26, Issue 6, 15 March 2010, Pages 841–842, https://doi.org/10.1093/bioinformatics/btq033
