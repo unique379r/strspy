@@ -82,7 +82,7 @@ Modify the configfiles describing your data `config/InputConfig.txt`
 
 ## Running with test datasets
 
-The testset is provided `testset.tar.gz` with the package for the quick start, however pre-computed results `test_results.tar.gz` are also avaiable for the reproducibility purposes. The test data should finish less than 25 Sec (via simple terminal use) to generate the results.
+The testset is provided `testset.tar.gz` with the package for the quick start, however pre-computed results `test_results.tar.gz` are also avaiable for the reproducibility purposes. The test data should finish less than 12 Sec (via simple terminal use) to generate the results.
 
 ### Extracting tar.gz Files
 
