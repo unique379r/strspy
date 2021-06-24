@@ -132,7 +132,7 @@ One may encounter with a bug that using wrapper (`STRspy_run_v1.0.sh`), STRspy p
 
 ## Evaluation
 
-STRspy has been evaluated on 2 datasets including 30cycle and 15cycle. Please have a look plots bellow the benchmarking of the datasets we used. For more details please have a look our paper `Courtney L. Halla*, Rupesh K. Kesharwani et al. 2021; Accurate profiling of forensic autosomal STRs using the Oxford Nanopore Technologies MinION device; Forensic Science International: Genetics.`
+STRspy has been evaluated on 2 datasets including 30cycle and 15cycle of the ONT reads. Please have a look plots bellow the benchmarking of the datasets we used. For more details please have a look our paper `Courtney L. Halla*, Rupesh K. Kesharwani et al. 2021; Accurate profiling of forensic autosomal STRs using the Oxford Nanopore Technologies MinION device; Forensic Science International: Genetics.`
 
 ## Heatmap of predicted STRs (30cycle and 15cycle)
 ![](Heatmap15-30X.jpeg)
@@ -153,5 +153,6 @@ O. Tange (2018): GNU Parallel 2018, March 2018, https://doi.org/10.5281/zenodo.1
 
 ## Contacts
 bioinforupesh200 DOT au AT gmail DOT com
+
 rupesh DOT kesharwani AT bcm DOT edu
 
