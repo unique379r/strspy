@@ -268,21 +268,21 @@ if [[ "$is_input_bam" == "no" ]]; then
 	fi
 fi
 
-# ## get cov info in case of bam provided
-# #### checking bam files existence
-# if [[ "$is_input_bam" == "yes" ]]; then
-# 	bam=($input_reads_dir/*.bam)
-# 	type="bam"
-# 	mkdir -p $output_dir/GenomicMappingStats
-# 	if [[ -e "${bam[0]}" ]]; then
-# 		echo -e "#Summerizing the mapped and unmapped reads and their percentage"
-# 		get_cov $input_reads_dir $output_dir/GenomicMappingStats $region_bed
-# 		echo -e "#Done"
-# 	else
-# 		echo -e "\n#ERROR: Provided Genomic bams are not found !!\n"
-# 		exit 1;
-# 	fi
-# fi
+## get cov info in case of bam provided
+#### checking bam files existence
+if [[ "$is_input_bam" == "yes" ]]; then
+	bam=($input_reads_dir/*.bam)
+	type="bam"
+	mkdir -p $output_dir/GenomicMappingStats
+	if [[ -e "${bam[0]}" ]]; then
+		echo -e "#Summerizing the mapped and unmapped reads and their percentage"
+		get_cov $input_reads_dir $output_dir/GenomicMappingStats $region_bed
+		echo -e "#Done"
+	else
+		echo -e "\n#ERROR: Provided Genomic bams are not found !!\n"
+		exit 1;
+	fi
+fi
 
 # #"==================================================================="
 # ## step2 : mapping to STR.fa + conting + normalization + SNV calling
