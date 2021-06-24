@@ -137,7 +137,6 @@ STRspy has been evaluated on 2 datasets including 30cycle and 15cycle of the ONT
 ## Heatmap of predicted STRs (30cycle and 15cycle)
 ![](Heatmap15-30X.jpeg)
 
-## Benchmarking of the datasets (30cycle and 15cycle)
 ![](STRspy_benchmarking.png)
 
 ## References
