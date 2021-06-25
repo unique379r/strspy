@@ -315,7 +315,7 @@ if [[ $read_type == "$type" ]]; then
 			$bedtools intersect -a "${bamfile}" -b "${bedfile}" > $output_dir/IntersectedRegions/"$bam_name"_"$bed_name".bam
 			## bam to fastq
 			$bedtools bamtofastq -i $output_dir/IntersectedRegions/"$bam_name"_"$bed_name".bam -fq $output_dir/IntersectedRegions/"$bam_name"_"$bed_name".bam.fq
-			rm $output_dir/IntersectedRegions/"$bam_name"_"$bed_name".bam
+			rm -rf $output_dir/IntersectedRegions/"$bam_name"_"$bed_name".bam
 			echo -e "#Done.\n"
 			echo -e "#Mapping fastq to motif fasta...\n"
 			if [[ "$readtype" == "ont" ]]; then
