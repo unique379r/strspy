@@ -303,7 +303,7 @@ if [[ $read_type == "$type" ]]; then
 			$bedtools intersect -a "${bamfile}" -b "${bedfile}" > $output_dir/IntersectedRegions/"$bam_name"_"$bed_name".bam
 			## bam to fastq
 			$bedtools bamtofastq -i $output_dir/IntersectedRegions/"$bam_name"_"$bed_name".bam -fq $output_dir/IntersectedRegions/"$bam_name"_"$bed_name".bam.fq
-			rm $output_dir/IntersectedRegions/"$bam_name"_"$bed_name".bam
+			rm -rf $output_dir/IntersectedRegions/"$bam_name"_"$bed_name".bam
 			echo -e "#Done.\n"
 			echo -e "#Mapping fastq to motif fasta...\n"
 			if [[ "$readtype" == "ont" ]]; then
@@ -334,7 +334,7 @@ if [[ $read_type == "$type" ]]; then
 			grep -v '*' | sort -nr -k1,1 > $output_dir/Countings/"$bed_fname"_"$bam_name"_Allele_freqs.txt
 			echo -e "#Normalize with maximum value of Allele counts.."
 			awk 'FNR==NR{max=($1+0>max)?$1:max;next} {print $2"\t"$1"\t"$1/max}' $output_dir/Countings/"$bed_fname"_"$bam_name"_Allele_freqs.txt \
-			$output_dir/Countings/"$bed_fname"_"$bam_name"_Allele_freqs.txt > temp && yes | mv temp $output_dir/Countings/"$bed_fname"_"$bam_name"_Allele_freqs.txt 
+			$output_dir/Countings/"$bed_fname"_"$bam_name"_Allele_freqs.txt > temp && mv temp $output_dir/Countings/"$bed_fname"_"$bam_name"_Allele_freqs.txt 
 			## header
 			sed -i '1iSTR\tRawCounts\tNormalizedCounts' $output_dir/Countings/"$bed_fname"_"$bam_name"_Allele_freqs.txt
 			## get top two by getting top two
