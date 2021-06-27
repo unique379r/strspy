@@ -84,11 +84,11 @@ if hash conda >/dev/null 2>&1; then
 	source ~/.bashrc
 	source ~/.bash_profile
 	echo -e "#Installation done"
-	exit 1;
+	exit;
 else
 	clear
 	echo -e "#conda/miniconda appears to have NOT installed ! please install it to continue.."
-	exit !;
+	exit 1;
 fi
 
 ## grab tools from strspy_env
