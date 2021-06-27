@@ -84,7 +84,7 @@ if hash conda >/dev/null 2>&1; then
 	source ~/.bashrc
 	source ~/.bash_profile
 	echo -e "#Installation done"
-	exit 1;
+	exit 0;
 else
 	clear
 	echo -e "#conda/miniconda appears to have NOT installed ! please install it to continue.."
