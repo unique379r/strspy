@@ -9,7 +9,7 @@ DNA evidence has long been considered the gold standard for human identification
 
 ## Key Features
 
-1. Input either fastq (raw reads usually from ONT) or bam (pre-aligned reads usually froom PacBio)
+1. Input either fastq (raw reads usually from ONT) or bam (pre-aligned reads usually from PacBio)
 2. Reports raw counts of allele along with its Normalized counts by its maximum value
 3. Find top two significant Alleles (filtering threshold set by user such as 0.4)
 4. Detects Small variants such as SNP and Indels
