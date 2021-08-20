@@ -59,8 +59,9 @@ echo -e "checking if strspy_env is already present...."
 if hash conda >/dev/null 2>&1; then
 	ENV=$(conda info --envs | grep ^strspy_env | awk '{print $1}')
 	if [[ $ENV == "strspy_env" ]]; then
-		echo -e "\n#The STRspy virtual environment has already been created/present, and packages should installed there as well"
-		echo -e "#Please use the STRspy package templets to manually create ToolConfig.txt\n"
+		echo -e "\n#The STRspy virtual environment (i.e. strspy_env) has already been created/present, and packages should installed there as well"
+		echo -e "#1. USE: conda activate strspy_env"
+		echo -e "#2. RUN: bash strspy/setup/MakeToolConfig.sh to create a ToolConfig.txt\n"
 		exit 1;
 	fi
 else

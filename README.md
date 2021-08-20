@@ -1,5 +1,5 @@
 # strspy
-![](STRspy-workflow.png)
+![](figs/STRspy-workflow-v2.1.png)
 
 STRspy: a novel alignment and quantification-based state-of-the-art method, short tandem repeat (STR) detection calling tool designed specifically for long-read sequencing reads such as from Oxford nanopore technology (ONT) and PacBio.
 
@@ -135,9 +135,9 @@ One may encounter with a bug that using wrapper (`STRspy_run_v1.0.sh`), STRspy p
 STRspy has been evaluated on 2 datasets including 30cycle and 15cycle of the ONT reads. Please have a look plots bellow the benchmarking of the datasets we used. For more details please have a look our paper `Courtney L. Halla*, Rupesh K. Kesharwani et al. 2021; Accurate profiling of forensic autosomal STRs using the Oxford Nanopore Technologies MinION device; Forensic Science International: Genetics.`
 
 ## Heatmap of predicted STRs (30cycle and 15cycle)
-![](Heatmap15-30X.jpeg)
+![](figs/Heatmap15-30X.jpeg)
 
-![](STRspy_benchmarking.png)
+![](figs/STRspy_benchmarking.png)
 
 ## References
 Aaron R. Quinlan, Ira M. Hall, BEDTools: a flexible suite of utilities for comparing genomic features, Bioinformatics, Volume 26, Issue 6, 15 March 2010, Pages 841–842, https://doi.org/10.1093/bioinformatics/btq033
