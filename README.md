@@ -86,13 +86,13 @@ The testset is provided `testset.tar.gz` with the package for the quick start, h
 
 ### Extracting tar.gz Files
 
-`tar -xvf testsets/testset.tar.gz`
+`tar -xvf demodata/testset.tar.gz`
 
 ### Note: don't forgter to change the config files & run the commands as instructed above
 
 Compare your test results with pre-computed outputs here
 
-`tar -xvf testsets/test_results.tar.gz`
+`tar -xvf demodata/test_results.tar.gz`
 
 ## InputConfig.txt
 
