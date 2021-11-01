@@ -78,6 +78,24 @@ fi
 ## length of brakcet repeats
 rep_count=$(awk -F\[ '{print NF-1}' $repeat_string)
 
+
+## fucntion to generate long perm-repeats from the given list
+gen_repeats () {
+	pre_list=$1
+	n_times=$2
+	gawk -v n="$n_times" '
+	{
+   	rec = rec $0 RS
+	}
+	1
+	END {
+   	for (i=2; i<=n; ++i) {
+       	x=gensub(/([^[:digit:]])1([^[:digit:]])/, "\\1" i "\\2", "g", rec)
+       	printf "%s", gensub(/([^[:digit:]])1([^[:digit:]])/, "\\1" i "\\2", "g", x)
+   	}
+	}' "$pre_list"
+}
+
 ## functions for bracket repeats = 1; [TCTA]12
 permutation_repeats_for_one () {
 	bracket_repeats_string=$1
@@ -99,54 +117,63 @@ permutation_repeats_for_one () {
 
 
 ## functions for bracket repeats = 2; [TCTA]12 [TCTA]3 / [TCTA]12 ccta [TCTA]3
-
 permutation_repeats_for_two () {
 	bracket_repeats_string=$1
 	middle=$2
 	mystr1=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $1}')
 	mynum1=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $2}')
+	## second repeats
+	if [[ $middle == "yes" ]]; then
+		mystr2=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $4}')
+		mynum2=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $NF}')
+	else
+		mystr2=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $3}')
+		mynum2=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $NF}')
+	fi
+	## logic to handle if second number is greater than first (primary repeats)
 	mynum1_start=$(($mynum1 - 5))
-	mynum1_end=$(($mynum1 + 5))
 	## remove negative to 1
 	if [[ $mynum1_start -lt 0 ]]
 	then
     		mynum1_start=2
 	fi
-	## second repeats
-	if [[ $middle == "yes" ]]; then
-		mystr2=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $4}')
-		mynum2=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $NF}')
-		mynum2_start=$(($mynum2 - 5))
-		## remove negative to 1
-		if [[ $mynum2_start -lt 0 || $mynum2_start -gt 1 ]]
-		then
-    			mynum2_start=1
-		fi
+	mynum2_start=$(($mynum2 - 5))
+	## remove negative to 1
+	if [[ $mynum2_start -lt 0 || $mynum2_start -gt 1 ]]
+	then
+    		mynum2_start=1
+	fi
+	## now i added 5 to num2 if its bigger than fum1
+	if (( $mynum2 >= $mynum1 )); then
+		sum2=$(( $mynum2 + 5))
+		mynum1_end=$(($mynum1 + $sum2))
 	else
-		mystr2=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $3}')
-		mynum2=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $NF}')
-		mynum2_start=$(($mynum2 - 5))
-		## remove negative to 1
-		if [[ $mynum2_start -lt 0 || $mynum2_start -gt 1 ]]
-		then
-    			mynum2_start=1
-		fi
+		mynum1_end=$(($mynum1 + 5))
 	fi
 	## repeats the string/bracket strings
 	part_one=$(for (( c=$mynum1_start; c<=$mynum1_end; c++)); do echo -e $mystr1"\t"$c; done)
 	lengthoffirst=$(printf "%s\n" "${part_one[@]}" | wc -l)
 	part_two=$(for (( c=$mynum2_start; c<=$lengthoffirst; c++)); do echo -e $mystr2"\t"$mynum2_start; done)
-	##printf "%s\n" "${part_one[@]}"
-	##printf "%s\n" "${part_two[@]}"
 	## side by side
 	if [[ $middle == "yes" ]]; then
 		midstring=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $3}')
 		midstring=$(for (( c=$mynum2_start; c<=$lengthoffirst; c++)); do echo $midstring; done)
-		paste <(printf "%s\n" "${part_one[@]}") <(printf "%s\n" "${midstring[@]}") <(printf "%s\n" "${part_two[@]}")
+		paste <(printf "%s\n" "${part_one[@]}") <(printf "%s\n" "${midstring[@]}") <(printf "%s\n" "${part_two[@]}") > temp_list
 	else
-		paste <(printf "%s\n" "${part_one[@]}") <(printf "%s\n" "${part_two[@]}")
+		paste <(printf "%s\n" "${part_one[@]}") <(printf "%s\n" "${part_two[@]}") > temp_list
 	fi
+
+	# print use fucntion to gene repeats
+	if (( $mynum2 >= $mynum1 )); then
+		n_times=$(( $mynum2 + 5))
+		gen_repeats temp_list $n_times
+		rm -f temp_list
+	else
+		gen_repeats temp_list 7
+		rm -f temp_list
+	fi 
 }
+
 
 ## functions for bracket repeats = 3; [TCTA]8 [TCTG]2 [TCTA]4 / [TAGA]4 CAGA [TAGA]8 [CAGA]8
 permutation_repeats_for_three () {
@@ -156,75 +183,81 @@ permutation_repeats_for_three () {
 	## first repeats
 	mystr1=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $1}')
 	mynum1=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $2}')
-	mynum1_start=$(($mynum1 - 5))
-	mynum1_end=$(($mynum1 + 5))
-	## remove negative to 1
-	if [[ $mynum1_start -lt 0 ]]
-	then
-    		mynum1_start=2
-	fi
 	## second repeats
 	if [[ $middle == "yes" ]] && [[ $string_side == "left" ]]; then
 		mystr2=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $4}')
 		mynum2=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $5}')
-		mynum2_start=$(($mynum2 - 5))
-		## remove negative to 1
-		if [[ $mynum2_start -lt 0 || $mynum2_start -gt 1 ]]
-		then
-    			mynum2_start=1
-		fi
 	else
 		mystr2=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $3}')
 		mynum2=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $4}')
-		mynum2_start=$(($mynum2 - 5))
-		## remove negative to 1
-		if [[ $mynum2_start -lt 0 || $mynum2_start -gt 1 ]]
-		then
-    			mynum2_start=1
-		fi
 	fi
 	## thirds repeats
 	if [[ $middle == "yes" ]]; then
 		mystr3=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $6}')
 		mynum3=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $NF}')
-		mynum3_start=$(($mynum3 - 5))
-		## remove negative to 1
-		if [[ $mynum3_start -lt 0 || $mynum3_start -gt 1 ]]
-		then
-    			mynum3_start=1
-		fi
 	else
 		mystr3=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $5}')
 		mynum3=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $NF}')
-		mynum3_start=$(($mynum3 - 5))
-		## remove negative to 1
-		if [[ $mynum3_start -lt 0 || $mynum3_start -gt 1 ]]
-		then
-    			mynum3_start=1
-		fi
+	fi
+	## logic to handle if second number is greater than first (primary repeats)
+	mynum1_start=$(($mynum1 - 5))
+	## remove negative to 1
+	if [[ $mynum1_start -lt 0 ]]
+	then
+    		mynum1_start=2
+	fi
+	mynum2_start=$(($mynum2 - 5))
+	## remove negative to 1
+	if [[ $mynum2_start -lt 0 || $mynum2_start -gt 1 ]]
+	then
+    		mynum2_start=1
+	fi
+	mynum3_start=$(($mynum3 - 5))
+	## remove negative to 1
+	if [[ $mynum3_start -lt 0 || $mynum3_start -gt 1 ]]
+	then
+    		mynum3_start=1
+	fi
+	## now i added 5 to num2 if its bigger than num1
+	if (( $mynum2 >= $mynum1 )); then
+		sum2=$(( $mynum2 + 5))
+		mynum1_end=$(($mynum1 + $sum2))
+	elif (( $mynum3 >= $mynum1 )); then
+		sum2=$(( $mynum3 + 5))
+		mynum1_end=$(($mynum1 + $sum2))
+	else
+		mynum1_end=$(($mynum1 + 5))
 	fi
 	## repeats the string/bracket strings
 	part_one=$(for (( c=$mynum1_start; c<=$mynum1_end; c++)); do echo -e $mystr1"\t"$c; done)
 	lengthoffirst=$(printf "%s\n" "${part_one[@]}" | wc -l)
 	part_two=$(for (( c=$mynum2_start; c<=$lengthoffirst; c++)); do echo -e $mystr2"\t"$mynum2_start; done)
 	part_tree=$(for (( c=$mynum3_start; c<=$lengthoffirst; c++)); do echo -e $mystr3"\t"$mynum3_start; done)
-	##printf "%s\n" "${part_one[@]}"
-	##printf "%s\n" "${part_two[@]}"
-	##printf "%s\n" "${part_tree[@]}"
-	## side by side
+	## print side by side
 	if [[ $middle == "yes" ]] && [[ $string_side == "left" ]]; then
 		midstring=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $3}')
 		midstring=$(for (( c=$mynum2_start; c<=$lengthoffirst; c++)); do echo $midstring; done)
-		paste <(printf "%s\n" "${part_one[@]}") <(printf "%s\n" "${midstring[@]}") <(printf "%s\n" "${part_two[@]}") <(printf "%s\n" "${part_tree[@]}")
+		paste <(printf "%s\n" "${part_one[@]}") <(printf "%s\n" "${midstring[@]}") <(printf "%s\n" "${part_two[@]}") <(printf "%s\n" "${part_tree[@]}") > temp_list
 	elif [[ $middle == "yes" ]] && [[ $string_side == "right" ]]; then
 		#statements
 		midstring=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $5}')
 		midstring=$(for (( c=$mynum2_start; c<=$lengthoffirst; c++)); do echo $midstring; done)
-		paste <(printf "%s\n" "${part_one[@]}") <(printf "%s\n" "${part_two[@]}") <(printf "%s\n" "${midstring[@]}") <(printf "%s\n" "${part_tree[@]}")
+		paste <(printf "%s\n" "${part_one[@]}") <(printf "%s\n" "${part_two[@]}") <(printf "%s\n" "${midstring[@]}") <(printf "%s\n" "${part_tree[@]}") > temp_list
 	else
-		paste <(printf "%s\n" "${part_one[@]}") <(printf "%s\n" "${part_two[@]}") <(printf "%s\n" "${part_tree[@]}")
+		paste <(printf "%s\n" "${part_one[@]}") <(printf "%s\n" "${part_two[@]}") <(printf "%s\n" "${part_tree[@]}") > temp_list
+	fi
+
+	# print use fucntion to gene repeats
+	if (( $mynum2 >= $mynum1 )); then
+		n_times=$(( $mynum2 + 5))
+		gen_repeats temp_list $n_times
+		rm -f temp_list
+	else
+		gen_repeats temp_list 7
+		rm -f temp_list
 	fi
 }
+
 
 ## functions for bracket repeats = 5; [TAGA]11 [TACA]2 [TAGA]2 [TACA]2 [TAGA]4
 permutation_repeats_for_four () {
@@ -233,63 +266,72 @@ permutation_repeats_for_four () {
 	## first repeats
 	mystr1=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $1}')
 	mynum1=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $2}')
-	mynum1_start=$(($mynum1 - 5))
-	mynum1_end=$(($mynum1 + 5))
-	## remove negative to 1
-	if [[ $mynum1_start -lt 0 ]]
-	then
-    		mynum1_start=2
-	fi
 	## second repeats
 	mystr2=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $3}')
 	mynum2=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $4}')
-	mynum2_start=$(($mynum2 - 5))
-	## remove negative to 1
-	if [[ $mynum2_start -lt 0 || $mynum2_start -gt 1 ]]
-		then
-    		mynum2_start=1
-	fi
-
 	## thirds repeats
 	if [[  $middle == "yes" ]]; then
 		mystr3=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $6}')
 		mynum3=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $7}')
-		mynum3_start=$(($mynum3 - 5))
-		## remove negative to 1
-		if [[ $mynum3_start -lt 0 || $mynum3_start -gt 1 ]]
-		then
-    			mynum3_start=1
-    		fi
-    	else
+    else
 		mystr3=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $5}')
 		mynum3=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $6}')
-		mynum3_start=$(($mynum3 - 5))
-		## remove negative to 1
-		if [[ $mynum3_start -lt 0 || $mynum3_start -gt 1 ]]
-		then
-    			mynum3_start=1
-		fi
 	fi
 	## four repeats
 	if [[  $middle == "yes" ]]; then
 		mystr4=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $8}')
 		mynum4=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $NF}')
-		mynum4_start=$(($mynum4 - 5))
-		## remove negative to 1
-		if [[ $mynum4_start -lt 0 || $mynum4_start -gt 1 ]]
-		then
-    			mynum4_start=1
-		fi
 	else
 		mystr4=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $7}')
 		mynum4=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $NF}')
 		mynum4_start=$(($mynum4 - 5))
-		## remove negative to 1
-		if [[ $mynum4_start -lt 0 || $mynum4_start -gt 1 ]]
-		then
-    			mynum4_start=1
-		fi
 	fi
+	## logic to handle if second number is greater than first (primary repeats)
+	mynum1_start=$(($mynum1 - 5))
+	## remove negative to 1
+	if [[ $mynum1_start -lt 0 ]]
+	then
+    		mynum1_start=2
+	fi
+	mynum2_start=$(($mynum2 - 5))
+	## remove negative to 1
+	if [[ $mynum2_start -lt 0 || $mynum2_start -gt 1 ]]
+	then
+    		mynum2_start=1
+	fi
+	mynum3_start=$(($mynum3 - 5))
+	## remove negative to 1
+	if [[ $mynum3_start -lt 0 || $mynum3_start -gt 1 ]]
+	then
+    		mynum3_start=1
+	fi
+	mynum4_start=$(($mynum4 - 5))
+	## remove negative to 1
+	if [[ $mynum4_start -lt 0 || $mynum4_start -gt 1 ]]
+	then
+    		mynum4_start=1
+	fi
+	## now i added 5 to num2 if its bigger than num1
+	if (( $mynum2 >= $mynum1 )); then
+		#echo "num2 is begger than num1"
+		sum2=$(( $mynum2 + 5))
+		mynum1_end=$(($mynum1 + $sum2))
+		#echo $mynum1_end
+	elif (( $mynum3 >= $mynum1 )); then
+		#echo "num3 is begger than num1"
+		sum2=$(( $mynum3 + 5))
+		mynum1_end=$(($mynum1 + $sum2))
+		#echo $mynum1_end
+	elif (( $mynum4 >= $mynum1 )); then
+		#echo "num4 is begger than num1"
+		sum2=$(( $mynum4 + 5))
+		mynum1_end=$(($mynum1 + $sum2))
+		#echo $mynum1_end
+	else
+		mynum1_end=$(($mynum1 + 5))
+		echo $mynum1_end
+	fi
+
 	## repeats the string/bracket strings
 	part_one=$(for (( c=$mynum1_start; c<=$mynum1_end; c++)); do echo -e $mystr1"\t"$c; done)
 	lengthoffirst=$(printf "%s\n" "${part_one[@]}" | wc -l)
@@ -300,9 +342,30 @@ permutation_repeats_for_four () {
 	if [[ $middle == "yes" ]]; then
 		midstring=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $5}')
 		midstring=$(for (( c=$mynum2_start; c<=$lengthoffirst; c++)); do echo $midstring; done)
-		paste <(printf "%s\n" "${part_one[@]}") <(printf "%s\n" "${part_two[@]}") <(printf "%s\n" "${midstring[@]}") <(printf "%s\n" "${part_three[@]}") <(printf "%s\n" "${part_four[@]}")
+		paste <(printf "%s\n" "${part_one[@]}") <(printf "%s\n" "${part_two[@]}") <(printf "%s\n" "${midstring[@]}") <(printf "%s\n" "${part_three[@]}") <(printf "%s\n" "${part_four[@]}") > temp_list
 	else
-		paste <(printf "%s\n" "${part_one[@]}") <(printf "%s\n" "${part_two[@]}") <(printf "%s\n" "${part_three[@]}") <(printf "%s\n" "${part_four[@]}")
+		paste <(printf "%s\n" "${part_one[@]}") <(printf "%s\n" "${part_two[@]}") <(printf "%s\n" "${part_three[@]}") <(printf "%s\n" "${part_four[@]}") > temp_list
+	fi
+
+	# print use function to gene repeats
+	if (( $mynum2 >= $mynum1 )); then
+		#echo "num2 is begger than num1"
+		n_times=$(( $mynum2 + 5))
+		gen_repeats temp_list $n_times
+		rm -f temp_list
+	elif (( $mynum3 >= $mynum1 )); then
+		#echo "num3 is begger than num1"
+		n_times=$(( $mynum3 + 5))
+		gen_repeats temp_list $n_times
+		rm -f temp_list
+	elif (( $mynum4 >= $mynum1 )); then
+		#echo "num4 is begger than num1"
+		n_times=$(( $mynum4 + 5))
+		gen_repeats temp_list $n_times
+		rm -f temp_list
+	else
+		gen_repeats temp_list 7
+		rm -f temp_list
 	fi
 }
 
@@ -312,49 +375,66 @@ permutation_repeats_for_five () {
 	## first repeats
 	mystr1=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $1}')
 	mynum1=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $2}')
+	## second repeats
+	mystr2=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $3}')
+	mynum2=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $4}')
+	## thirds repeats
+	mystr3=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $5}')
+	mynum3=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $6}')
+	## four repeats
+	mystr4=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $7}')
+	mynum4=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $8}')
+	## fifth repeats
+	mystr5=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $9}')
+	mynum5=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $10}')
+	## logic to handle if second number is greater than first (primary repeats)
 	mynum1_start=$(($mynum1 - 5))
-	mynum1_end=$(($mynum1 + 5))
 	## remove negative to 1
 	if [[ $mynum1_start -lt 0 ]]
 	then
     		mynum1_start=2
 	fi
-	## second repeats
-	mystr2=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $3}')
-	mynum2=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $4}')
 	mynum2_start=$(($mynum2 - 5))
 	## remove negative to 1
 	if [[ $mynum2_start -lt 0 || $mynum2_start -gt 1 ]]
-		then
+	then
     		mynum2_start=1
 	fi
-	## thirds repeats
-	mystr3=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $5}')
-	mynum3=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $6}')
 	mynum3_start=$(($mynum3 - 5))
 	## remove negative to 1
 	if [[ $mynum3_start -lt 0 || $mynum3_start -gt 1 ]]
-		then
+	then
     		mynum3_start=1
 	fi
-	## four repeats
-	mystr4=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $7}')
-	mynum4=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $8}')
 	mynum4_start=$(($mynum4 - 5))
 	## remove negative to 1
 	if [[ $mynum4_start -lt 0 || $mynum4_start -gt 1 ]]
-		then
+	then
     		mynum4_start=1
 	fi
-	## fifth repeats
-	mystr5=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $9}')
-	mynum5=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $10}')
 	mynum5_start=$(($mynum5 - 5))
 	## remove negative to 1
 	if [[ $mynum5_start -lt 0 || $mynum5_start -gt 1 ]]
-		then
+	then
     		mynum5_start=1
 	fi
+	## now i added 5 to num2 if its bigger than num1
+	if (( $mynum2 >= $mynum1 )); then
+		sum2=$(( $mynum2 + 5))
+		mynum1_end=$(($mynum1 + $sum2))
+	elif (( $mynum3 >= $mynum1 )); then
+		sum2=$(( $mynum3 + 5))
+		mynum1_end=$(($mynum1 + $sum2))
+	elif (( $mynum4 >= $mynum1 )); then
+		sum2=$(( $mynum4 + 5))
+		mynum1_end=$(($mynum1 + $sum2))
+	elif (( $mynum5 >= $mynum1 )); then
+		sum2=$(( $mynum5 + 5))
+		mynum1_end=$(($mynum1 + $sum2))
+	else
+		mynum1_end=$(($mynum1 + 5))
+	fi
+
 	## repeats the string/bracket strings
 	part_one=$(for (( c=$mynum1_start; c<=$mynum1_end; c++)); do echo -e $mystr1"\t"$c; done)
 	lengthoffirst=$(printf "%s\n" "${part_one[@]}" | wc -l)
@@ -363,7 +443,33 @@ permutation_repeats_for_five () {
 	part_four=$(for (( c=$mynum4_start; c<=$lengthoffirst; c++)); do echo -e $mystr3"\t"$mynum4_start; done)
 	part_five=$(for (( c=$mynum5_start; c<=$lengthoffirst; c++)); do echo -e $mystr3"\t"$mynum5_start; done)
 	## side by side
-	paste <(printf "%s\n" "${part_one[@]}") <(printf "%s\n" "${part_two[@]}") <(printf "%s\n" "${part_three[@]}") <(printf "%s\n" "${part_four[@]}") <(printf "%s\n" "${part_five[@]}")
+	paste <(printf "%s\n" "${part_one[@]}") <(printf "%s\n" "${part_two[@]}") <(printf "%s\n" "${part_three[@]}") <(printf "%s\n" "${part_four[@]}") <(printf "%s\n" "${part_five[@]}") > temp_list
+
+	# print use function to gene repeats
+	if (( $mynum2 >= $mynum1 )); then
+		#echo "num2 is begger than num1"
+		n_times=$(( $mynum2 + 5))
+		gen_repeats temp_list $n_times
+		rm -f temp_list
+	elif (( $mynum3 >= $mynum1 )); then
+		#echo "num3 is begger than num1"
+		n_times=$(( $mynum3 + 5))
+		gen_repeats temp_list $n_times
+		rm -f temp_list
+	elif (( $mynum4 >= $mynum1 )); then
+		#echo "num4 is begger than num1"
+		n_times=$(( $mynum4 + 5))
+		gen_repeats temp_list $n_times
+		rm -f temp_list
+	elif (( $mynum5 >= $mynum1 )); then
+		#echo "num5 is begger than num1"
+		n_times=$(( $mynum5 + 5))
+		gen_repeats temp_list $n_times
+		rm -f temp_list
+	else
+		gen_repeats temp_list 7
+		rm -f temp_list
+	fi
 }
 
 ################################### input runs here ###################################################
@@ -374,28 +480,7 @@ permutation_repeats_for_five () {
 if [[ $rep_count == 2 ]]; then
 	echo -e "#Number of Repeats found:" $rep_count
 	echo -e "#Working on permutation for bracket repeats:" `cat $repeat_string`
-	permutation_repeats_for_two $repeat_string $string > $strname"_list.txt"
-	### make a full permutation output
-	# gawk -v n=5 '
-	# {
- #   	rec = rec $0 RS
-	# }
-	# 1
-	# END {
- #   	for (i=2; i<=n; ++i)
- #      printf "%s", gensub(/[0-9]+(\n|$)/, i "\\1", "g", rec)
-	# }' $strname"_list.txt" > $strname"_final_list.txt"
-	gawk -v n=5 '
-	{
-   	rec = rec $0 RS
-	}
-	1
-	END {
-   	for (i=2; i<=n; ++i) {
-       x=gensub(/([^[:digit:]])1([^[:digit:]])/, "\\1" i "\\2", "g", rec)
-       printf "%s", gensub(/([^[:digit:]])1([^[:digit:]])/, "\\1" i "\\2", "g", x)
-   	}
-	}' $strname"_list.txt" > $strname"_final_list.txt"
+	permutation_repeats_for_two $repeat_string $string > $strname"_final_list.txt"
 	echo -e "#List generated."
 	exit 0;
 #^^^^^^^^^^^^^^^^^^^^^^^^^#
@@ -408,8 +493,9 @@ elif [[ $rep_count == 1 ]]; then
 	for i in {1..5}; do
 		cat $strname"_list.txt" >> $strname"_final_list.txt"
 	done
+	rm -f $strname"_list.txt"
 	## printf "`cat myone_list.txt`\n%.0s" {1..5} > $strname"_final_list.txt"
-	cat $strname"_list.txt"
+	## cat $strname"_list.txt"
 	echo -e "#List generated."
 	exit 0;
 else
@@ -423,17 +509,6 @@ if [[ $rep_count == 3 ]]; then
 	echo -e "#Number of Repeats found:" $rep_count
 	echo -e "#Working on permutation for bracket repeats:" `cat $repeat_string`
 	permutation_repeats_for_three $repeat_string $string $string_side > $strname"_list.txt"
-	gawk -v n=5 '
-	{
-   	rec = rec $0 RS
-	}
-	1
-	END {
-   	for (i=2; i<=n; ++i) {
-       x=gensub(/([^[:digit:]])1([^[:digit:]])/, "\\1" i "\\2", "g", rec)
-       printf "%s", gensub(/([^[:digit:]])1([^[:digit:]])/, "\\1" i "\\2", "g", x)
-   	}
-	}' $strname"_list.txt" > $strname"_final_list.txt"
 	echo -e "#List generated."
 	exit 0;
 else
@@ -447,21 +522,10 @@ if [[  $rep_count == 4 ]]; then
 	echo -e "#Number of Repeats found:" $rep_count
 	echo -e "#Working on permutation for bracket repeats:" `cat $repeat_string`
 	permutation_repeats_for_four $repeat_string $string > $strname"_list.txt"
-	gawk -v n=5 '
-	{
-   	rec = rec $0 RS
-	}
-	1
-	END {
-   	for (i=2; i<=n; ++i) {
-       x=gensub(/([^[:digit:]])1([^[:digit:]])/, "\\1" i "\\2", "g", rec)
-       printf "%s", gensub(/([^[:digit:]])1([^[:digit:]])/, "\\1" i "\\2", "g", x)
-   	}
-	}' $strname"_list.txt" > $strname"_final_list.txt"
 	echo -e "#List generated."
 	exit 0;
 else
-	echo -e "#Seems repeats are greater than 5, skipping.."
+	echo -e "#Seems repeats are greater than 4, skipping.."
 fi
 
 #^^^^^^^^^^^^^^^^^^^^^^^^^#
@@ -471,17 +535,6 @@ if [[  $rep_count == 5 ]]; then
 	echo -e "#Number of Repeats found:" $rep_count
 	echo -e "#Working on permutation for bracket repeats:" `cat $repeat_string`
 	permutation_repeats_for_five $repeat_string > $strname"_list.txt"
-	gawk -v n=5 '
-	{
-   	rec = rec $0 RS
-	}
-	1
-	END {
-   	for (i=2; i<=n; ++i) {
-       x=gensub(/([^[:digit:]])1([^[:digit:]])/, "\\1" i "\\2", "g", rec)
-       printf "%s", gensub(/([^[:digit:]])1([^[:digit:]])/, "\\1" i "\\2", "g", x)
-   	}
-	}' $strname"_list.txt" > $strname"_final_list.txt"
 	echo -e "#List generated."
 	exit 0;
 else
