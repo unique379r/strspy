@@ -37,10 +37,10 @@
 # # ==============================================================================================================================================#
 
 # USAGE:
-# bash ./Proj-Forensic-ChrY-perm-repeat-script_V2.sh <input motif repeats> <motif name> <string_avaible(yes/no) <string_side(left/right/middle/NA)>
+# bash ./Proj-Forensic-ChrY-perm-repeat-script_V2.sh <input motif repeats> <motif name> <string_avaible(yes/no) <string_side(left/right/NA)>
 # EXAMPLE: bash prem_str.sh DYS19.txt DYS19 yes left
 
-## DYS19.txt should looks like one of them: 
+## input file should similar to one of them: 
 ## [TCTA]12 / [TCTA]12 [TCTA]3 / [TCTA]12 ccta [TCTA]3 / [TCTA]8 [TCTG]2 [TCTA]4 / [TAGA]4 CAGA [TAGA]8 [CAGA]8 / [TAGA]11 [TACA]2 [TAGA]2 [TACA]2 [TAGA]4
 ## [AGAGAT]13 N42 [AGAGAT]8
 
