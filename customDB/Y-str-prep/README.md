@@ -4,24 +4,30 @@
 
 Just keep in mind that the out fasta will not have flanking regions (500bp) or reverse compliment the sequences
 
-`USAGE:`
+```
+USAGE:
 
-`bash ./Proj-Forensic-ChrY-perm-repeat-script_final_v3_outFA.sh <input motif repeats> <motif name> <string_avaible(yes/no) <string_side(left/right/NA)>`
+bash ./Proj-Forensic-ChrY-perm-repeat-script_final_v3_outFA.sh <input motif repeats> <motif name> <string_avaible(yes/no) <string_side(left/right/NA)>
 
-`EXAMPLE: bash ./Proj-Forensic-ChrY-perm-repeat-script_final_v3_outFA.sh DYS19.txt DYS19 yes left`
+EXAMPLE: bash ./Proj-Forensic-ChrY-perm-repeat-script_final_v3_outFA.sh DYS19.txt DYS19 yes left
 
-`while read line`
-`do`
-        `locus=$(echo $line | cut -f1)`
-        `string=$(echo $line | awk '{print $(NF-2)}')`
-        `string_side=$(echo $line | awk '{print $(NF-1)}')`
-        `sample=$(echo $line | awk '{print $NF}')`
-        `motif=$(echo $line | awk -F"\t" '{print $3}')`
-        `echo $line | awk -F"\t" '{print $3}' > motif_file`
-        `#echo -e "Working for:" $locus "("$motif")" $string $string_side $sample`
-        `bash Proj-Forensic-ChrY-perm-repeat-script_final_v3_withFA.sh motif_file $locus $string $string_side`
-        `rm -f motif_file`
-`done <test_input.txt > logs`
+```
+
+```
+while read line
+do
+        locus=$(echo $line | cut -f1)
+        string=$(echo $line | awk '{print $(NF-2)}')
+        string_side=$(echo $line | awk '{print $(NF-1)}')
+        sample=$(echo $line | awk '{print $NF}')
+        motif=$(echo $line | awk -F"\t" '{print $3}')
+        echo $line | awk -F"\t" '{print $3}' > motif_file
+        #echo -e "Working for:" $locus "("$motif")" $string $string_side $sample
+        bash Proj-Forensic-ChrY-perm-repeat-script_final_v3_withFA.sh motif_file $locus $string $string_side
+        rm -f motif_file
+done <test_input.txt > logs
+
+```
 
 ## Step 2 [Concatnate flanking regions or optionally, reverse compliment the entire fasta sequences]
 
