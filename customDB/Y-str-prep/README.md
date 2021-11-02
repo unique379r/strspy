@@ -4,6 +4,7 @@
 
 Just keep in mind that the out fasta will not have flanking regions (500bp) or reverse compliment the sequences
 
+### single repeats only
 ```
 USAGE:
 
@@ -12,6 +13,8 @@ bash ./Proj-Forensic-ChrY-perm-repeat-script_final_v3_outFA.sh <input motif repe
 EXAMPLE: bash ./Proj-Forensic-ChrY-perm-repeat-script_final_v3_outFA.sh DYS19.txt DYS19 yes left
 
 ```
+
+### batch lists of repeats
 
 ```
 while read line
