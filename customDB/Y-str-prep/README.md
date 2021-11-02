@@ -29,7 +29,7 @@ done <test_input.txt > logs
 
 ```
 
-## Step 2 [Concatnate flanking regions or optionally, reverse compliment the entire fasta sequences]
+## Step 2 [Concatenate flanking regions or optionally, reverse compliment the entire fasta sequences]
 
 The script is coming soon.
 
