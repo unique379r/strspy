@@ -26,7 +26,7 @@ do
         motif=$(echo $line | awk -F"\t" '{print $3}')
         echo $line | awk -F"\t" '{print $3}' > motif_file
         #echo -e "Working for:" $locus "("$motif")" $string $string_side $sample
-        bash Proj-Forensic-ChrY-perm-repeat-script_final_v3_withFA.sh motif_file $locus $string $string_side
+        bash Proj-Forensic-ChrY-perm-repeat-script_final_v3_outFA.sh motif_file $locus $string $string_side
         rm -f motif_file
 done <test_input.txt > logs
 
