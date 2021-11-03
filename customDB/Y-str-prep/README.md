@@ -54,7 +54,7 @@ do
                         echo "match found"
                         cat "$i" | seqkit mutate -i 0:$left --quiet | seqkit mutate -i -1:$right --quiet > $locus"_"$falocus"_out_perm_flank.fa"
                 fi
-        done<../ChrY/left-right500.tab.txt
+        done<left-right500.tab.txt
 done
 
 ```
