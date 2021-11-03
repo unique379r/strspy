@@ -459,10 +459,10 @@ permutation_repeats_for_three () {
 			motif=$(echo $first_num $sec_num $third_num | awk '{print $1 + $2 + $3}')
 			echo -e ">"$strname"_["$mystr1"]"$first_num"_"$midstring1"_["$mystr2"]"$sec_num"_["$mystr3"]"$third_num"_"$motif
 			echo -e $myrepeat1$midstring1$myrepeat2$myrepeat3
-    	done<$strname"_temp" > $strname"_perm.fa"
-    	rm -f $strname"_temp"
-    elif [[ $middle == "yes" ]] && [[ $string_side == "right" ]]; then
-    	while read line; do
+    		done<$strname"_temp" > $strname"_perm.fa"
+    		rm -f $strname"_temp"
+    	elif [[ $middle == "yes" ]] && [[ $string_side == "right" ]]; then
+    		while read line; do
 			first_num=$(echo $line |  awk '{print $2}')
 			sec_num=$(echo $line |  awk '{print $4}')
 			third_num=$(echo $line |  awk '{print $NF}')
@@ -472,10 +472,10 @@ permutation_repeats_for_three () {
 			motif=$(echo $first_num $sec_num $third_num | awk '{print $1 + $2 + $3}')
 			echo -e ">"$strname"_["$mystr1"]"$first_num"_["$mystr2"]"$sec_num"_"$midstring1"_["$mystr3"]"$third_num"_"$motif
 			echo -e $myrepeat1$myrepeat2$midstring1$myrepeat3
-    	done<$strname"_temp" > $strname"_perm.fa"
-    	rm -f $strname"_temp"
-    else
-    	while read line; do
+    		done<$strname"_temp" > $strname"_perm.fa"
+    		rm -f $strname"_temp"
+    	else
+    		while read line; do
 			first_num=$(echo $line |  awk '{print $2}')
 			sec_num=$(echo $line |  awk '{print $4}')
 			sec_num=$(echo $line |  awk '{print $NF}')
@@ -485,9 +485,9 @@ permutation_repeats_for_three () {
 			motif=$(echo $first_num $sec_num $third_num | awk '{print $1 + $2 + $3}')
 			echo -e ">"$strname"_["$mystr1"]"$first_num"_["$mystr2"]"$sec_num"_["$mystr3"]"$third_num"_"$motif
 			echo -e $myrepeat1$myrepeat2$myrepeat3
-    	done<$strname"_temp" > $strname"_perm.fa"
-    	rm -f $strname"_temp"
-    fi
+    		done<$strname"_temp" > $strname"_perm.fa"
+    		rm -f $strname"_temp"
+    	fi
 }
 
 # ## functions for bracket repeats = 5; [TAGA]11 [TACA]2 [TAGA]2 [TACA]2 [TAGA]4
@@ -723,23 +723,23 @@ permutation_repeats_for_four () {
 			motif=$(echo $first_num $sec_num $third_num $fourth_num | awk '{print $1 + $2 + $3 + $4}')
 			echo -e ">"$strname"_["$mystr1"]"$first_num"_["$mystr2"]"$sec_num"_"$midstring1"_["$mystr3"]"$third_num"_["$mystr4"]"$fourth_num"_"$motif
 			echo -e $myrepeat1$myrepeat2$midstring1$myrepeat3$myrepeat4
-    	done<$strname"_temp" > $strname"_perm.fa"
-    	rm -f $strname"_temp"
-    else
-    	while read line; do
-		first_num=$(echo $line |  awk '{print $2}')
-		sec_num=$(echo $line |  awk '{print $4}')
-		third_num=$(echo $line |  awk '{print $6}')
-		fourth_num=$(echo $line |  awk '{print $NF}')
-		myrepeat1=$(printf -v spaces '%*s' $first_num ''; printf '%s\n' ${spaces// /$mystr1})
-		myrepeat2=$(printf -v spaces '%*s' $sec_num ''; printf '%s\n' ${spaces// /$mystr2})
-		myrepeat3=$(printf -v spaces '%*s' $third_num ''; printf '%s\n' ${spaces// /$mystr3})
-		myrepeat4=$(printf -v spaces '%*s' $fourth_num ''; printf '%s\n' ${spaces// /$mystr4})
-		motif=$(echo $first_num $sec_num $third_num $fourth_num | awk '{print $1 + $2 + $3 + $4}')
-		echo -e ">"$strname"_["$mystr1"]"$first_num"_["$mystr2"]"$sec_num"_["$mystr3"]"$third_num"_["$mystr4"]"$fourth_num"_"$motif
-		echo -e $myrepeat1$myrepeat2$myrepeat3$myrepeat4
-    	done<$strname"_temp" > $strname"_perm.fa"
-    	rm -f $strname"_temp"
+    		done<$strname"_temp" > $strname"_perm.fa"
+    		rm -f $strname"_temp"
+    	else
+    		while read line; do
+			first_num=$(echo $line |  awk '{print $2}')
+			sec_num=$(echo $line |  awk '{print $4}')
+			third_num=$(echo $line |  awk '{print $6}')
+			fourth_num=$(echo $line |  awk '{print $NF}')
+			myrepeat1=$(printf -v spaces '%*s' $first_num ''; printf '%s\n' ${spaces// /$mystr1})
+			myrepeat2=$(printf -v spaces '%*s' $sec_num ''; printf '%s\n' ${spaces// /$mystr2})
+			myrepeat3=$(printf -v spaces '%*s' $third_num ''; printf '%s\n' ${spaces// /$mystr3})
+			myrepeat4=$(printf -v spaces '%*s' $fourth_num ''; printf '%s\n' ${spaces// /$mystr4})
+			motif=$(echo $first_num $sec_num $third_num $fourth_num | awk '{print $1 + $2 + $3 + $4}')
+			echo -e ">"$strname"_["$mystr1"]"$first_num"_["$mystr2"]"$sec_num"_["$mystr3"]"$third_num"_["$mystr4"]"$fourth_num"_"$motif
+			echo -e $myrepeat1$myrepeat2$myrepeat3$myrepeat4
+    		done<$strname"_temp" > $strname"_perm.fa"
+    		rm -f $strname"_temp"
     fi
 }
 
@@ -949,23 +949,23 @@ permutation_repeats_for_five () {
 		gen_repeats temp_list 7 > $strname"_temp"
 		rm -f temp_list
 	fi
-	## fasta work
-    while read line; do
-		first_num=$(echo $line |  awk '{print $2}')
-		sec_num=$(echo $line |  awk '{print $4}')
-		third_num=$(echo $line |  awk '{print $6}')
-		fourth_num=$(echo $line |  awk '{print $8}')
-		fifth_num=$(echo $line |  awk '{print $NF}')
-		myrepeat1=$(printf -v spaces '%*s' $first_num ''; printf '%s\n' ${spaces// /$mystr1})
-		myrepeat2=$(printf -v spaces '%*s' $sec_num ''; printf '%s\n' ${spaces// /$mystr2})
-		myrepeat3=$(printf -v spaces '%*s' $third_num ''; printf '%s\n' ${spaces// /$mystr3})
-		myrepeat4=$(printf -v spaces '%*s' $fourth_num ''; printf '%s\n' ${spaces// /$mystr4})
-		myrepeat5=$(printf -v spaces '%*s' $fifth_num ''; printf '%s\n' ${spaces// /$mystr5})
-		motif=$(echo $first_num $sec_num $third_num $fourth_num $fifth_num | awk '{print $1 + $2 + $3 + $4 + $5}')
-		echo -e ">"$strname"_["$mystr1"]"$first_num"_["$mystr2"]"$sec_num"_["$mystr3"]"$third_num"_["$mystr4"]"$fourth_num"_["$mystr5"]"$fifth_num"_"$motif
-		echo -e $myrepeat1$myrepeat2$myrepeat3$myrepeat4$myrepeat5
-    done<$strname"_temp" > $strname"_perm.fa"
-    rm -f $strname"_temp"
+## fasta work
+while read line; do
+	first_num=$(echo $line |  awk '{print $2}')
+	sec_num=$(echo $line |  awk '{print $4}')
+	third_num=$(echo $line |  awk '{print $6}')
+	fourth_num=$(echo $line |  awk '{print $8}')
+	fifth_num=$(echo $line |  awk '{print $NF}')
+	myrepeat1=$(printf -v spaces '%*s' $first_num ''; printf '%s\n' ${spaces// /$mystr1})
+	myrepeat2=$(printf -v spaces '%*s' $sec_num ''; printf '%s\n' ${spaces// /$mystr2})
+	myrepeat3=$(printf -v spaces '%*s' $third_num ''; printf '%s\n' ${spaces// /$mystr3})
+	myrepeat4=$(printf -v spaces '%*s' $fourth_num ''; printf '%s\n' ${spaces// /$mystr4})
+	myrepeat5=$(printf -v spaces '%*s' $fifth_num ''; printf '%s\n' ${spaces// /$mystr5})
+	motif=$(echo $first_num $sec_num $third_num $fourth_num $fifth_num | awk '{print $1 + $2 + $3 + $4 + $5}')
+	echo -e ">"$strname"_["$mystr1"]"$first_num"_["$mystr2"]"$sec_num"_["$mystr3"]"$third_num"_["$mystr4"]"$fourth_num"_["$mystr5"]"$fifth_num"_"$motif
+	echo -e $myrepeat1$myrepeat2$myrepeat3$myrepeat4$myrepeat5
+done<$strname"_temp" > $strname"_perm.fa"
+rm -f $strname"_temp"
 }
 
 ################################### input runs here ###################################################
