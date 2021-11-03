@@ -34,12 +34,33 @@ done <test_input.txt > logs
 
 ## Step 2 [Concatenate flanking regions or optionally, reverse compliment the entire fasta sequences]
 
-The script is coming soon.
+`conda install -c bioconda seqkit`
+
+Note: Pre-computed left and right 500 bases are prepared from reference chrY
+
+```
+declare -a arr=(*.fa)   ## output fasta (permutation based fasta) from step 1
+
+for i in "${arr[@]}"
+do
+   echo "$i"
+   falocus=$(echo "$i" | awk -F"_" '{print $1}')
+   while read line
+        do
+                locus=$(echo $line | awk '{print $1}')
+                left=$(echo $line | awk '{print $4}')
+                right=$(echo $line | awk '{print $5}')
+                if [[ "$falocus" == "$locus" ]]; then
+                        echo "match found"
+                        cat "$i" | seqkit mutate -i 0:$left --quiet | seqkit mutate -i -1:$right --quiet > $locus"_"$falocus"_out_perm_flank.fa"
+                fi
+        done<../ChrY/left-right500.tab.txt
+done
+
+```
 
 
 ## Step 3 [Used these prepared DB to run the original STRspy]
-
-
 
 
 ## Contacts for any feedback or comment
