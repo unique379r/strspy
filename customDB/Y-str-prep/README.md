@@ -8,9 +8,9 @@ Just keep in mind that the out fasta will not have flanking regions (500bp) or r
 ```
 USAGE:
 
-bash ./Proj-Forensic-ChrY-perm-repeat-script_final_v3_outFA.sh <input motif repeats> <motif name> <string_avaible(yes/no) <string_side(left/right/NA)>
+bash ./Proj-Forensic-ChrY-perm-repeat-script_final_v4_outFA.sh <input motif repeats> <motif name> <string_avaible(yes/no) <string_side(left/right/NA)>
 
-EXAMPLE: bash ./Proj-Forensic-ChrY-perm-repeat-script_final_v3_outFA.sh DYS19.txt DYS19 yes left
+EXAMPLE: bash ./Proj-Forensic-ChrY-perm-repeat-script_final_v4_outFA.sh DYS19.txt DYS19 yes left
 
 ```
 
@@ -25,12 +25,15 @@ do
         sample=$(echo $line | awk '{print $NF}')
         motif=$(echo $line | awk -F"\t" '{print $3}')
         echo $line | awk -F"\t" '{print $3}' > motif_file
-        #echo -e "Working for:" $locus "("$motif")" $string $string_side $sample
-        bash Proj-Forensic-ChrY-perm-repeat-script_final_v3_outFA.sh motif_file $locus $string $string_side
+        echo -e "Working for:" $locus "("$motif")" $string $string_side $sample
+        bash Proj-Forensic-ChrY-perm-repeat-script_final_v4_outFA.sh motif_file $locus $string $string_side
         rm -f motif_file
 done <test_input.txt > logs
 
 ```
+
+Note: N42 type of bases between the motifs will just randomize by ACGT and will be added to out fasta
+
 
 ## Step 2 [Concatenate flanking regions or optionally, reverse compliment the entire fasta sequences]
 

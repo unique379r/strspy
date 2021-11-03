@@ -60,7 +60,7 @@ string_side="$4" ## (left/right)
 print_USAGE()
 {
 echo -e "\n"
-echo -e "#Please Provide all arguments !!"
+echo -e "#Please Provide all inputs !!"
 echo -e "\n"
 echo -e "USAGE:
 bash ./Proj-Forensic-ChrY-perm-repeat-script_final_v3_outFA.sh <input motif repeats> <motif name> <string_avaible(yes/no) <string_side(left/right/NA)>"
@@ -240,7 +240,10 @@ permutation_repeats_for_two () {
 	part_two=$(for (( c=$mynum2_start; c<=$lengthoffirst; c++)); do echo -e $mystr2"\t"$mynum2_start; done)
 	## side by side
 	if [[ $middle == "yes" ]]; then
+		midstring0=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $3}')
 		midstring1=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $3}')
+		ntime=$(echo $midstring1 | sed 's/N/N /g' | awk '{print $2}')
+		midstring1=$(echo -e "ACGT" | fold -w1 | shuf -r -n $ntime | tr -d '\n')
 		midstring=$(for (( c=$mynum2_start; c<=$lengthoffirst; c++)); do echo $midstring1; done)
 		paste <(printf "%s\n" "${part_one[@]}") <(printf "%s\n" "${midstring[@]}") <(printf "%s\n" "${part_two[@]}") > temp_list
 	else
@@ -264,7 +267,7 @@ permutation_repeats_for_two () {
 			myrepeat1=$(printf -v spaces '%*s' $first_num ''; printf '%s\n' ${spaces// /$mystr1})
 			myrepeat2=$(printf -v spaces '%*s' $sec_num ''; printf '%s\n' ${spaces// /$mystr2})
 			motif=$(echo $first_num $sec_num | awk '{print $1 + $2}')
-			echo -e ">"$strname"_["$mystr1"]"$first_num"_"$midstring1"_["$mystr2"]"$sec_num"_"$motif
+			echo -e ">"$strname"_["$mystr1"]"$first_num"_"$midstring0"_["$mystr2"]"$sec_num"_"$motif
 			echo -e $myrepeat1$midstring1$myrepeat2
     		done<$strname"_temp" > $strname"_perm.fa"
     		rm -f $strname"_temp"
@@ -426,12 +429,17 @@ permutation_repeats_for_three () {
 	part_tree=$(for (( c=$mynum3_start; c<=$lengthoffirst; c++)); do echo -e $mystr3"\t"$mynum3_start; done)
 	## print side by side
 	if [[ $middle == "yes" ]] && [[ $string_side == "left" ]]; then
+		midstring0=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $3}')
 		midstring1=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $3}')
+		ntime=$(echo $midstring1 | sed 's/N/N /g' | awk '{print $2}')
+		midstring1=$(echo -e "ACGT" | fold -w1 | shuf -r -n $ntime | tr -d '\n')
 		midstring=$(for (( c=$mynum2_start; c<=$lengthoffirst; c++)); do echo $midstring1; done)
 		paste <(printf "%s\n" "${part_one[@]}") <(printf "%s\n" "${midstring[@]}") <(printf "%s\n" "${part_two[@]}") <(printf "%s\n" "${part_tree[@]}") > temp_list
 	elif [[ $middle == "yes" ]] && [[ $string_side == "right" ]]; then
-		#statements
+		midstring0=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $5}')
 		midstring1=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $5}')
+		ntime=$(echo $midstring1 | sed 's/N/N /g' | awk '{print $2}')
+		midstring1=$(echo -e "ACGT" | fold -w1 | shuf -r -n $ntime | tr -d '\n')
 		midstring=$(for (( c=$mynum2_start; c<=$lengthoffirst; c++)); do echo $midstring1; done)
 		paste <(printf "%s\n" "${part_one[@]}") <(printf "%s\n" "${part_two[@]}") <(printf "%s\n" "${midstring[@]}") <(printf "%s\n" "${part_tree[@]}") > temp_list
 	else
@@ -457,7 +465,7 @@ permutation_repeats_for_three () {
 			myrepeat2=$(printf -v spaces '%*s' $sec_num ''; printf '%s\n' ${spaces// /$mystr2})
 			myrepeat3=$(printf -v spaces '%*s' $third_num ''; printf '%s\n' ${spaces// /$mystr3})
 			motif=$(echo $first_num $sec_num $third_num | awk '{print $1 + $2 + $3}')
-			echo -e ">"$strname"_["$mystr1"]"$first_num"_"$midstring1"_["$mystr2"]"$sec_num"_["$mystr3"]"$third_num"_"$motif
+			echo -e ">"$strname"_["$mystr1"]"$first_num"_"$midstring0"_["$mystr2"]"$sec_num"_["$mystr3"]"$third_num"_"$motif
 			echo -e $myrepeat1$midstring1$myrepeat2$myrepeat3
     		done<$strname"_temp" > $strname"_perm.fa"
     		rm -f $strname"_temp"
@@ -470,7 +478,7 @@ permutation_repeats_for_three () {
 			myrepeat2=$(printf -v spaces '%*s' $sec_num ''; printf '%s\n' ${spaces// /$mystr2})
 			myrepeat3=$(printf -v spaces '%*s' $third_num ''; printf '%s\n' ${spaces// /$mystr3})
 			motif=$(echo $first_num $sec_num $third_num | awk '{print $1 + $2 + $3}')
-			echo -e ">"$strname"_["$mystr1"]"$first_num"_["$mystr2"]"$sec_num"_"$midstring1"_["$mystr3"]"$third_num"_"$motif
+			echo -e ">"$strname"_["$mystr1"]"$first_num"_["$mystr2"]"$sec_num"_"$midstring0"_["$mystr3"]"$third_num"_"$motif
 			echo -e $myrepeat1$myrepeat2$midstring1$myrepeat3
     		done<$strname"_temp" > $strname"_perm.fa"
     		rm -f $strname"_temp"
@@ -682,7 +690,10 @@ permutation_repeats_for_four () {
 	part_four=$(for (( c=$mynum4_start; c<=$lengthoffirst; c++)); do echo -e $mystr3"\t"$mynum4_start; done)
 	## side by side
 	if [[ $middle == "yes" ]]; then
+		midstring0=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $5}')
 		midstring1=$(cat $bracket_repeats_string | tr '[' ' ' | tr ']' ' ' | sed -E 's/[0-9]+/& /g' | sed 's/^ //g' | awk '{print $5}')
+		ntime=$(echo $midstring1 | sed 's/N/N /g' | awk '{print $2}')
+		midstring1=$(echo -e "ACGT" | fold -w1 | shuf -r -n $ntime | tr -d '\n')
 		midstring=$(for (( c=$mynum2_start; c<=$lengthoffirst; c++)); do echo $midstring1; done)
 		paste <(printf "%s\n" "${part_one[@]}") <(printf "%s\n" "${part_two[@]}") <(printf "%s\n" "${midstring[@]}") <(printf "%s\n" "${part_three[@]}") <(printf "%s\n" "${part_four[@]}") > temp_list
 	else
@@ -721,7 +732,7 @@ permutation_repeats_for_four () {
 			myrepeat3=$(printf -v spaces '%*s' $third_num ''; printf '%s\n' ${spaces// /$mystr3})
 			myrepeat4=$(printf -v spaces '%*s' $fourth_num ''; printf '%s\n' ${spaces// /$mystr4})
 			motif=$(echo $first_num $sec_num $third_num $fourth_num | awk '{print $1 + $2 + $3 + $4}')
-			echo -e ">"$strname"_["$mystr1"]"$first_num"_["$mystr2"]"$sec_num"_"$midstring1"_["$mystr3"]"$third_num"_["$mystr4"]"$fourth_num"_"$motif
+			echo -e ">"$strname"_["$mystr1"]"$first_num"_["$mystr2"]"$sec_num"_"$midstring0"_["$mystr3"]"$third_num"_["$mystr4"]"$fourth_num"_"$motif
 			echo -e $myrepeat1$myrepeat2$midstring1$myrepeat3$myrepeat4
     		done<$strname"_temp" > $strname"_perm.fa"
     		rm -f $strname"_temp"
@@ -740,7 +751,7 @@ permutation_repeats_for_four () {
 			echo -e $myrepeat1$myrepeat2$myrepeat3$myrepeat4
     		done<$strname"_temp" > $strname"_perm.fa"
     		rm -f $strname"_temp"
-    fi
+    	fi
 }
 
 # ## functions for bracket repeats = 5; [TAGA]11 [TACA]2 [TAGA]2 [TACA]2 [TAGA]4
