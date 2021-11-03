@@ -60,7 +60,7 @@ string_side="$4" ## (left/right)
 print_USAGE()
 {
 echo -e "\n"
-echo -e "#Please Provide a all input !!"
+echo -e "#Please Provide all arguments !!"
 echo -e "\n"
 echo -e "USAGE:
 bash ./Proj-Forensic-ChrY-perm-repeat-script_final_v3_outFA.sh <input motif repeats> <motif name> <string_avaible(yes/no) <string_side(left/right/NA)>"
