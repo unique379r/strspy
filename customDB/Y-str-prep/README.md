@@ -8,9 +8,9 @@ Just keep in mind that the out fasta will not have flanking regions (500bp) or r
 ```
 USAGE:
 
-bash ./Proj-Forensic-ChrY-perm-repeat-script_final_v4_outFA.sh <input motif repeats> <motif name> <string_avaible(yes/no) <string_side(left/right/NA)>
+bash ./Proj-Forensic-ChrY-perm-repeat-script_final_v5_outFA.sh <input motif repeats> <motif name> <string_avaible(yes/no) <string_side(left/right/NA)>
 
-EXAMPLE: bash ./Proj-Forensic-ChrY-perm-repeat-script_final_v4_outFA.sh DYS19.txt DYS19 yes left
+EXAMPLE: bash ./Proj-Forensic-ChrY-perm-repeat-script_final_v5_outFA.sh DYS19.txt DYS19 yes left
 
 ```
 
