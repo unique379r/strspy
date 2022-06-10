@@ -139,6 +139,8 @@ STRspy has been evaluated on 2 datasets including 30cycle and 15cycle of the ONT
 
 ![](figs/STRspy_benchmarking.png)
 
+## The YSTR database is coming soon.
+
 ## References
 Aaron R. Quinlan, Ira M. Hall, BEDTools: a flexible suite of utilities for comparing genomic features, Bioinformatics, Volume 26, Issue 6, 15 March 2010, Pages 841–842, https://doi.org/10.1093/bioinformatics/btq033
 
