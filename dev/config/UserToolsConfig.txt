@@ -1,0 +1,6 @@
+SAMTOOLS=/stornext/snfs5/next-gen/scratch/rupesh/Apps/envs/strspy_env/bin/samtools
+BEDTOOLS=/stornext/snfs5/next-gen/scratch/rupesh/Apps/envs/strspy_env/bin/bedtools
+XATLAS=/stornext/snfs5/next-gen/scratch/rupesh/Apps/envs/strspy_env/bin/xatlas
+PARALLEL=/stornext/snfs5/next-gen/scratch/rupesh/Apps/envs/strspy_env/bin/parallel
+MINIMAP=/stornext/snfs5/next-gen/scratch/rupesh/Apps/envs/strspy_env/bin/minimap2
+LONGSHOT=/stornext/snfs5/next-gen/scratch/rupesh/Apps/envs/strspy_env/bin/longshot

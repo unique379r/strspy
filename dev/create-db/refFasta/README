@@ -1,0 +1,7 @@
+README to create a DB from NCBI genbank
+
+>Extract the ref genome from genome fasta for the test or Use whole genome fasta from genecode [https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_42/GRCh38.primary_assembly.genome.fa.gz] (should be with "chr"1-22,Y).
+
+## for test only to create DB
+samtools faidx GRCh38.primary_assembly.genome.fa chr2 chr12 > chr2_chr12.fa
+

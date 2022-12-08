@@ -1,0 +1,10 @@
+#"===========================Inputs for STRspy==================================================="
+INPUT_DIR=/stornext/snfs4/next-gen/scratch/rupesh/ProjectFritz/NIHprojct/ArgTest/Reads
+INPUT_BAM=no
+READ_TYPE=ont
+STR_FASTA=/stornext/snfs4/next-gen/scratch/rupesh/ProjectFritz/NIHprojct/ArgTest/DB
+STR_BED=/stornext/snfs4/next-gen/scratch/rupesh/ProjectFritz/NIHprojct/ArgTest/DB
+GENOME_FASTA=/stornext/snfs4/next-gen/scratch/rupesh/ProjectFritz/NIHprojct/ArgTest/genome/Chr6.8.fa
+REGION_BED=/stornext/snfs4/next-gen/scratch/rupesh/ProjectFritz/NIHprojct/ArgTest/ArgScript/TwoLocus.bed
+NORM_CUTOFF=0.4
+OUTPUT_DIR=/stornext/snfs4/next-gen/scratch/rupesh/ProjectFritz/NIHprojct/ArgTest/Results
