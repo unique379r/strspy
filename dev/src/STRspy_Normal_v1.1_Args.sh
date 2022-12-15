@@ -273,13 +273,13 @@ get_cov() {
 		xargs | awk ' {print $1"\t"$2,"("$2/$1*100"%)""\t"$1-$2,"("($1-$2)/$1*100"%)"}' > \
 		$arg2/"$bamfile_name"_MappingStats.txt
 		# header
-		sed -i '1iTotalReads\tIntersectMappedReads(Ratio)\tUnmapedReads(Ration)' $arg2/"$bamfile_name"_MappingStats.txt
+		sed -i '1iTotalReads\tIntersectMappedReads(Ratio)\tUnmapedReads(Ratio)' $arg2/"$bamfile_name"_MappingStats.txt
 		## get overlap regions from mapped reads
 		region_cov=$("$samtools" view -c -F 4 -L $arg3 $bamfile)
 		bam_cov=$("$samtools" view -c -F 4 $bamfile)
 		paste <(echo $bam_cov) <(echo $region_cov) | awk '{print $1"\t"$2"\t"$2/$1*100"(%)"}' > $arg2/"$bamfile_name".regions.OverlapStats.txt
 		## header
-		sed -i '1iGenomicMapping\tRegionsOverllaped\tRatio' $arg2/"$bamfile_name".regions.OverlapStats.txt
+		sed -i '1iGenomicMapping\tRegionsOverlapped\tRatio' $arg2/"$bamfile_name".regions.OverlapStats.txt
 	done
 }
 
