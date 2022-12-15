@@ -188,13 +188,13 @@ if [[ $ParallelJob == "parallel" ]] || [[ $ParallelJob == "Parallel" ]] || [[ $P
 		exit 1;
 	fi
 else
-	if [[ -f "STRspy_v1.1_Args.sh" ]]; then
+	if [[ -f "STRspy_Normal_v1.1_Args.sh" ]]; then
 		echo -e "\n"
 		echo -e "\t\t  ~ ~ ~ ~ Running STRspy ~ ~ ~ ~	 "
 		echo -e "\t\tAnalysis date:" `date`
 		echo -e "\n"
 		## nested loop version STRspy
-		bash STRspy_Normal_v1.1_Args -s "$INPUT_DIR" -r "$INPUT_BAM" -t "$READ_TYPE" -f "$STR_FASTA" -b "$STR_BED" -g "$GENOME_FASTA" -l "$REGION_BED" -k "$NORM_CUTOFF" -o "$OUTPUT_DIR" -c "$ToolsConfig"
+		bash STRspy_Normal_v1.1_Args.sh -s "$INPUT_DIR" -r "$INPUT_BAM" -t "$READ_TYPE" -f "$STR_FASTA" -b "$STR_BED" -g "$GENOME_FASTA" -l "$REGION_BED" -k "$NORM_CUTOFF" -o "$OUTPUT_DIR" -c "$ToolsConfig"
 	else
 		echo -e "please make sure you are in the same directory of STRspy\n"
 		exit 1;

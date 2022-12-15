@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#PBS -j	oe
+#PBS -l nodes=1:ppn=4,mem=90gb
+#PBS -q ill-prod
+#PBS -M	rupesh.kesharwani@bcm.org
+#PBS –A pro_forensic
+#PBS -N pro-forensic
+
+
+cd /stornext/snfs5/next-gen/scratch/rupesh/ForensicDBv2/BenchmarkingRunDB2/ArgScript_v1.1
+
+echo -e "All autosomes + chrY Analysis started for new sample agaisnt NCBI_DB_Work.."
+date_analysis=$(date +'%m/%d/%Y')
+echo "Analysis started :" "$date_analysis"
+bash STRspy_run_v1.1_Args.sh -i InputConfig.txt -t UserToolsConfig.txt -j normal
+echo -e "All DONE"
+
+
