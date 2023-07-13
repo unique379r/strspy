@@ -1,6 +1,14 @@
 # strspy
 ![](figs/STRspy-workflow-cleanlogo.png)
 
+# NEWS: We are pleased to announce that soon we are going to release STRspy 2.0. Stay tuned.
+## What you should expect in STRspy 2.0
+### 1. DB_v2: Autosome and ChrY-specific STRs
+### 2. New Utility script to generate DB from Genebank and Fasta.
+### 3. New Interface of command line options
+### 4. New Benchmarking results with multiple datasets
+### 5. Docker container with the pre-installed tools to run the STRspy 2.0
+
 STRspy: a novel alignment and quantification-based state-of-the-art method, short tandem repeat (STR) detection calling tool designed specifically for long-read sequencing reads such as from Oxford nanopore technology (ONT) and PacBio.
 
 ## Cite
@@ -11,13 +19,13 @@ https://pubmed.ncbi.nlm.nih.gov/34837788/
 
 ## Overview
 
-DNA evidence has long been considered the gold standard for human identification in forensic investigations. Most often, DNA typing exploits the high variability of short tandem repeat (STR) sequences to differentiate between individuals at the genetic level. Comparison of STR profiles can be used for human identification in a wide range of forensic cases including homicides, sexual assaults, missing persons, and mass disaster victims. The number of contiguous repeat units present at a given microsatellite locus varies significantly among individuals, and thus make them useful for human identification purposes. Here, we are presents a complete pipeline i.e STRspy to identify STRs in a long read samples i.e. Oxford nanopore sequencing reads and Pacbio reads.
+DNA evidence has long been considered the gold standard for human identification in forensic investigations. Most often, DNA typing exploits the high variability of short tandem repeat (STR) sequences to differentiate between individuals at the genetic level. Comparison of STR profiles can be used for human identification in a wide range of forensic cases including homicides, sexual assaults, missing persons, and mass disaster victims. The number of contiguous repeat units present at a given microsatellite locus varies significantly among individuals and thus makes them useful for human identification purposes. Here, we are presents a complete pipeline i.e. STRspy to identify STRs in a long read sample i.e. Oxford nanopore sequencing reads and Pacbio reads.
 
 ## Key Features
 
 1. Input either fastq (raw reads usually from ONT) or bam (pre-aligned reads usually from PacBio)
-2. Reports raw counts of allele along with its Normalized counts by its maximum value
-3. Find top two significant Alleles (filtering threshold set by user such as 0.4)
+2. Reports raw counts of allele along with their Normalized counts by their maximum value
+3. Find the top two significant Alleles (filtering threshold set by the user such as 0.4)
 4. Detects Small variants such as SNP and Indels
 5. Reports mapping summary and STR region of overlaps
 6. Stutters analysis for simple motifs of STRs
@@ -76,7 +84,7 @@ STRspy includes the installation of the following third-party software before it
 
 ## Quickstart
 
-Modify the configfiles describing your data `config/InputConfig.txt`
+Modify the config files describing your data `config/InputConfig.txt`
 
 ## Run STRspy
 
@@ -88,13 +96,13 @@ Modify the configfiles describing your data `config/InputConfig.txt`
 
 ## Running with test datasets
 
-The testset is provided `testset.tar.gz` with the package for the quick start, however pre-computed results `test_results.tar.gz` are also avaiable for the reproducibility purposes. The test data should finish less than 12 Sec (via simple terminal use) to generate the results.
+The testset is provided `testset.tar.gz` with the package for the quick start, however, pre-computed results `test_results.tar.gz` are also available for reproducibility purposes. The test data should finish less than 12 Sec (via simple terminal use) to generate the results.
 
 ### Extracting tar.gz Files
 
 `tar -xvf demodata/testset.tar.gz`
 
-### Note: don't forgter to change the config files & run the commands as instructed above
+### Note: don't forget to change the config files & run the commands as instructed above
 
 Compare your test results with pre-computed outputs here
 
@@ -114,9 +122,9 @@ STR_BED 	: A dir contains Bed files for each STR region of interest [assimung it
 
 GENOME_FASTA: Genome fasta (hg19/hg38) must provide in case of fastq input.
 
-REGION_BED	: All STr bed has to concatnated inot single bed file to calculate the coverage of it from the aligment sample file.
+REGION_BED	: All STr\R bed has to concatenate into a single bed file to calculate the coverage of it from the alignment sample file.
 
-NORM_CUTOFF	: A normalization threshold is required to select top two allles of a STR
+NORM_CUTOFF	: A normalization threshold is required to select the top two allles of a STR
 
 OUTPUT_DIR : A empty directory to write the results
 
@@ -134,18 +142,16 @@ PARALLEL 	=	../user/path/parallel
 
 ## Note
 
-One may encounter with a bug that using wrapper (`STRspy_run_v1.0.sh`), STRspy parallel version may not able to communicate properly with "gnu parallel" and exit the workflow without mapping or further steps of the analysis. Solution to this, the user may either run the script directly from scripts/STRspy_v1.0.sh in the STRspy dir or modify the STRspy_run_v1.0.sh script and allow the nested loop version of the workflow, but bear in mind that this is a little slower than the parallel version.
+One may encounter a bug that using a wrapper (`STRspy_run_v1.0.sh`), STRspy parallel version may not be able to communicate properly with "gnu parallel" and exit the workflow without mapping or further steps of the analysis. The solution to this, the user may either run the script directly from scripts/STRspy_v1.0.sh in the STRspy dir or modify the STRspy_run_v1.0.sh script and allow the nested loop version of the workflow, but bear in mind that this is a little slower than the parallel version.
 
 ## Evaluation
 
-STRspy has been evaluated on 2 datasets including 30cycle and 15cycle of the ONT reads. Please have a look plots bellow the benchmarking of the datasets we used. For more details please refer to our paper `Hall CL, Kesharwani RK, Phillips NR, Planz JV, Sedlazeck FJ, Zascavage RR. Accurate profiling of forensic autosomal STRs using the Oxford Nanopore Technologies MinION device. Forensic Sci Int Genet. 2022 Jan;56:102629. doi: 10.1016/j.fsigen.2021.102629. Epub 2021 Nov 17. PMID: 34837788.`
+STRspy has been evaluated on 2 datasets including 30 cycles and 15 cycles of the ONT reads. Please have a look plots below for the benchmarking of the datasets we used. For more details please refer to our paper `Hall CL, Kesharwani RK, Phillips NR, Planz JV, Sedlazeck FJ, Zascavage RR. Accurate profiling of forensic autosomal STRs using the Oxford Nanopore Technologies MinION device. Forensic Sci Int Genet. 2022 Jan;56:102629. doi: 10.1016/j.fsigen.2021.102629. Epub 2021 Nov 17. PMID: 34837788.`
 
 ## Heatmap of predicted STRs (30cycle and 15cycle)
 ![](figs/Heatmap15-30X.jpeg)
 
 ![](figs/STRspy_benchmarking.png)
-
-## NOTE: The YSTR database is coming soon.
 
 ## References
 Aaron R. Quinlan, Ira M. Hall, BEDTools: a flexible suite of utilities for comparing genomic features, Bioinformatics, Volume 26, Issue 6, 15 March 2010, Pages 841–842, https://doi.org/10.1093/bioinformatics/btq033
