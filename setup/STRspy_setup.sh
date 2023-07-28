@@ -31,14 +31,14 @@
 
 # This file is part of STRspy.
 
-## some warnings before to start
+## Some warnings before start
 echo -e "\n"
 echo -e "\t\t\t\t#### Welcome to the installation of third-party software for STRspy pipeline use ####"
 echo -e "\t\t\t\t\t\t\t#### Before to Run this script ####"
 echo -e "\n"
 echo -e "#Make sure internet connection works properly in your privileges."
 echo -e "# bash ./STRspy_setup.sh"
-echo -n "Continue ? (y/n) : "
+echo -n "Continue? (y/n) : "
 read ans
 if [[ "${ans}" != "y" ]] && [[ "${ans}" != "Y" ]]; then
 	echo -e "\n"
@@ -59,13 +59,13 @@ echo -e "checking if strspy_env is already present...."
 if hash conda >/dev/null 2>&1; then
 	ENV=$(conda info --envs | grep ^strspy_env | awk '{print $1}')
 	if [[ $ENV == "strspy_env" ]]; then
-		echo -e "\n#The STRspy virtual environment (i.e. strspy_env) has already been created/present, and packages should installed there as well"
+		echo -e "\n#The STRspy virtual environment (i.e. strspy_env) has already been created/present, and packages should be installed there as well"
 		echo -e "#1. USE: conda activate strspy_env"
 		echo -e "#2. RUN: bash strspy/setup/MakeToolConfig.sh to create a ToolConfig.txt\n"
 		exit 1;
 	fi
 else
-	echo -e "#conda/miniconda appears to have NOT installed ! please install it to continue.."
+	echo -e "#conda/miniconda appears to have NOT installed! please install it to continue.."
 	exit 1;
 fi
 
@@ -81,14 +81,14 @@ if hash conda >/dev/null 2>&1; then
 	echo -e "#conda appears to have already installed !"
 	echo -e "#attempting to make a conda env and install required packages.."
 	conda env create -n strspy_env -f ./environment.yml
-	## reload terminal
-	source ~/.bashrc
-	source ~/.bash_profile
-	echo -e "#Installation done"
+	## Reload terminal
+	#source ~/.bashrc
+	#source ~/.bash_profile
+	echo -e "#Installation may done, please verify it by restarting your terminal and --> conda info --envs | grep ^strspy_env | awk '{print $1}'"
 	exit;
 else
 	clear
-	echo -e "#conda/miniconda appears to have NOT installed ! please install it to continue.."
+	echo -e "#conda/miniconda appears to have NOT installed! please install it to continue.."
 	exit 1;
 fi
 
