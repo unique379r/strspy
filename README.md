@@ -12,9 +12,8 @@
 ### 4. New Benchmarking results with multiple datasets including Case Samples
 
 
-================================================================================================================================================================================================================
 
-STRspy: a novel alignment and quantification-based state-of-the-art method, short tandem repeat (STR) detection calling tool designed specifically for long-read sequencing reads such as from Oxford nanopore technology (ONT) and PacBio.
+## STRspy: a novel alignment and quantification-based state-of-the-art method, short tandem repeat (STR) detection calling tool designed specifically for long-read sequencing reads such as from Oxford nanopore technology (ONT) and PacBio.
 
 
 ## Cite
