@@ -6,7 +6,7 @@
 
 ( https://github.com/unique379r/strspy/tree/STRspy2.0 )
 
-## Whats New in STRsp2.0
+## Whats New in STRspy2.0
 ### 1. DB_v2: Autosome and ChrY-specific STRs (comprehensive STR database from GenBank records in the STRSeq BioProject (accessions: PRJNA380345 and PRJNA380347))
 ### 2. New Utility script to generate DB from Genebank and Fasta.
 ### 3. New Interface of command line options from main scripts
