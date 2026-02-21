@@ -211,7 +211,6 @@ Jesse Farek, Daniel Hughes, Adam Mansfield, Olga Krasheninina et al (2018). xAtl
 O. Tange (2018): GNU Parallel 2018, March 2018, https://doi.org/10.5281/zenodo.1146014.
 
 ## Contacts
+```
 bioinforupesh200 DOT au AT gmail DOT com
-
-rupesh DOT kesharwani AT bcm DOT edu
-
+```
