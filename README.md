@@ -1,21 +1,24 @@
 # strspy
 ![](figs/STRspy-workflow-cleanlogo.png)
 
-# NEWS: We are pleased to announce that soon we are going to release STRspy 2.0. Stay tuned.
-## What you should expect in STRspy 2.0
-### 1. DB_v2: Autosome and ChrY-specific STRs
+# NEWS: We are pleased to announce our new release of STRspy i.e. 2.0 ( https://github.com/unique379r/strspy/tree/STRspy2.0 )
+## Whats New in STRsp2.0
+### 1. DB_v2: Autosome and ChrY-specific STRs (comprehensive STR database from GenBank records in the STRSeq BioProject (accessions: PRJNA380345 and PRJNA380347))
 ### 2. New Utility script to generate DB from Genebank and Fasta.
-### 3. New Interface of command line options
-### 4. New Benchmarking results with multiple datasets
-### 5. Docker container with the pre-installed tools to run the STRspy 2.0
+### 3. New Interface of command line options from main scripts
+### 4. New Benchmarking results with multiple datasets including Case Samples
+
 
 STRspy: a novel alignment and quantification-based state-of-the-art method, short tandem repeat (STR) detection calling tool designed specifically for long-read sequencing reads such as from Oxford nanopore technology (ONT) and PacBio.
 
 ## Cite
 
-Hall CL, Kesharwani RK, Phillips NR, Planz JV, Sedlazeck FJ, Zascavage RR. Accurate profiling of forensic autosomal STRs using the Oxford Nanopore Technologies MinION device. Forensic Sci Int Genet. 2022 Jan;56:102629. doi: 10.1016/j.fsigen.2021.102629. Epub 2021 Nov 17. PMID: 34837788.
+Hall CL, Kesharwani RK, Phillips NR, Planz JV, Sedlazeck FJ, Zascavage RR. Accurate profiling of forensic autosomal STRs using the Oxford Nanopore Technologies MinION device. Forensic Sci Int Genet. 2022 Jan;56:102629. doi: 10.1016/j.fsigen.2021.102629. Epub 2021 Nov 17. PMID: 34837788. https://pubmed.ncbi.nlm.nih.gov/34837788/
 
-https://pubmed.ncbi.nlm.nih.gov/34837788/
+## Latest Publication 
+
+Hall, C.L.; Kesharwani, R.K.; McBroom Henson, K.E.; Kapema, B.; Phillips, N.R.; Sedlazeck, F.J.; Zascavage, R.R. STRspy2.0: Unlocking the Potential of Long Reads for Forensic DNA Profiling. Int. J. Mol. Sci. 2026, 27, 1889. https://doi.org/10.3390/ijms27041889
+
 
 ## Overview
 
