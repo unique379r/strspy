@@ -1,7 +1,10 @@
 # strspy
 ![](figs/STRspy-workflow-cleanlogo.png)
 
-# NEWS: We are pleased to announce our new release of STRspy i.e. 2.0 ( https://github.com/unique379r/strspy/tree/STRspy2.0 )
+# NEWS: We are pleased to announce our new release of STRspy i.e. 2.0 
+
+( https://github.com/unique379r/strspy/tree/STRspy2.0 )
+
 ## Whats New in STRsp2.0
 ### 1. DB_v2: Autosome and ChrY-specific STRs (comprehensive STR database from GenBank records in the STRSeq BioProject (accessions: PRJNA380345 and PRJNA380347))
 ### 2. New Utility script to generate DB from Genebank and Fasta.
@@ -9,7 +12,7 @@
 ### 4. New Benchmarking results with multiple datasets including Case Samples
 
 
-STRspy: a novel alignment and quantification-based state-of-the-art method, short tandem repeat (STR) detection calling tool designed specifically for long-read sequencing reads such as from Oxford nanopore technology (ONT) and PacBio.
+**STRspy: a novel alignment and quantification-based state-of-the-art method, short tandem repeat (STR) detection calling tool designed specifically for long-read sequencing reads such as from Oxford nanopore technology (ONT) and PacBio.**
 
 ## Cite
 
