@@ -1,5 +1,5 @@
-<p align="justify">
-# STRspy: a novel alignment and quantification-based state-of-the-art method, short tandem repeat (STR) detection calling tool designed specifically for long-read sequencing reads such as from Oxford nanopore technology (ONT) and PacBio.
+<p align="center">
+<strong>STRspy</strong> : a novel alignment and quantification-based state-of-the-art method, short tandem repeat (STR) detection calling tool designed specifically for long-read sequencing reads such as from Oxford nanopore technology (ONT) and PacBio.
 </p>
 
 # NEWS: We are pleased to announce our new release of STRspy i.e. 2.0 
@@ -15,19 +15,24 @@
 
 ## Cite
 
+<p align="justify">
 Hall CL, Kesharwani RK, Phillips NR, Planz JV, Sedlazeck FJ, Zascavage RR. Accurate profiling of forensic autosomal STRs using the Oxford Nanopore Technologies MinION device. Forensic Sci Int Genet. 2022 Jan;56:102629. doi: 10.1016/j.fsigen.2021.102629. Epub 2021 Nov 17. PMID: 34837788. https://pubmed.ncbi.nlm.nih.gov/34837788/
+</p>
 
 ## Latest Publication 
 
+<p align="justify">
 Hall, C.L.; Kesharwani, R.K.; McBroom Henson, K.E.; Kapema, B.; Phillips, N.R.; Sedlazeck, F.J.; Zascavage, R.R. STRspy2.0: Unlocking the Potential of Long Reads for Forensic DNA Profiling. Int. J. Mol. Sci. 2026, 27, 1889. https://doi.org/10.3390/ijms27041889
-
+</p>
 
 # strspy
 ![](figs/STRspy-workflow-cleanlogo.png)
 
 ## Overview
 
+<p align="justify">
 DNA evidence has long been considered the gold standard for human identification in forensic investigations. Most often, DNA typing exploits the high variability of short tandem repeat (STR) sequences to differentiate between individuals at the genetic level. Comparison of STR profiles can be used for human identification in a wide range of forensic cases including homicides, sexual assaults, missing persons, and mass disaster victims. The number of contiguous repeat units present at a given microsatellite locus varies significantly among individuals and thus makes them useful for human identification purposes. Here, we are presents a complete pipeline i.e. STRspy to identify STRs in a long read sample i.e. Oxford nanopore sequencing reads and Pacbio reads.
+</p>
 
 ## Key Features
 
@@ -123,7 +128,9 @@ USAGE: bash ./STRspy_run_v1.0.sh config/InputConfig.txt config/ToolsConfig.txt
 
 ## Running with test datasets
 
+<p align="justify">
 The testset is provided `testset.tar.gz` with the package for the quick start, however, pre-computed results `test_results.tar.gz` are also available for reproducibility purposes. The test data should finish less than 12 Sec (via simple terminal use) to generate the results.
+</p>
 
 ### Extracting tar.gz Files
 
@@ -177,7 +184,10 @@ PARALLEL 	=	../user/path/parallel
 
 ## Note
 
+<p align="justify">
 One may encounter a bug that using a wrapper (`STRspy_run_v1.0.sh`), STRspy parallel version may not be able to communicate properly with "gnu parallel" and exit the workflow without mapping or further steps of the analysis. The solution to this, the user may either run the script directly from scripts/STRspy_v1.0.sh in the STRspy dir or modify the STRspy_run_v1.0.sh script and allow the nested loop version of the workflow, but bear in mind that this is a little slower than the parallel version.
+</p>
+
 
 ## Evaluation
 
