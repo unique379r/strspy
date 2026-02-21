@@ -27,7 +27,7 @@ Hall, C.L.; Kesharwani, R.K.; McBroom Henson, K.E.; Kapema, B.; Phillips, N.R.; 
 
 # STRspy2.0
 
-![](figs/fig.png)
+![Workflow](figs/fig.png)
 
 <p align="justify">
 Figure 1. Schematic overview of STRspy2.0 workflow. (a) STRspy2.0 relies on an STR allele database to generate profiles consistent with established length-based forensic nomenclature. Users can use the STRspy2.0 database or build their own from GenBank records. When GenBank records are provided, STRspy2.0 automatically generates database entries using the locus name, reference chromosome, repeat location, repeat sequence, and flanking sequence variants, then adds 500 bp flanks from hg38 to each allele. (b) During data analysis, STRspy2.0 aligns reads to the human reference genome, extracts those overlapping STR loci, and realigns them to the STR allele database. Each allele is ranked by normalized read count to determine the genotype at each locus. 
