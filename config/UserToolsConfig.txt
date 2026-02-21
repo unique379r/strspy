@@ -1,0 +1,6 @@
+SAMTOOLS=/conda/envs/strspy_env/bin/samtools
+BEDTOOLS=/conda/envs/strspy_env/bin/bedtools
+XATLAS=/conda/envs/strspy_env/bin/xatlas
+PARALLEL=/conda/envs/strspy_env/bin/parallel
+MINIMAP=/conda/envs/strspy_env/bin/minimap2
+SEQKIT=/conda/envs/strspy_env/bin/seqkit

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#PBS -j	oe
+#PBS -l nodes=1:ppn=4,mem=90gb
+#PBS -q analysis
+#PBS -M	EMAIL
+#PBS –A pro_forensic
+#PBS -N pro-forensic
+
+
+cd /dir/STRspy_v2.0
+
+echo -e "All autosomes + chrY Analysis started for new sample against NCBI_DB_Work.."
+date_analysis=$(date +'%m/%d/%Y')
+echo "Analysis started :" "$date_analysis"
+bash STRspy_run_v2.0_Args -i InputConfig.txt -t UserToolsConfig.txt -j normal
+echo -e "All DONE"

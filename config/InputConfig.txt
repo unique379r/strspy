@@ -1,11 +1,11 @@
-#"==========================================Inputs for STRspy==========================================================================="
-INPUT_DIR=../example/input_dir
-INPUT_BAM=yes
+#"===========================Inputs for STRspy==================================================="
+INPUT_DIR=/test/Reads
+INPUT_BAM=no
 READ_TYPE=ont
-STR_FASTA=../example/str_fa
-STR_BED=../example/str_bed
-GENOME_FASTA=../example/ref_genome/chr22.fa
-REGION_BED=../extra/regions.sort.named.bed
+STR_FASTA=/test/DB
+STR_BED=/test/DB
+GENOME_FASTA=/test/genome/Chr6.8.fa
+REGION_BED=/test/Loci.bed
 NORM_CUTOFF=0.4
-OUTPUT_DIR=../example/ParallelOutput_dir
-
+OUTPUT_DIR=/test/Results
+THREAD=1

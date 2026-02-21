@@ -1,7 +1,0 @@
-#"=========================================Tools global path=========================================================================="
-BEDTOOLS=../bin/bedtools
-MINIMAP=../bin/minimap2
-SAMTOOLS=../bin/samtools
-XATLAS=../xatlas-0.2.1/xatlas
-PARALLEL=../bin/parallel
-

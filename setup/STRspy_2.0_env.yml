@@ -1,0 +1,15 @@
+name: strspy_env 
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.7.7
+# conda-forge channel installs
+  - parallel
+# bioconda channel installs
+  - xatlas
+  - samtools
+  - bedtools
+  - minimap2
+  - seqkit
