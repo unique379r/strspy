@@ -179,7 +179,8 @@ One may encounter a bug that using a wrapper (`STRspy_run_v1.0.sh`), STRspy para
 
 ## Evaluation
 
-STRspy has been evaluated on 2 datasets including 30 cycles and 15 cycles of the ONT reads. Please have a look plots below for the benchmarking of the datasets we used. For more details please refer to our paper `Hall CL, Kesharwani RK, Phillips NR, Planz JV, Sedlazeck FJ, Zascavage RR. Accurate profiling of forensic autosomal STRs using the Oxford Nanopore Technologies MinION device. Forensic Sci Int Genet. 2022 Jan;56:102629. doi: 10.1016/j.fsigen.2021.102629. Epub 2021 Nov 17. PMID: 34837788.`
+STRspy has been evaluated on 2 datasets including 30 cycles and 15 cycles of the ONT reads. Please have a look plots below for the benchmarking of the datasets we used. For more details please refer to our paper 
+`doi: 10.1016/j.fsigen.2021.102629`
 
 ## Heatmap of predicted STRs (30cycle and 15cycle)
 ![](figs/Heatmap15-30X.jpeg)
