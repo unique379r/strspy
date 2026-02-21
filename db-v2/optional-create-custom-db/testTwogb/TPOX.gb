@@ -1,0 +1,1607 @@
+LOCUS       MG988078                 198 bp    DNA     linear   PRI 08-JUL-2022
+DEFINITION  Homo sapiens microsatellite TPOX 14 TGAA[14] FS,PS sequence.
+ACCESSION   MG988078
+VERSION     MG988078.2
+DBLINK      BioProject: PRJNA380554
+KEYWORDS    STRSeq; STR; TPOX.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 198)
+  AUTHORS   Gettings,K.B., Borsuk,L.A., Ballard,D., Bodner,M., Budowle,B.,
+            Devesse,L., King,J., Parson,W., Phillips,C. and Vallone,P.M.
+  TITLE     STRSeq: A catalog of sequence diversity at human identification
+            Short Tandem Repeat loci
+  JOURNAL   Forensic Sci Int Genet 31, 111-117 (2017)
+   PUBMED   28888135
+REFERENCE   2  (bases 1 to 198)
+  AUTHORS   NIST,A.G.G.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-FEB-2018) Applied Genetics Group, National Institute
+            of Standards and Technology, 100 Bureau Drive, MS-8314,
+            Gaithersburg, Maryland 20899, United States of America
+COMMENT     On Jul 8, 2022 this sequence version replaced MG988078.1.
+            Annotation ('bracketing') of the repeat region is consistent with
+            the guidance of the ISFG (International Society of Forensic
+            Genetics), PMID: 26844919.  Lower case letters in the 'Bracketed
+            repeat' region below denote uncounted bases.   The given
+            length-based allele value was determined using the designated
+            length-based technology.  Variation in the length-based allele
+            between individuals or assays can result from indels in flanking
+            regions.  The length of reported sequence is dependent on the assay
+            and the quality of the flanking sequence. This information is
+            provided as part of the STR Sequencing Project (STRseq), a
+            collaborative effort of the international forensic DNA community.
+            The purpose of this project is to facilitate the description of
+            sequence-based STR alleles.  Additional resources can be found at
+            strseq.nist.gov.  For questions or feedback, please contact
+            strseq@nist.gov.  Allele frequency data can be accessed in the
+            strider.online database.
+            
+            ##HumanSTR-START##
+            Sequence attribution  :: Applied Genetics Group, NIST
+            STR locus name        :: TPOX
+            Length-based allele   :: 14
+            Minimum range bracket :: TGAA[14]
+            Bracketed record seq. :: TGAA[14]
+            Sequencing technology :: MiSeq FGx
+            Sequencing assay code :: FS,PS
+            Coverage              :: >30X
+            Length-based tech.    :: PowerPlex Fusion,3130xl
+            Assembly              :: GRCh38 (GCF_000001405)
+            Chromosome            :: 2
+            Ref. seq. accession   :: NC_000002.12
+            Chrom. location       :: 1489529..1489702
+            ISFG minimum range    :: 1489647..1489692
+            Frequency reference   :: STRidER.online
+            STR locus alt name    :: hTPO, TPO
+            Historical bracketing :: [AATG]14
+            ##Metadata-END##
+FEATURES             Location/Qualifiers
+     source          1..198
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9606"
+     misc_feature    1..198
+                     /note="Promega PowerSeq 46GY System"
+     repeat_region   119..188
+                     /note="minimum range"
+                     /rpt_type=tandem
+                     /satellite="microsatellite:TPOX"
+     misc_feature    125..185
+                     /note="Verogen ForenSeq DNA Signature Prep Kit"
+ORIGIN      
+        1 cactggcctg tgggtccccc catagatcgt aagcccagga ggaagggctg tgtttcaggg
+       61 ctgtgatcac tagcacccag aaccgtcgac tggcacagaa caggcactta gggaaccctc
+      121 actgaatgaa tgaatgaatg aatgaatgaa tgaatgaatg aatgaatgaa tgaatgaatg
+      181 tttgggcaaa taaacgct
+//
+
+LOCUS       MG988075                 204 bp    DNA     linear   PRI 08-JUL-2022
+DEFINITION  Homo sapiens microsatellite TPOX 8 TGAA[8]_-94G>A FS,GF,PS
+            sequence.
+ACCESSION   MG988075
+VERSION     MG988075.3
+DBLINK      BioProject: PRJNA380554
+KEYWORDS    STRSeq; STR; TPOX.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 204)
+  AUTHORS   Gettings,K.B., Borsuk,L.A., Ballard,D., Bodner,M., Budowle,B.,
+            Devesse,L., King,J., Parson,W., Phillips,C. and Vallone,P.M.
+  TITLE     STRSeq: A catalog of sequence diversity at human identification
+            Short Tandem Repeat loci
+  JOURNAL   Forensic Sci Int Genet 31, 111-117 (2017)
+   PUBMED   28888135
+REFERENCE   2  (bases 1 to 204)
+  AUTHORS   NIST,A.G.G.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-FEB-2018) Applied Genetics Group, National Institute
+            of Standards and Technology, 100 Bureau Drive, MS-8314,
+            Gaithersburg, Maryland 20899, United States of America
+COMMENT     On Jul 8, 2022 this sequence version replaced MG988075.2.
+            Annotation ('bracketing') of the repeat region is consistent with
+            the guidance of the ISFG (International Society of Forensic
+            Genetics), PMID: 26844919.  Lower case letters in the 'Bracketed
+            repeat' region below denote uncounted bases.   The given
+            length-based allele value was determined using the designated
+            length-based technology.  Variation in the length-based allele
+            between individuals or assays can result from indels in flanking
+            regions.  The length of reported sequence is dependent on the assay
+            and the quality of the flanking sequence. This information is
+            provided as part of the STR Sequencing Project (STRseq), a
+            collaborative effort of the international forensic DNA community.
+            The purpose of this project is to facilitate the description of
+            sequence-based STR alleles.  Additional resources can be found at
+            strseq.nist.gov.  For questions or feedback, please contact
+            strseq@nist.gov.  Allele frequency data can be accessed in the
+            strider.online database.
+            
+            ##HumanSTR-START##
+            Sequence attribution  :: Applied Genetics Group, NIST
+            STR locus name        :: TPOX
+            Length-based allele   :: 8
+            Minimum range bracket :: TGAA[8]
+            Bracketed record seq. :: TGAA[8]_-94G>A
+            Sequencing technology :: MiSeq FGx
+            Sequencing assay code :: FS,GF,PS
+            Coverage              :: >30X
+            Length-based tech.    :: PowerPlex Fusion,3130xl
+            Assembly              :: GRCh38 (GCF_000001405)
+            Chromosome            :: 2
+            Ref. seq. accession   :: NC_000002.12
+            Chrom. location       :: 1489529..1489732
+            ISFG minimum range    :: 1489647..1489692
+            Frequency reference   :: STRidER.online
+            STR locus alt name    :: hTPO, TPO
+            Historical bracketing :: [AATG]8
+            ##Metadata-END##
+FEATURES             Location/Qualifiers
+     source          1..204
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9606"
+     misc_feature    1..174
+                     /note="Promega PowerSeq 46GY System"
+     variation       29
+                     /note="-94G>A"
+                     /db_xref="dbSNP:rs145426142"
+     misc_feature    77..204
+                     /note="Applied Biosystems Precision ID GlobalFiler NGS STR
+                     Panel v2"
+     repeat_region   119..164
+                     /note="minimum range"
+                     /rpt_type=tandem
+                     /satellite="microsatellite:TPOX"
+     misc_feature    125..161
+                     /note="Verogen ForenSeq DNA Signature Prep Kit"
+ORIGIN      
+        1 cactggcctg tgggtccccc catagatcat aagcccagga ggaagggctg tgtttcaggg
+       61 ctgtgatcac tagcacccag aaccgtcgac tggcacagaa caggcactta gggaaccctc
+      121 actgaatgaa tgaatgaatg aatgaatgaa tgaatgtttg ggcaaataaa cgctgacaag
+      181 gacagaaggg cctagcggga aggg
+//
+
+LOCUS       MG988074                 162 bp    DNA     linear   PRI 08-JUL-2022
+DEFINITION  Homo sapiens microsatellite TPOX 5 TGAA[5] FS,PS sequence.
+ACCESSION   MG988074
+VERSION     MG988074.2
+DBLINK      BioProject: PRJNA380554
+KEYWORDS    STRSeq; STR; TPOX.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 162)
+  AUTHORS   Gettings,K.B., Borsuk,L.A., Ballard,D., Bodner,M., Budowle,B.,
+            Devesse,L., King,J., Parson,W., Phillips,C. and Vallone,P.M.
+  TITLE     STRSeq: A catalog of sequence diversity at human identification
+            Short Tandem Repeat loci
+  JOURNAL   Forensic Sci Int Genet 31, 111-117 (2017)
+   PUBMED   28888135
+REFERENCE   2  (bases 1 to 162)
+  AUTHORS   NIST,A.G.G.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-FEB-2018) Applied Genetics Group, National Institute
+            of Standards and Technology, 100 Bureau Drive, MS-8314,
+            Gaithersburg, Maryland 20899, United States of America
+COMMENT     On Jul 8, 2022 this sequence version replaced MG988074.1.
+            Annotation ('bracketing') of the repeat region is consistent with
+            the guidance of the ISFG (International Society of Forensic
+            Genetics), PMID: 26844919.  Lower case letters in the 'Bracketed
+            repeat' region below denote uncounted bases.   The given
+            length-based allele value was determined using the designated
+            length-based technology.  Variation in the length-based allele
+            between individuals or assays can result from indels in flanking
+            regions.  The length of reported sequence is dependent on the assay
+            and the quality of the flanking sequence. This information is
+            provided as part of the STR Sequencing Project (STRseq), a
+            collaborative effort of the international forensic DNA community.
+            The purpose of this project is to facilitate the description of
+            sequence-based STR alleles.  Additional resources can be found at
+            strseq.nist.gov.  For questions or feedback, please contact
+            strseq@nist.gov.  Allele frequency data can be accessed in the
+            strider.online database.
+            
+            ##HumanSTR-START##
+            Sequence attribution  :: Applied Genetics Group, NIST
+            STR locus name        :: TPOX
+            Length-based allele   :: 5
+            Minimum range bracket :: TGAA[5]
+            Bracketed record seq. :: TGAA[5]
+            Sequencing technology :: MiSeq FGx
+            Sequencing assay code :: FS,PS
+            Coverage              :: >30X
+            Length-based tech.    :: PowerPlex Fusion,3130xl
+            Assembly              :: GRCh38 (GCF_000001405)
+            Chromosome            :: 2
+            Ref. seq. accession   :: NC_000002.12
+            Chrom. location       :: 1489529..1489702
+            ISFG minimum range    :: 1489647..1489692
+            Frequency reference   :: STRidER.online
+            STR locus alt name    :: hTPO, TPO
+            Historical bracketing :: [AATG]5
+            ##Metadata-END##
+FEATURES             Location/Qualifiers
+     source          1..162
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9606"
+     misc_feature    1..162
+                     /note="Promega PowerSeq 46GY System"
+     repeat_region   119..152
+                     /note="minimum range"
+                     /rpt_type=tandem
+                     /satellite="microsatellite:TPOX"
+     misc_feature    125..149
+                     /note="Verogen ForenSeq DNA Signature Prep Kit"
+ORIGIN      
+        1 cactggcctg tgggtccccc catagatcgt aagcccagga ggaagggctg tgtttcaggg
+       61 ctgtgatcac tagcacccag aaccgtcgac tggcacagaa caggcactta gggaaccctc
+      121 actgaatgaa tgaatgaatg aatgtttggg caaataaacg ct
+//
+
+LOCUS       MF044256                 220 bp    DNA     linear   PRI 08-JUL-2022
+DEFINITION  Homo sapiens microsatellite TPOX 12 TGAA[12] FS,GF,PS sequence.
+ACCESSION   MF044256
+VERSION     MF044256.3
+DBLINK      BioProject: PRJNA380554
+KEYWORDS    STRSeq, STR, TPOX.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 220)
+  AUTHORS   Gettings,K.B., Borsuk,L.A., Ballard,D., Bodner,M., Budowle,B.,
+            Devesse,L., King,J., Parson,W., Phillips,C. and Vallone,P.M.
+  TITLE     STRSeq: A catalog of sequence diversity at human identification
+            Short Tandem Repeat loci
+  JOURNAL   Forensic Sci Int Genet 31, 111-117 (2017)
+   PUBMED   28888135
+REFERENCE   2  (bases 1 to 220)
+  AUTHORS   NIST,A.G.G.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (04-MAY-2017) Applied Genetics Group, National Institute
+            of Standards and Technology, 100 Bureau Drive, MS-8314,
+            Gaithersburg, MD 20899, USA
+COMMENT     On Jul 8, 2022 this sequence version replaced MF044256.2.
+            Annotation ('bracketing') of the repeat region is consistent with
+            the guidance of the ISFG (International Society of Forensic
+            Genetics), PMID: 26844919.  Lower case letters in the 'Bracketed
+            repeat' region below denote uncounted bases.   The given
+            length-based allele value was determined using the designated
+            length-based technology.  Variation in the length-based allele
+            between individuals or assays can result from indels in flanking
+            regions.  The length of reported sequence is dependent on the assay
+            and the quality of the flanking sequence. This information is
+            provided as part of the STR Sequencing Project (STRseq), a
+            collaborative effort of the international forensic DNA community.
+            The purpose of this project is to facilitate the description of
+            sequence-based STR alleles.  Additional resources can be found at
+            strseq.nist.gov.  For questions or feedback, please contact
+            strseq@nist.gov.  Allele frequency data can be accessed in the
+            strider.online database.
+            
+            ##HumanSTR-START##
+            Sequence attribution  :: Applied Genetics Group, NIST
+            STR locus name        :: TPOX
+            Length-based allele   :: 12
+            Minimum range bracket :: TGAA[12]
+            Bracketed record seq. :: TGAA[12]
+            Sequencing technology :: MiSeq FGx
+            Sequencing assay code :: FS,GF,PS
+            Coverage              :: >30X
+            Length-based tech.    :: PowerPlex Fusion,ABI3500xl
+            Assembly              :: GRCh38 (GCF_000001405)
+            Chromosome            :: 2
+            Ref. seq. accession   :: NC_000002.12
+            Chrom. location       :: 1489529..1489732
+            ISFG minimum range    :: 1489647..1489692
+            Frequency reference   :: STRidER.online
+            STR locus alt name    :: hTPO, TPO
+            Historical bracketing :: [AATG]12
+            ##Metadata-END##
+FEATURES             Location/Qualifiers
+     source          1..220
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9606"
+     misc_feature    1..190
+                     /note="Promega PowerSeq 46GY System"
+     misc_feature    77..220
+                     /note="Applied Biosystems Precision ID GlobalFiler NGS STR
+                     Panel v2"
+     repeat_region   119..180
+                     /note="minimum range"
+                     /rpt_type=tandem
+                     /satellite="microsatellite:TPOX"
+     misc_feature    125..177
+                     /note="Verogen ForenSeq DNA Signature Prep Kit"
+ORIGIN      
+        1 cactggcctg tgggtccccc catagatcgt aagcccagga ggaagggctg tgtttcaggg
+       61 ctgtgatcac tagcacccag aaccgtcgac tggcacagaa caggcactta gggaaccctc
+      121 actgaatgaa tgaatgaatg aatgaatgaa tgaatgaatg aatgaatgaa tgtttgggca
+      181 aataaacgct gacaaggaca gaagggccta gcgggaaggg
+//
+
+LOCUS       MF044255                 216 bp    DNA     linear   PRI 08-JUL-2022
+DEFINITION  Homo sapiens microsatellite TPOX 11 TGAA[11] FS,GF,PS sequence.
+ACCESSION   MF044255
+VERSION     MF044255.3
+DBLINK      BioProject: PRJNA380554
+KEYWORDS    STRSeq, STR, TPOX.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 216)
+  AUTHORS   Gettings,K.B., Borsuk,L.A., Ballard,D., Bodner,M., Budowle,B.,
+            Devesse,L., King,J., Parson,W., Phillips,C. and Vallone,P.M.
+  TITLE     STRSeq: A catalog of sequence diversity at human identification
+            Short Tandem Repeat loci
+  JOURNAL   Forensic Sci Int Genet 31, 111-117 (2017)
+   PUBMED   28888135
+REFERENCE   2  (bases 1 to 216)
+  AUTHORS   NIST,A.G.G.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (04-MAY-2017) Applied Genetics Group, National Institute
+            of Standards and Technology, 100 Bureau Drive, MS-8314,
+            Gaithersburg, MD 20899, USA
+COMMENT     On Jul 8, 2022 this sequence version replaced MF044255.2.
+            Annotation ('bracketing') of the repeat region is consistent with
+            the guidance of the ISFG (International Society of Forensic
+            Genetics), PMID: 26844919.  Lower case letters in the 'Bracketed
+            repeat' region below denote uncounted bases.   The given
+            length-based allele value was determined using the designated
+            length-based technology.  Variation in the length-based allele
+            between individuals or assays can result from indels in flanking
+            regions.  The length of reported sequence is dependent on the assay
+            and the quality of the flanking sequence. This information is
+            provided as part of the STR Sequencing Project (STRseq), a
+            collaborative effort of the international forensic DNA community.
+            The purpose of this project is to facilitate the description of
+            sequence-based STR alleles.  Additional resources can be found at
+            strseq.nist.gov.  For questions or feedback, please contact
+            strseq@nist.gov.  Allele frequency data can be accessed in the
+            strider.online database.
+            
+            ##HumanSTR-START##
+            Sequence attribution  :: Applied Genetics Group, NIST
+            STR locus name        :: TPOX
+            Length-based allele   :: 11
+            Minimum range bracket :: TGAA[11]
+            Bracketed record seq. :: TGAA[11]
+            Sequencing technology :: MiSeq FGx
+            Sequencing assay code :: FS,GF,PS
+            Coverage              :: >30X
+            Length-based tech.    :: PowerPlex Fusion,ABI3500xl
+            Assembly              :: GRCh38 (GCF_000001405)
+            Chromosome            :: 2
+            Ref. seq. accession   :: NC_000002.12
+            Chrom. location       :: 1489529..1489732
+            ISFG minimum range    :: 1489647..1489692
+            Frequency reference   :: STRidER.online
+            STR locus alt name    :: hTPO, TPO
+            Historical bracketing :: [AATG]11
+            ##Metadata-END##
+FEATURES             Location/Qualifiers
+     source          1..216
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9606"
+     misc_feature    1..186
+                     /note="Promega PowerSeq 46GY System"
+     misc_feature    77..216
+                     /note="Applied Biosystems Precision ID GlobalFiler NGS STR
+                     Panel v2"
+     repeat_region   119..176
+                     /note="minimum range"
+                     /rpt_type=tandem
+                     /satellite="microsatellite:TPOX"
+     misc_feature    125..173
+                     /note="Verogen ForenSeq DNA Signature Prep Kit"
+ORIGIN      
+        1 cactggcctg tgggtccccc catagatcgt aagcccagga ggaagggctg tgtttcaggg
+       61 ctgtgatcac tagcacccag aaccgtcgac tggcacagaa caggcactta gggaaccctc
+      121 actgaatgaa tgaatgaatg aatgaatgaa tgaatgaatg aatgaatgtt tgggcaaata
+      181 aacgctgaca aggacagaag ggcctagcgg gaaggg
+//
+
+LOCUS       MF044253                 212 bp    DNA     linear   PRI 08-JUL-2022
+DEFINITION  Homo sapiens microsatellite TPOX 10 TGAA[10] FS,GF,PS sequence.
+ACCESSION   MF044253
+VERSION     MF044253.3
+DBLINK      BioProject: PRJNA380554
+KEYWORDS    STRSeq, STR, TPOX.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 212)
+  AUTHORS   Gettings,K.B., Borsuk,L.A., Ballard,D., Bodner,M., Budowle,B.,
+            Devesse,L., King,J., Parson,W., Phillips,C. and Vallone,P.M.
+  TITLE     STRSeq: A catalog of sequence diversity at human identification
+            Short Tandem Repeat loci
+  JOURNAL   Forensic Sci Int Genet 31, 111-117 (2017)
+   PUBMED   28888135
+REFERENCE   2  (bases 1 to 212)
+  AUTHORS   NIST,A.G.G.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (04-MAY-2017) Applied Genetics Group, National Institute
+            of Standards and Technology, 100 Bureau Drive, MS-8314,
+            Gaithersburg, MD 20899, USA
+COMMENT     On Jul 8, 2022 this sequence version replaced MF044253.2.
+            Annotation ('bracketing') of the repeat region is consistent with
+            the guidance of the ISFG (International Society of Forensic
+            Genetics), PMID: 26844919.  Lower case letters in the 'Bracketed
+            repeat' region below denote uncounted bases.   The given
+            length-based allele value was determined using the designated
+            length-based technology.  Variation in the length-based allele
+            between individuals or assays can result from indels in flanking
+            regions.  The length of reported sequence is dependent on the assay
+            and the quality of the flanking sequence. This information is
+            provided as part of the STR Sequencing Project (STRseq), a
+            collaborative effort of the international forensic DNA community.
+            The purpose of this project is to facilitate the description of
+            sequence-based STR alleles.  Additional resources can be found at
+            strseq.nist.gov.  For questions or feedback, please contact
+            strseq@nist.gov.  Allele frequency data can be accessed in the
+            strider.online database.
+            
+            ##HumanSTR-START##
+            Sequence attribution  :: Applied Genetics Group, NIST
+            STR locus name        :: TPOX
+            Length-based allele   :: 10
+            Minimum range bracket :: TGAA[10]
+            Bracketed record seq. :: TGAA[10]
+            Sequencing technology :: MiSeq FGx
+            Sequencing assay code :: FS,GF,PS
+            Coverage              :: >30X
+            Length-based tech.    :: PowerPlex Fusion,ABI3500xl
+            Assembly              :: GRCh38 (GCF_000001405)
+            Chromosome            :: 2
+            Ref. seq. accession   :: NC_000002.12
+            Chrom. location       :: 1489529..1489732
+            ISFG minimum range    :: 1489647..1489692
+            Frequency reference   :: STRidER.online
+            STR locus alt name    :: hTPO, TPO
+            Historical bracketing :: [AATG]10
+            ##Metadata-END##
+FEATURES             Location/Qualifiers
+     source          1..212
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9606"
+     misc_feature    1..182
+                     /note="Promega PowerSeq 46GY System"
+     misc_feature    77..212
+                     /note="Applied Biosystems Precision ID GlobalFiler NGS STR
+                     Panel v2"
+     repeat_region   119..172
+                     /note="minimum range"
+                     /rpt_type=tandem
+                     /satellite="microsatellite:TPOX"
+     misc_feature    125..169
+                     /note="Verogen ForenSeq DNA Signature Prep Kit"
+ORIGIN      
+        1 cactggcctg tgggtccccc catagatcgt aagcccagga ggaagggctg tgtttcaggg
+       61 ctgtgatcac tagcacccag aaccgtcgac tggcacagaa caggcactta gggaaccctc
+      121 actgaatgaa tgaatgaatg aatgaatgaa tgaatgaatg aatgtttggg caaataaacg
+      181 ctgacaagga cagaagggcc tagcgggaag gg
+//
+
+LOCUS       MF044252                 208 bp    DNA     linear   PRI 08-JUL-2022
+DEFINITION  Homo sapiens microsatellite TPOX 9 TGAA[9]_-107C>A FS,GF,PS
+            sequence.
+ACCESSION   MF044252
+VERSION     MF044252.2
+DBLINK      BioProject: PRJNA380554
+KEYWORDS    STRSeq, STR, TPOX.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 208)
+  AUTHORS   Gettings,K.B., Borsuk,L.A., Ballard,D., Bodner,M., Budowle,B.,
+            Devesse,L., King,J., Parson,W., Phillips,C. and Vallone,P.M.
+  TITLE     STRSeq: A catalog of sequence diversity at human identification
+            Short Tandem Repeat loci
+  JOURNAL   Forensic Sci Int Genet 31, 111-117 (2017)
+   PUBMED   28888135
+REFERENCE   2  (bases 1 to 208)
+  AUTHORS   NIST,A.G.G.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (04-MAY-2017) Applied Genetics Group, National Institute
+            of Standards and Technology, 100 Bureau Drive, MS-8314,
+            Gaithersburg, MD 20899, USA
+COMMENT     On Jul 8, 2022 this sequence version replaced MF044252.1.
+            Annotation ('bracketing') of the repeat region is consistent with
+            the guidance of the ISFG (International Society of Forensic
+            Genetics), PMID: 26844919.  Lower case letters in the 'Bracketed
+            repeat' region below denote uncounted bases.   The given
+            length-based allele value was determined using the designated
+            length-based technology.  Variation in the length-based allele
+            between individuals or assays can result from indels in flanking
+            regions.  The length of reported sequence is dependent on the assay
+            and the quality of the flanking sequence. This information is
+            provided as part of the STR Sequencing Project (STRseq), a
+            collaborative effort of the international forensic DNA community.
+            The purpose of this project is to facilitate the description of
+            sequence-based STR alleles.  Additional resources can be found at
+            strseq.nist.gov.  For questions or feedback, please contact
+            strseq@nist.gov.  Allele frequency data can be accessed in the
+            strider.online database.
+            
+            ##HumanSTR-START##
+            Sequence attribution  :: Applied Genetics Group, NIST
+            STR locus name        :: TPOX
+            Length-based allele   :: 9
+            Minimum range bracket :: TGAA[9]
+            Bracketed record seq. :: TGAA[9]_-107C>A
+            Sequencing technology :: MiSeq FGx
+            Sequencing assay code :: FS,GF,PS
+            Coverage              :: >30X
+            Length-based tech.    :: PowerPlex Fusion,ABI3500xl
+            Assembly              :: GRCh38 (GCF_000001405)
+            Chromosome            :: 2
+            Ref. seq. accession   :: NC_000002.12
+            Chrom. location       :: 1489529..1489732
+            ISFG minimum range    :: 1489647..1489692
+            Frequency reference   :: STRidER.online
+            STR locus alt name    :: hTPO, TPO
+            Historical bracketing :: [AATG]9
+            ##Metadata-END##
+FEATURES             Location/Qualifiers
+     source          1..208
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9606"
+     misc_feature    1..178
+                     /note="Promega PowerSeq 46GY System"
+     variation       16
+                     /note="-107C>A"
+                     /db_xref="dbSNP:rs13422969"
+     misc_feature    77..208
+                     /note="Applied Biosystems Precision ID GlobalFiler NGS STR
+                     Panel v2"
+     repeat_region   119..168
+                     /note="minimum range"
+                     /rpt_type=tandem
+                     /satellite="microsatellite:TPOX"
+     misc_feature    125..165
+                     /note="Verogen ForenSeq DNA Signature Prep Kit"
+ORIGIN      
+        1 cactggcctg tgggtacccc catagatcgt aagcccagga ggaagggctg tgtttcaggg
+       61 ctgtgatcac tagcacccag aaccgtcgac tggcacagaa caggcactta gggaaccctc
+      121 actgaatgaa tgaatgaatg aatgaatgaa tgaatgaatg tttgggcaaa taaacgctga
+      181 caaggacaga agggcctagc gggaaggg
+//
+
+LOCUS       MF044251                 208 bp    DNA     linear   PRI 08-JUL-2022
+DEFINITION  Homo sapiens microsatellite TPOX 9 TGAA[9] FS,GF,PS sequence.
+ACCESSION   MF044251
+VERSION     MF044251.3
+DBLINK      BioProject: PRJNA380554
+KEYWORDS    STRSeq, STR, TPOX.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 208)
+  AUTHORS   Gettings,K.B., Borsuk,L.A., Ballard,D., Bodner,M., Budowle,B.,
+            Devesse,L., King,J., Parson,W., Phillips,C. and Vallone,P.M.
+  TITLE     STRSeq: A catalog of sequence diversity at human identification
+            Short Tandem Repeat loci
+  JOURNAL   Forensic Sci Int Genet 31, 111-117 (2017)
+   PUBMED   28888135
+REFERENCE   2  (bases 1 to 208)
+  AUTHORS   NIST,A.G.G.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (04-MAY-2017) Applied Genetics Group, National Institute
+            of Standards and Technology, 100 Bureau Drive, MS-8314,
+            Gaithersburg, MD 20899, USA
+COMMENT     On Jul 8, 2022 this sequence version replaced MF044251.2.
+            Annotation ('bracketing') of the repeat region is consistent with
+            the guidance of the ISFG (International Society of Forensic
+            Genetics), PMID: 26844919.  Lower case letters in the 'Bracketed
+            repeat' region below denote uncounted bases.   The given
+            length-based allele value was determined using the designated
+            length-based technology.  Variation in the length-based allele
+            between individuals or assays can result from indels in flanking
+            regions.  The length of reported sequence is dependent on the assay
+            and the quality of the flanking sequence. This information is
+            provided as part of the STR Sequencing Project (STRseq), a
+            collaborative effort of the international forensic DNA community.
+            The purpose of this project is to facilitate the description of
+            sequence-based STR alleles.  Additional resources can be found at
+            strseq.nist.gov.  For questions or feedback, please contact
+            strseq@nist.gov.  Allele frequency data can be accessed in the
+            strider.online database.
+            
+            ##HumanSTR-START##
+            Sequence attribution  :: Applied Genetics Group, NIST
+            STR locus name        :: TPOX
+            Length-based allele   :: 9
+            Minimum range bracket :: TGAA[9]
+            Bracketed record seq. :: TGAA[9]
+            Sequencing technology :: MiSeq FGx
+            Sequencing assay code :: FS,GF,PS
+            Coverage              :: >30X
+            Length-based tech.    :: PowerPlex Fusion,ABI3500xl
+            Assembly              :: GRCh38 (GCF_000001405)
+            Chromosome            :: 2
+            Ref. seq. accession   :: NC_000002.12
+            Chrom. location       :: 1489529..1489732
+            ISFG minimum range    :: 1489647..1489692
+            Frequency reference   :: STRidER.online
+            STR locus alt name    :: hTPO, TPO
+            Historical bracketing :: [AATG]9
+            ##Metadata-END##
+FEATURES             Location/Qualifiers
+     source          1..208
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9606"
+     misc_feature    1..178
+                     /note="Promega PowerSeq 46GY System"
+     misc_feature    77..208
+                     /note="Applied Biosystems Precision ID GlobalFiler NGS STR
+                     Panel v2"
+     repeat_region   119..168
+                     /note="minimum range"
+                     /rpt_type=tandem
+                     /satellite="microsatellite:TPOX"
+     misc_feature    125..165
+                     /note="Verogen ForenSeq DNA Signature Prep Kit"
+ORIGIN      
+        1 cactggcctg tgggtccccc catagatcgt aagcccagga ggaagggctg tgtttcaggg
+       61 ctgtgatcac tagcacccag aaccgtcgac tggcacagaa caggcactta gggaaccctc
+      121 actgaatgaa tgaatgaatg aatgaatgaa tgaatgaatg tttgggcaaa taaacgctga
+      181 caaggacaga agggcctagc gggaaggg
+//
+
+LOCUS       MF044250                 174 bp    DNA     linear   PRI 08-JUL-2022
+DEFINITION  Homo sapiens microsatellite TPOX 8 TGAA[8]_-50G>T FS,PS sequence.
+ACCESSION   MF044250
+VERSION     MF044250.2
+DBLINK      BioProject: PRJNA380554
+KEYWORDS    STRSeq, STR, TPOX.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 174)
+  AUTHORS   Gettings,K.B., Borsuk,L.A., Ballard,D., Bodner,M., Budowle,B.,
+            Devesse,L., King,J., Parson,W., Phillips,C. and Vallone,P.M.
+  TITLE     STRSeq: A catalog of sequence diversity at human identification
+            Short Tandem Repeat loci
+  JOURNAL   Forensic Sci Int Genet 31, 111-117 (2017)
+   PUBMED   28888135
+REFERENCE   2  (bases 1 to 174)
+  AUTHORS   NIST,A.G.G.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (04-MAY-2017) Applied Genetics Group, National Institute
+            of Standards and Technology, 100 Bureau Drive, MS-8314,
+            Gaithersburg, MD 20899, USA
+COMMENT     On Jul 8, 2022 this sequence version replaced MF044250.1.
+            Annotation ('bracketing') of the repeat region is consistent with
+            the guidance of the ISFG (International Society of Forensic
+            Genetics), PMID: 26844919.  Lower case letters in the 'Bracketed
+            repeat' region below denote uncounted bases.   The given
+            length-based allele value was determined using the designated
+            length-based technology.  Variation in the length-based allele
+            between individuals or assays can result from indels in flanking
+            regions.  The length of reported sequence is dependent on the assay
+            and the quality of the flanking sequence. This information is
+            provided as part of the STR Sequencing Project (STRseq), a
+            collaborative effort of the international forensic DNA community.
+            The purpose of this project is to facilitate the description of
+            sequence-based STR alleles.  Additional resources can be found at
+            strseq.nist.gov.  For questions or feedback, please contact
+            strseq@nist.gov.  Allele frequency data can be accessed in the
+            strider.online database.
+            
+            ##HumanSTR-START##
+            Sequence attribution  :: Applied Genetics Group, NIST
+            STR locus name        :: TPOX
+            Length-based allele   :: 8
+            Minimum range bracket :: TGAA[8]
+            Bracketed record seq. :: TGAA[8]_-50G>T
+            Sequencing technology :: MiSeq FGx
+            Sequencing assay code :: FS,PS
+            Coverage              :: >30X
+            Length-based tech.    :: PowerPlex Fusion,ABI3500xl
+            Assembly              :: GRCh38 (GCF_000001405)
+            Chromosome            :: 2
+            Ref. seq. accession   :: NC_000002.12
+            Chrom. location       :: 1489529..1489702
+            ISFG minimum range    :: 1489647..1489692
+            Frequency reference   :: STRidER.online
+            STR locus alt name    :: hTPO, TPO
+            Historical bracketing :: [AATG]8
+            ##Metadata-END##
+FEATURES             Location/Qualifiers
+     source          1..174
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9606"
+     misc_feature    1..174
+                     /note="Promega PowerSeq 46GY System"
+     variation       73
+                     /note="-50G>T"
+                     /db_xref="dbSNP:rs149212737"
+     repeat_region   119..164
+                     /note="minimum range"
+                     /rpt_type=tandem
+                     /satellite="microsatellite:TPOX"
+     misc_feature    125..161
+                     /note="Verogen ForenSeq DNA Signature Prep Kit"
+ORIGIN      
+        1 cactggcctg tgggtccccc catagatcgt aagcccagga ggaagggctg tgtttcaggg
+       61 ctgtgatcac tatcacccag aaccgtcgac tggcacagaa caggcactta gggaaccctc
+      121 actgaatgaa tgaatgaatg aatgaatgaa tgaatgtttg ggcaaataaa cgct
+//
+
+LOCUS       MF044248                 204 bp    DNA     linear   PRI 08-JUL-2022
+DEFINITION  Homo sapiens microsatellite TPOX 8 TGAA[8] FS,GF,PS sequence.
+ACCESSION   MF044248
+VERSION     MF044248.3
+DBLINK      BioProject: PRJNA380554
+KEYWORDS    STRSeq, STR, TPOX.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 204)
+  AUTHORS   Gettings,K.B., Borsuk,L.A., Ballard,D., Bodner,M., Budowle,B.,
+            Devesse,L., King,J., Parson,W., Phillips,C. and Vallone,P.M.
+  TITLE     STRSeq: A catalog of sequence diversity at human identification
+            Short Tandem Repeat loci
+  JOURNAL   Forensic Sci Int Genet 31, 111-117 (2017)
+   PUBMED   28888135
+REFERENCE   2  (bases 1 to 204)
+  AUTHORS   NIST,A.G.G.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (04-MAY-2017) Applied Genetics Group, National Institute
+            of Standards and Technology, 100 Bureau Drive, MS-8314,
+            Gaithersburg, MD 20899, USA
+COMMENT     On Jul 8, 2022 this sequence version replaced MF044248.2.
+            Annotation ('bracketing') of the repeat region is consistent with
+            the guidance of the ISFG (International Society of Forensic
+            Genetics), PMID: 26844919.  Lower case letters in the 'Bracketed
+            repeat' region below denote uncounted bases.   The given
+            length-based allele value was determined using the designated
+            length-based technology.  Variation in the length-based allele
+            between individuals or assays can result from indels in flanking
+            regions.  The length of reported sequence is dependent on the assay
+            and the quality of the flanking sequence. This information is
+            provided as part of the STR Sequencing Project (STRseq), a
+            collaborative effort of the international forensic DNA community.
+            The purpose of this project is to facilitate the description of
+            sequence-based STR alleles.  Additional resources can be found at
+            strseq.nist.gov.  For questions or feedback, please contact
+            strseq@nist.gov.  Allele frequency data can be accessed in the
+            strider.online database.
+            
+            ##HumanSTR-START##
+            Sequence attribution  :: Applied Genetics Group, NIST
+            STR locus name        :: TPOX
+            Length-based allele   :: 8
+            Minimum range bracket :: TGAA[8]
+            Bracketed record seq. :: TGAA[8]
+            Sequencing technology :: MiSeq FGx
+            Sequencing assay code :: FS,GF,PS
+            Coverage              :: >30X
+            Length-based tech.    :: PowerPlex Fusion,ABI3500xl
+            Assembly              :: GRCh38 (GCF_000001405)
+            Chromosome            :: 2
+            Ref. seq. accession   :: NC_000002.12
+            Chrom. location       :: 1489529..1489732
+            ISFG minimum range    :: 1489647..1489692
+            Frequency reference   :: STRidER.online
+            STR locus alt name    :: hTPO, TPO
+            Historical bracketing :: [AATG]8
+            ##Metadata-END##
+FEATURES             Location/Qualifiers
+     source          1..204
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9606"
+     misc_feature    1..174
+                     /note="Promega PowerSeq 46GY System"
+     misc_feature    77..204
+                     /note="Applied Biosystems Precision ID GlobalFiler NGS STR
+                     Panel v2"
+     repeat_region   119..164
+                     /note="minimum range"
+                     /rpt_type=tandem
+                     /satellite="microsatellite:TPOX"
+     misc_feature    125..161
+                     /note="Verogen ForenSeq DNA Signature Prep Kit"
+ORIGIN      
+        1 cactggcctg tgggtccccc catagatcgt aagcccagga ggaagggctg tgtttcaggg
+       61 ctgtgatcac tagcacccag aaccgtcgac tggcacagaa caggcactta gggaaccctc
+      121 actgaatgaa tgaatgaatg aatgaatgaa tgaatgtttg ggcaaataaa cgctgacaag
+      181 gacagaaggg cctagcggga aggg
+//
+
+LOCUS       OL410602                  52 bp    DNA     linear   PRI 16-NOV-2021
+DEFINITION  Homo sapiens microsatellite TPOX 10 [AATG]10 rs1370060017 FS
+            sequence.
+ACCESSION   OL410602
+VERSION     OL410602.1
+DBLINK      BioProject: PRJNA380554
+KEYWORDS    STRSeq; STR; TPOX.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 52)
+  AUTHORS   Gettings,K.B., Borsuk,L.A., Ballard,D., Bodner,M., Budowle,B.,
+            Devesse,L., King,J., Parson,W., Phillips,C. and Vallone,P.M.
+  TITLE     STRSeq: A catalog of sequence diversity at human identification
+            Short Tandem Repeat loci
+  JOURNAL   Forensic Sci Int Genet 31, 111-117 (2017)
+   PUBMED   28888135
+REFERENCE   2  (bases 1 to 52)
+  AUTHORS   University of Santiago de Compostela,F.G.U.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (05-NOV-2021) Forensic Genetics Unit, Institute of
+            Forensic Sciences, University of Santiago de Compostela, Calle San
+            Fransisco S/N, Santiago de Compostela, Galicia 15705, Spain
+COMMENT     Annotation ('bracketing') of the repeat region is consistent with
+            the guidance of the ISFG (International Society of Forensic
+            Genetics), PMID: 26844919.  Lower case letters in the 'Bracketed
+            repeat' region below denote uncounted bases.   The given
+            length-based allele value was determined using the designated
+            length-based technology.  Variation in the length-based allele
+            between individuals or assays can result from indels in flanking
+            regions.  The length of reported sequence is dependent on the assay
+            and the quality of the flanking sequence.   Sequencing assays are
+            coded as Illumina ForenSeq DNA Signature Prep Kit (FS), Applied
+            Biosystems Precision ID GlobalFiler NGS STR Panel v2 (GF), and
+            Promega PowerSeq 46GY System (PS). This information is provided as
+            part of the STR Sequencing Project (STRseq), a collaborative effort
+            of the international forensic DNA community.  The purpose of this
+            project is to facilitate the description of sequence-based STR
+            alleles.  For questions or feedback, please contact
+            strseq@nist.gov.  Allele frequency data can be accessed in the
+            strider.online database.
+            
+            ##HumanSTR-START##
+            STR locus name        :: TPOX
+            Length-based allele   :: 10
+            Bracketed repeat      :: [AATG]10
+            Sequencing technology :: MiSeq FGx
+            Sequencing assay code :: FS
+            Coverage              :: >30X
+            Length-based tech.    :: Not reported. Allele length inferred from
+                                     sequence.
+            Assembly              :: GRCh38 (GCF_000001405)
+            Chromosome            :: 2
+            RefSeq Accession      :: NC_000002.12
+            Chrom. Location       :: 1489649..1489692
+            Repeat Location       :: 1489653..1489684
+            Cytogenetic Location  :: 2p25.3
+            ##HumanSTR-END##
+FEATURES             Location/Qualifiers
+     source          1..52
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9606"
+     misc_feature    1..4
+                     /note="inferred from reference"
+     misc_feature    5..49
+                     /note="Illumina ForenSeq DNA Signature Prep Kit"
+     repeat_region   5..48
+                     /rpt_type=tandem
+                     /satellite="microsatellite:TPOX"
+     variation       46..47
+                     /note="del TGTT;
+                     NA"
+                     /db_xref="dbSNP:rs1370060017"
+     misc_feature    50..52
+                     /note="inferred from reference"
+ORIGIN      
+        1 actgaatgaa tgaatgaatg aatgaatgaa tgaatgaatg aatgaatggg ca
+//
+
+LOCUS       OK330025                 178 bp    DNA     linear   PRI 16-NOV-2021
+DEFINITION  Homo sapiens microsatellite TPOX 9 [AATG]9 rs149212737 PS sequence.
+ACCESSION   OK330025
+VERSION     OK330025.1
+DBLINK      BioProject: PRJNA380554
+KEYWORDS    STRSeq; STR; TPOX.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 178)
+  AUTHORS   Gettings,K.B., Borsuk,L.A., Ballard,D., Bodner,M., Budowle,B.,
+            Devesse,L., King,J., Parson,W., Phillips,C. and Vallone,P.M.
+  TITLE     STRSeq: A catalog of sequence diversity at human identification
+            Short Tandem Repeat loci
+  JOURNAL   Forensic Sci Int Genet 31, 111-117 (2017)
+   PUBMED   28888135
+REFERENCE   2  (bases 1 to 178)
+  AUTHORS   National Institute Standards Technology,A.G.G.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (28-SEP-2021) Applied Genetics Group, National Institute
+            of Standards and Technology, 100 Bureau Drive, MS-8314,
+            Gaithersburg, Maryland 20899, United States of America
+COMMENT     Annotation ('bracketing') of the repeat region is consistent with
+            the guidance of the ISFG (International Society of Forensic
+            Genetics), PMID: 26844919.  Lower case letters in the 'Bracketed
+            repeat' region below denote uncounted bases.   The given
+            length-based allele value was determined using the designated
+            length-based technology.  Variation in the length-based allele
+            between individuals or assays can result from indels in flanking
+            regions.  The length of reported sequence is dependent on the assay
+            and the quality of the flanking sequence.   Sequencing assays are
+            coded as Illumina ForenSeq DNA Signature Prep Kit (FS), Applied
+            Biosystems Precision ID GlobalFiler NGS STR Panel v2 (GF), and
+            Promega PowerSeq 46GY System (PS). This information is provided as
+            part of the STR Sequencing Project (STRseq), a collaborative effort
+            of the international forensic DNA community.  The purpose of this
+            project is to facilitate the description of sequence-based STR
+            alleles.  For questions or feedback, please contact
+            strseq@nist.gov.  Allele frequency data can be accessed in the
+            strider.online database.
+            
+            ##HumanSTR-START##
+            STR locus name        :: TPOX
+            Length-based allele   :: 9
+            Bracketed repeat      :: [AATG]9
+            Sequencing technology :: MiSeq FGx
+            Sequencing assay code :: PS
+            Coverage              :: >30X
+            Length-based tech.    :: "PowerPlex Fusion 6C, 3500xl"
+            Assembly              :: GRCh38 (GCF_000001405)
+            Chromosome            :: 2
+            RefSeq Accession      :: NC_000002.12
+            Chrom. Location       :: 1489529..1489702
+            Repeat Location       :: 1489653..1489684
+            Cytogenetic Location  :: 2p25.3
+            ##HumanSTR-END##
+FEATURES             Location/Qualifiers
+     source          1..178
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9606"
+     misc_feature    1..178
+                     /note="Promega PowerSeq 46GY System"
+     variation       73
+                     /note="-52 G>T"
+                     /db_xref="dbSNP:rs149212737"
+     repeat_region   125..160
+                     /rpt_type=tandem
+                     /satellite="microsatellite:TPOX"
+ORIGIN      
+        1 cactggcctg tgggtccccc catagatcgt aagcccagga ggaagggctg tgtttcaggg
+       61 ctgtgatcac tatcacccag aaccgtcgac tggcacagaa caggcactta gggaaccctc
+      121 actgaatgaa tgaatgaatg aatgaatgaa tgaatgaatg tttgggcaaa taaacgct
+//
+
+LOCUS       MZ325997                 186 bp    DNA     linear   PRI 01-SEP-2021
+DEFINITION  Homo sapiens microsatellite TPOX 11 [AATG]11 rs115644759 PS
+            sequence.
+ACCESSION   MZ325997
+VERSION     MZ325997.1
+DBLINK      BioProject: PRJNA380554
+KEYWORDS    STRSeq; STR; TPOX.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 186)
+  AUTHORS   Gettings,K.B., Borsuk,L.A., Ballard,D., Bodner,M., Budowle,B.,
+            Devesse,L., King,J., Parson,W., Phillips,C. and Vallone,P.M.
+  TITLE     STRSeq: A catalog of sequence diversity at human identification
+            Short Tandem Repeat loci
+  JOURNAL   Forensic Sci Int Genet 31, 111-117 (2017)
+   PUBMED   28888135
+REFERENCE   2  (bases 1 to 186)
+  AUTHORS   Holzl-Muller,P., Bodner,M., Berger,B. and Parson,W.
+  TITLE     Exploring STR sequencing for forensic DNA intelligence databasing
+            using the Austrian National DNA Database as an example
+  JOURNAL   Int J Legal Med (2021) In press
+   PUBMED   34436655
+  REMARK    Publication Status: Available-Online prior to print
+REFERENCE   3  (bases 1 to 186)
+  AUTHORS   Medical University of Innsbruck,Io.L.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (01-JUN-2021) Institute of Legal Medicine, Medical
+            University of Innsbruck, Mullerstrasse 44, Innsbruck, Tyrol 6020,
+            Austria
+COMMENT     Annotation ('bracketing') of the repeat region is consistent with
+            the guidance of the ISFG (International Society of Forensic
+            Genetics), PMID: 26844919.  Lower case letters in the 'Bracketed
+            repeat' region below denote uncounted bases.   The given
+            length-based allele value was determined using the designated
+            length-based technology.  Variation in the length-based allele
+            between individuals or assays can result from indels in flanking
+            regions.  The length of reported sequence is dependent on the assay
+            and the quality of the flanking sequence.   Sequencing assays are
+            coded as Illumina ForenSeq DNA Signature Prep Kit (FS), Applied
+            Biosystems Precision ID GlobalFiler NGS STR Panel v2 (GF), and
+            Promega PowerSeq 46GY System (PS). This information is provided as
+            part of the STR Sequencing Project (STRseq), a collaborative effort
+            of the international forensic DNA community.  The purpose of this
+            project is to facilitate the description of sequence-based STR
+            alleles.  For questions or feedback, please contact
+            strseq@nist.gov.  Allele frequency data can be accessed in the
+            strider.online database.
+            
+            ##HumanSTR-START##
+            STR locus name        :: TPOX
+            Length-based allele   :: 11
+            Bracketed repeat      :: [AATG]11
+            Sequencing technology :: MiSeq FGx
+            Sequencing assay code :: PS
+            Coverage              :: >30X
+            Length-based tech.    :: "3500XL, AmpFlSTR NGM SElect Express Kit &
+                                     PowerPlex 16 System "
+            Assembly              :: GRCh38 (GCF_000001405)
+            Chromosome            :: 2
+            RefSeq Accession      :: NC_000002.12
+            Chrom. Location       :: 1489532..1489698
+            Repeat Location       :: 1489653..1489684
+            Cytogenetic Location  :: 2p25.3
+            ##HumanSTR-END##
+FEATURES             Location/Qualifiers
+     source          1..186
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9606"
+     misc_feature    1..186
+                     /note="Promega PowerSeq 46GY System"
+     variation       28
+                     /note="C/T SNP;
+                     NA"
+                     /db_xref="dbSNP:rs115644759"
+     repeat_region   125..168
+                     /rpt_type=tandem
+                     /satellite="microsatellite:TPOX"
+ORIGIN      
+        1 cactggcctg tgggtccccc catagattgt aagcccagga ggaagggctg tgtttcaggg
+       61 ctgtgatcac tagcacccag aaccgtcgac tggcacagaa caggcactta gggaaccctc
+      121 actgaatgaa tgaatgaatg aatgaatgaa tgaatgaatg aatgaatgtt tgggcaaata
+      181 aacgct
+//
+
+LOCUS       MZ325945                 170 bp    DNA     linear   PRI 29-JUN-2021
+DEFINITION  Homo sapiens microsatellite TPOX 7 [AATG]7 PS sequence.
+ACCESSION   MZ325945
+VERSION     MZ325945.1
+DBLINK      BioProject: PRJNA380554
+KEYWORDS    STRSeq; STR; TPOX.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 170)
+  AUTHORS   Gettings,K.B., Borsuk,L.A., Ballard,D., Bodner,M., Budowle,B.,
+            Devesse,L., King,J., Parson,W., Phillips,C. and Vallone,P.M.
+  TITLE     STRSeq: A catalog of sequence diversity at human identification
+            Short Tandem Repeat loci
+  JOURNAL   Forensic Sci Int Genet 31, 111-117 (2017)
+   PUBMED   28888135
+REFERENCE   2  (bases 1 to 170)
+  AUTHORS   Universidade Federal do Rio de Janeiro,Id.B.Ld.B.M.F.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (01-JUN-2021) Instituto de Biologia, Laboratorio de
+            Biologia Molecular Forense, Universidade Federal do Rio de Janeiro,
+            Av. Carlos Chagas Filho, 373, Ed. CCS, Bloco A, Sala A0-087, Rio de
+            Janeiro, RJ CEP 21.941-902, Brasil
+COMMENT     Annotation ('bracketing') of the repeat region is consistent with
+            the guidance of the ISFG (International Society of Forensic
+            Genetics), PMID: 26844919.  Lower case letters in the 'Bracketed
+            repeat' region below denote uncounted bases.   The given
+            length-based allele value was determined using the designated
+            length-based technology.  Variation in the length-based allele
+            between individuals or assays can result from indels in flanking
+            regions.  The length of reported sequence is dependent on the assay
+            and the quality of the flanking sequence.   Sequencing assays are
+            coded as Illumina ForenSeq DNA Signature Prep Kit (FS), Applied
+            Biosystems Precision ID GlobalFiler NGS STR Panel v2 (GF), and
+            Promega PowerSeq 46GY System (PS). This information is provided as
+            part of the STR Sequencing Project (STRseq), a collaborative effort
+            of the international forensic DNA community.  The purpose of this
+            project is to facilitate the description of sequence-based STR
+            alleles.  For questions or feedback, please contact
+            strseq@nist.gov.  Allele frequency data can be accessed in the
+            strider.online database.
+            
+            ##HumanSTR-START##
+            STR locus name        :: TPOX
+            Length-based allele   :: 7
+            Bracketed repeat      :: [AATG]7
+            Sequencing technology :: MiSeq FGx
+            Sequencing assay code :: PS
+            Coverage              :: >30X
+            Length-based tech.    :: Not reported. Allele length inferred from
+                                     sequence.
+            Assembly              :: GRCh38 (GCF_000001405)
+            Chromosome            :: 2
+            RefSeq Accession      :: NC_000002.12
+            Chrom. Location       :: 1489529..1489702
+            Repeat Location       :: 1489653..1489684
+            Cytogenetic Location  :: 2p25.3
+            ##HumanSTR-END##
+FEATURES             Location/Qualifiers
+     source          1..170
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9606"
+     misc_feature    1..170
+                     /note="Promega PowerSeq 46GY System"
+     repeat_region   125..152
+                     /note="NA"
+                     /rpt_type=tandem
+                     /satellite="microsatellite:TPOX"
+ORIGIN      
+        1 cactggcctg tgggtccccc catagatcgt aagcccagga ggaagggctg tgtttcaggg
+       61 ctgtgatcac tagcacccag aaccgtcgac tggcacagaa caggcactta gggaaccctc
+      121 actgaatgaa tgaatgaatg aatgaatgaa tgtttgggca aataaacgct
+//
+
+LOCUS       MG988077                 187 bp    DNA     linear   PRI 04-SEP-2018
+DEFINITION  Homo sapiens microsatellite TPOX 13 [AATG]13 sequence.
+ACCESSION   MG988077
+VERSION     MG988077.1
+DBLINK      BioProject: PRJNA380554
+KEYWORDS    STRSeq; STR; TPOX.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 187)
+  AUTHORS   Gettings,K.B., Borsuk,L.A., Ballard,D., Bodner,M., Budowle,B.,
+            Devesse,L., King,J., Parson,W., Phillips,C. and Vallone,P.M.
+  TITLE     STRSeq: A catalog of sequence diversity at human identification
+            Short Tandem Repeat loci
+  JOURNAL   Forensic Sci Int Genet 31, 111-117 (2017)
+   PUBMED   28888135
+REFERENCE   2  (bases 1 to 187)
+  AUTHORS   NIST,A.G.G.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-FEB-2018) Applied Genetics Group, National Institute
+            of Standards and Technology, 100 Bureau Drive, MS-8314,
+            Gaithersburg, Maryland 20899, United States of America
+COMMENT     Annotation ('bracketing') of the repeat region is consistent with
+            the guidance of the ISFG (International Society of Forensic
+            Genetics), PMID: 26844919.  Lower case letters in the 'Bracketed
+            repeat' region below denote uncounted bases.   The given
+            length-based allele value was determined using the designated
+            length-based technology.  Variation in the length-based allele
+            between individuals or assays can result from indels in flanking
+            regions.  The length of reported sequence is dependent on the assay
+            and the quality of the flanking sequence. This information is
+            provided as part of the STR Sequencing Project (STRseq), a
+            collaborative effort of the international forensic DNA community.
+            The purpose of this project is to facilitate the description of
+            sequence-based STR alleles.  Additional resources can be found at
+            strseq.nist.gov.  For questions or feedback, please contact
+            strseq@nist.gov.  Allele frequency data can be accessed in the
+            strider.online database.
+            
+            ##HumanSTR-START##
+            STR locus name        :: TPOX
+            Length-based allele   :: 13
+            Bracketed repeat      :: [AATG]13
+            Sequencing technology :: ForenSeq, MiSeq FGx; PowerSeq Auto, MiSeq
+            Coverage              :: >30X
+            Length-based tech.    :: "PowerPlex Fusion, 3130xl"
+            Assembly              :: GRCh38 (GCF_000001405)
+            Chromosome            :: 2
+            RefSeq Accession      :: NC_000002.12
+            Chrom. Location       :: 1489532..1489698
+            Repeat Location       :: 1489653..1489684
+            Cytogenetic Location  :: 2p25.3
+            ##HumanSTR-END##
+FEATURES             Location/Qualifiers
+     source          1..187
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9606"
+     misc_feature    1..187
+                     /note="Promega PowerSeq Sequence"
+     misc_feature    120..178
+                     /note="Illumina ForenSeq Sequence"
+     repeat_region   122..173
+                     /rpt_type=tandem
+                     /satellite="microsatellite:TPOX"
+ORIGIN      
+        1 tggcctgtgg gtccccccat agatcgtaag cccaggagga agggctgtgt ttcagggctg
+       61 tgatcactag cacccagaac cgtcgactgg cacagaacag gcacttaggg aaccctcact
+      121 gaatgaatga atgaatgaat gaatgaatga atgaatgaat gaatgaatga atgtttgggc
+      181 aaataaa
+//
+
+LOCUS       MG988076                  51 bp    DNA     linear   PRI 04-SEP-2018
+DEFINITION  Homo sapiens microsatellite TPOX 11 [AATG]10 TATG sequence.
+ACCESSION   MG988076
+VERSION     MG988076.1
+DBLINK      BioProject: PRJNA380554
+KEYWORDS    STRSeq; STR; TPOX.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 51)
+  AUTHORS   Gettings,K.B., Borsuk,L.A., Ballard,D., Bodner,M., Budowle,B.,
+            Devesse,L., King,J., Parson,W., Phillips,C. and Vallone,P.M.
+  TITLE     STRSeq: A catalog of sequence diversity at human identification
+            Short Tandem Repeat loci
+  JOURNAL   Forensic Sci Int Genet 31, 111-117 (2017)
+   PUBMED   28888135
+REFERENCE   2  (bases 1 to 51)
+  AUTHORS   NIST,A.G.G.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-FEB-2018) Applied Genetics Group, National Institute
+            of Standards and Technology, 100 Bureau Drive, MS-8314,
+            Gaithersburg, Maryland 20899, United States of America
+COMMENT     Annotation ('bracketing') of the repeat region is consistent with
+            the guidance of the ISFG (International Society of Forensic
+            Genetics), PMID: 26844919.  Lower case letters in the 'Bracketed
+            repeat' region below denote uncounted bases.   The given
+            length-based allele value was determined using the designated
+            length-based technology.  Variation in the length-based allele
+            between individuals or assays can result from indels in flanking
+            regions.  The length of reported sequence is dependent on the assay
+            and the quality of the flanking sequence. This information is
+            provided as part of the STR Sequencing Project (STRseq), a
+            collaborative effort of the international forensic DNA community.
+            The purpose of this project is to facilitate the description of
+            sequence-based STR alleles.  Additional resources can be found at
+            strseq.nist.gov.  For questions or feedback, please contact
+            strseq@nist.gov.  Allele frequency data can be accessed in the
+            strider.online database.
+            
+            ##HumanSTR-START##
+            STR locus name        :: TPOX
+            Length-based allele   :: 11
+            Bracketed repeat      :: [AATG]10 TATG
+            Sequencing technology :: ForenSeq, MiSeq FGx
+            Coverage              :: >30X
+            Length-based tech.    :: "PowerPlex Fusion, 3130xl"
+            Assembly              :: GRCh38 (GCF_000001405)
+            Chromosome            :: 2
+            RefSeq Accession      :: NC_000002.12
+            Chrom. Location       :: 1489651..1489689
+            Repeat Location       :: 1489653..1489684
+            Cytogenetic Location  :: 2p25.3
+            ##HumanSTR-END##
+FEATURES             Location/Qualifiers
+     source          1..51
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9606"
+     misc_feature    1..51
+                     /note="Illumina ForenSeq Sequence"
+     repeat_region   3..46
+                     /rpt_type=tandem
+                     /satellite="microsatellite:TPOX"
+ORIGIN      
+        1 tgaatgaatg aatgaatgaa tgaatgaatg aatgaatgaa tgtatgtttg g
+//
+
+LOCUS       MF044254                 175 bp    DNA     linear   PRI 04-SEP-2018
+DEFINITION  Homo sapiens microsatellite TPOX 10 [AATG]10 rs13422969 sequence.
+ACCESSION   MF044254
+VERSION     MF044254.1
+DBLINK      BioProject: PRJNA380554
+KEYWORDS    STRSeq, STR, TPOX.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 175)
+  AUTHORS   Gettings,K.B., Borsuk,L.A., Ballard,D., Bodner,M., Budowle,B.,
+            Devesse,L., King,J., Parson,W., Phillips,C. and Vallone,P.M.
+  TITLE     STRSeq: A catalog of sequence diversity at human identification
+            Short Tandem Repeat loci
+  JOURNAL   Forensic Sci Int Genet 31, 111-117 (2017)
+   PUBMED   28888135
+REFERENCE   2  (bases 1 to 175)
+  AUTHORS   NIST,A.G.G.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (04-MAY-2017) Applied Genetics Group, National Institute
+            of Standards and Technology, 100 Bureau Drive, MS-8314,
+            Gaithersburg, MD 20899, USA
+COMMENT     Annotation ('bracketing') of the repeat region is consistent with
+            the guidance of the ISFG (International Society of Forensic
+            Genetics), PMID: 26844919.  Lower case letters in the 'Bracketed
+            repeat' region below denote uncounted bases.   The given
+            length-based allele value was determined using the designated
+            length-based technology.  Variation in the length-based allele
+            between individuals or assays can result from indels in flanking
+            regions.  The length of reported sequence is dependent on the assay
+            and the quality of the flanking sequence. This information is
+            provided as part of the STR Sequencing Project (STRseq), a
+            collaborative effort of the international forensic DNA community.
+            The purpose of this project is to facilitate the description of
+            sequence-based STR alleles.  Additional resources can be found at
+            strseq.nist.gov.  For questions or feedback, please contact
+            strseq@nist.gov.  Allele frequency data can be accessed in the
+            strider.online database.
+            
+            ##HumanSTR-START##
+            STR locus name        :: TPOX
+            Length-based allele   :: 10
+            Bracketed repeat      :: [AATG]10
+            Sequencing technology :: ForenSeq, MiSeq FGx; PowerSeq Auto, MiSeq
+            Coverage              :: >30X
+            Length-based tech.    :: PowerPlex Fusion, ABI3500xl
+            Assembly              :: GRCh38 (GCF_000001405)
+            Chromosome            :: 2
+            RefSeq Accession      :: NC_000002.12
+            Chrom. Location       :: 1489532..1489698
+            Repeat Location       :: 1489653..1489684
+            Cytogenetic Location  :: 2p25.3
+            ##HumanSTR-END##
+FEATURES             Location/Qualifiers
+     source          1..175
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9606"
+     misc_feature    1..175
+                     /note="Promega PowerSeq Sequence"
+     variation       13
+                     /note="A/C SNP"
+                     /db_xref="dbSNP:rs13422969"
+     misc_feature    120..166
+                     /note="Illumina ForenSeq Sequence"
+     repeat_region   122..161
+                     /rpt_type=tandem
+                     /satellite="microsatellite:TPOX"
+ORIGIN      
+        1 tggcctgtgg gtacccccat agatcgtaag cccaggagga agggctgtgt ttcagggctg
+       61 tgatcactag cacccagaac cgtcgactgg cacagaacag gcacttaggg aaccctcact
+      121 gaatgaatga atgaatgaat gaatgaatga atgaatgaat gtttgggcaa ataaa
+//
+
+LOCUS       MF044249                 167 bp    DNA     linear   PRI 04-SEP-2018
+DEFINITION  Homo sapiens microsatellite TPOX 8 [AATG]8 rs115644759 sequence.
+ACCESSION   MF044249
+VERSION     MF044249.1
+DBLINK      BioProject: PRJNA380554
+KEYWORDS    STRSeq, STR, TPOX.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 167)
+  AUTHORS   Gettings,K.B., Borsuk,L.A., Ballard,D., Bodner,M., Budowle,B.,
+            Devesse,L., King,J., Parson,W., Phillips,C. and Vallone,P.M.
+  TITLE     STRSeq: A catalog of sequence diversity at human identification
+            Short Tandem Repeat loci
+  JOURNAL   Forensic Sci Int Genet 31, 111-117 (2017)
+   PUBMED   28888135
+REFERENCE   2  (bases 1 to 167)
+  AUTHORS   NIST,A.G.G.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (04-MAY-2017) Applied Genetics Group, National Institute
+            of Standards and Technology, 100 Bureau Drive, MS-8314,
+            Gaithersburg, MD 20899, USA
+COMMENT     Annotation ('bracketing') of the repeat region is consistent with
+            the guidance of the ISFG (International Society of Forensic
+            Genetics), PMID: 26844919.  Lower case letters in the 'Bracketed
+            repeat' region below denote uncounted bases.   The given
+            length-based allele value was determined using the designated
+            length-based technology.  Variation in the length-based allele
+            between individuals or assays can result from indels in flanking
+            regions.  The length of reported sequence is dependent on the assay
+            and the quality of the flanking sequence. This information is
+            provided as part of the STR Sequencing Project (STRseq), a
+            collaborative effort of the international forensic DNA community.
+            The purpose of this project is to facilitate the description of
+            sequence-based STR alleles.  Additional resources can be found at
+            strseq.nist.gov.  For questions or feedback, please contact
+            strseq@nist.gov.  Allele frequency data can be accessed in the
+            strider.online database.
+            
+            ##HumanSTR-START##
+            STR locus name        :: TPOX
+            Length-based allele   :: 8
+            Bracketed repeat      :: [AATG]8
+            Sequencing technology :: ForenSeq, MiSeq FGx; PowerSeq Auto, MiSeq
+            Coverage              :: >30X
+            Length-based tech.    :: PowerPlex Fusion, ABI3500xl
+            Assembly              :: GRCh38 (GCF_000001405)
+            Chromosome            :: 2
+            RefSeq Accession      :: NC_000002.12
+            Chrom. Location       :: 1489532..1489698
+            Repeat Location       :: 1489653..1489684
+            Cytogenetic Location  :: 2p25.3
+            ##HumanSTR-END##
+FEATURES             Location/Qualifiers
+     source          1..167
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9606"
+     misc_feature    1..167
+                     /note="Promega PowerSeq Sequence"
+     variation       25
+                     /note="C/T SNP"
+                     /db_xref="dbSNP:rs115644759"
+     misc_feature    120..158
+                     /note="Illumina ForenSeq Sequence"
+     repeat_region   122..153
+                     /rpt_type=tandem
+                     /satellite="microsatellite:TPOX"
+ORIGIN      
+        1 tggcctgtgg gtccccccat agattgtaag cccaggagga agggctgtgt ttcagggctg
+       61 tgatcactag cacccagaac cgtcgactgg cacagaacag gcacttaggg aaccctcact
+      121 gaatgaatga atgaatgaat gaatgaatga atgtttgggc aaataaa
+//
+
+LOCUS       MF044247                 163 bp    DNA     linear   PRI 04-SEP-2018
+DEFINITION  Homo sapiens microsatellite TPOX 7 [AATG]7 rs115644759 sequence.
+ACCESSION   MF044247
+VERSION     MF044247.1
+DBLINK      BioProject: PRJNA380554
+KEYWORDS    STRSeq, STR, TPOX.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 163)
+  AUTHORS   Gettings,K.B., Borsuk,L.A., Ballard,D., Bodner,M., Budowle,B.,
+            Devesse,L., King,J., Parson,W., Phillips,C. and Vallone,P.M.
+  TITLE     STRSeq: A catalog of sequence diversity at human identification
+            Short Tandem Repeat loci
+  JOURNAL   Forensic Sci Int Genet 31, 111-117 (2017)
+   PUBMED   28888135
+REFERENCE   2  (bases 1 to 163)
+  AUTHORS   NIST,A.G.G.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (04-MAY-2017) Applied Genetics Group, National Institute
+            of Standards and Technology, 100 Bureau Drive, MS-8314,
+            Gaithersburg, MD 20899, USA
+COMMENT     Annotation ('bracketing') of the repeat region is consistent with
+            the guidance of the ISFG (International Society of Forensic
+            Genetics), PMID: 26844919.  Lower case letters in the 'Bracketed
+            repeat' region below denote uncounted bases.   The given
+            length-based allele value was determined using the designated
+            length-based technology.  Variation in the length-based allele
+            between individuals or assays can result from indels in flanking
+            regions.  The length of reported sequence is dependent on the assay
+            and the quality of the flanking sequence. This information is
+            provided as part of the STR Sequencing Project (STRseq), a
+            collaborative effort of the international forensic DNA community.
+            The purpose of this project is to facilitate the description of
+            sequence-based STR alleles.  Additional resources can be found at
+            strseq.nist.gov.  For questions or feedback, please contact
+            strseq@nist.gov.  Allele frequency data can be accessed in the
+            strider.online database.
+            
+            ##HumanSTR-START##
+            STR locus name        :: TPOX
+            Length-based allele   :: 7
+            Bracketed repeat      :: [AATG]7
+            Sequencing technology :: ForenSeq, MiSeq FGx; PowerSeq Auto, MiSeq
+            Coverage              :: >30X
+            Length-based tech.    :: PowerPlex Fusion, ABI3500xl
+            Assembly              :: GRCh38 (GCF_000001405)
+            Chromosome            :: 2
+            RefSeq Accession      :: NC_000002.12
+            Chrom. Location       :: 1489532..1489698
+            Repeat Location       :: 1489653..1489684
+            Cytogenetic Location  :: 2p25.3
+            ##HumanSTR-END##
+FEATURES             Location/Qualifiers
+     source          1..163
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9606"
+     misc_feature    1..163
+                     /note="Promega PowerSeq Sequence"
+     variation       25
+                     /note="C/T SNP"
+                     /db_xref="dbSNP:rs115644759"
+     misc_feature    120..154
+                     /note="Illumina ForenSeq Sequence"
+     repeat_region   122..149
+                     /rpt_type=tandem
+                     /satellite="microsatellite:TPOX"
+ORIGIN      
+        1 tggcctgtgg gtccccccat agattgtaag cccaggagga agggctgtgt ttcagggctg
+       61 tgatcactag cacccagaac cgtcgactgg cacagaacag gcacttaggg aaccctcact
+      121 gaatgaatga atgaatgaat gaatgaatgt ttgggcaaat aaa
+//
+
+LOCUS       MF044246                 159 bp    DNA     linear   PRI 04-SEP-2018
+DEFINITION  Homo sapiens microsatellite TPOX 6 [AATG]6 sequence.
+ACCESSION   MF044246
+VERSION     MF044246.1
+DBLINK      BioProject: PRJNA380554
+KEYWORDS    STRSeq, STR, TPOX.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 159)
+  AUTHORS   Gettings,K.B., Borsuk,L.A., Ballard,D., Bodner,M., Budowle,B.,
+            Devesse,L., King,J., Parson,W., Phillips,C. and Vallone,P.M.
+  TITLE     STRSeq: A catalog of sequence diversity at human identification
+            Short Tandem Repeat loci
+  JOURNAL   Forensic Sci Int Genet 31, 111-117 (2017)
+   PUBMED   28888135
+REFERENCE   2  (bases 1 to 159)
+  AUTHORS   NIST,A.G.G.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (04-MAY-2017) Applied Genetics Group, National Institute
+            of Standards and Technology, 100 Bureau Drive, MS-8314,
+            Gaithersburg, MD 20899, USA
+COMMENT     Annotation ('bracketing') of the repeat region is consistent with
+            the guidance of the ISFG (International Society of Forensic
+            Genetics), PMID: 26844919.  Lower case letters in the 'Bracketed
+            repeat' region below denote uncounted bases.   The given
+            length-based allele value was determined using the designated
+            length-based technology.  Variation in the length-based allele
+            between individuals or assays can result from indels in flanking
+            regions.  The length of reported sequence is dependent on the assay
+            and the quality of the flanking sequence. This information is
+            provided as part of the STR Sequencing Project (STRseq), a
+            collaborative effort of the international forensic DNA community.
+            The purpose of this project is to facilitate the description of
+            sequence-based STR alleles.  Additional resources can be found at
+            strseq.nist.gov.  For questions or feedback, please contact
+            strseq@nist.gov.  Allele frequency data can be accessed in the
+            strider.online database.
+            
+            ##HumanSTR-START##
+            STR locus name        :: TPOX
+            Length-based allele   :: 6
+            Bracketed repeat      :: [AATG]6
+            Sequencing technology :: ForenSeq, MiSeq FGx; PowerSeq Auto, MiSeq
+            Coverage              :: >30X
+            Length-based tech.    :: PowerPlex Fusion, ABI3500xl
+            Assembly              :: GRCh38 (GCF_000001405)
+            Chromosome            :: 2
+            RefSeq Accession      :: NC_000002.12
+            Chrom. Location       :: 1489532..1489698
+            Repeat Location       :: 1489653..1489684
+            Cytogenetic Location  :: 2p25.3
+            ##HumanSTR-END##
+FEATURES             Location/Qualifiers
+     source          1..159
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9606"
+     misc_feature    1..159
+                     /note="Promega PowerSeq Sequence"
+     misc_feature    120..150
+                     /note="Illumina ForenSeq Sequence"
+     repeat_region   122..145
+                     /rpt_type=tandem
+                     /satellite="microsatellite:TPOX"
+ORIGIN      
+        1 tggcctgtgg gtccccccat agatcgtaag cccaggagga agggctgtgt ttcagggctg
+       61 tgatcactag cacccagaac cgtcgactgg cacagaacag gcacttaggg aaccctcact
+      121 gaatgaatga atgaatgaat gaatgtttgg gcaaataaa
+//
