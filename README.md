@@ -254,12 +254,6 @@ where:
 
 ```
 
-## Known bug
-
-When using the wrapper ('STRspy_run_v1.0.sh'), One might run into an issue. The parallel version of **STRspy_Parallel_v2.0_Args.sh** is unable to properly connect with "gnu parallel" and exits the workflow without mapping or further analysis steps of the pipeline. Solution to this, the user can choose the Normal version to avoid any crash. 
-
-***Tip: Its good practice to use pre-aligned bams for quicker outcomes.***
-
 
 ## Results from the publication
 
@@ -292,6 +286,13 @@ C.L.H. and R.K.K. are co-first authors. C.L.H. performed the ONT and Illumina se
 ## Funding
 
 This research was funded by the National Institute of Justice grant number 15PNIJ-22-GG-04414-MUMU).
+
+
+## Known bug
+
+When using the wrapper ('STRspy_run_v1.0.sh'), One might run into an issue. The parallel version of **STRspy_Parallel_v2.0_Args.sh** is unable to properly connect with "gnu parallel" and exits the workflow without mapping or further analysis steps of the pipeline. Solution to this, the user can choose the Normal version to avoid any crash. 
+
+***Tip: Its good practice to use pre-aligned bams for quicker outcomes.***
 
 
 ## Contacts
