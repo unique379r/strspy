@@ -1,4 +1,6 @@
+<p align="justify">
 # STRspy: a novel alignment and quantification-based state-of-the-art method, short tandem repeat (STR) detection calling tool designed specifically for long-read sequencing reads such as from Oxford nanopore technology (ONT) and PacBio.
+</p>
 
 # NEWS: We are pleased to announce our new release of STRspy i.e. 2.0 
 
