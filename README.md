@@ -44,9 +44,12 @@ Download Miniconda installer from here: https://docs.conda.io/en/latest/minicond
 
 ### Conda under linux environment
 
-`wget https://repo.anaconda.com/miniconda/Miniconda3-py39_4.9.2-Linux-x86_64.sh`
+```
+wget https://repo.anaconda.com/miniconda/Miniconda3-py39_4.9.2-Linux-x86_64.sh
 
-`bash Miniconda3-py39_4.9.2-Linux-x86_64.sh`
+bash Miniconda3-py39_4.9.2-Linux-x86_64.sh
+
+```
 
 Follow the instructions directed by the miniconda script
 
@@ -54,39 +57,52 @@ Follow the instructions directed by the miniconda script
 
 STRspy includes the installation of the following third-party software before it can be used.
 
-`gnu parallel >=20210222`
+```
+gnu parallel >=20210222
 
-`samtools >=v1.12`
+samtools >=v1.12
 
-`bedtools >=v2.30.0`
+bedtools >=v2.30.0
 
-`minimap2 >=v2.18-r1015`
+minimap2 >=v2.18-r1015
 
-`xatlas >=v0.2.1`
+xatlas >=v0.2.1
+```
 
 ### Clone the repository
 
-`git clone git@github.com:unique379r/strspy.git`
+```
+git clone git@github.com:unique379r/strspy.git
 
-`cd strspy`
+cd strspy
+```
 
 ### Create an environment
 
-`bash setup/STRspy_setup.sh`
+```
+bash setup/STRspy_setup.sh
+```
 
 ### Activate the environment
 
-`conda activate strspy_env`
+```
+conda activate strspy_env
+```
 
 ### Set up configuration
 
-`bash setup/MakeToolConfig.sh`
+```
+bash setup/MakeToolConfig.sh
 
-`mv UserToolsConfig.txt config/`
+mv UserToolsConfig.txt config/
+
+```
 
 ### deactivate the environment
 
-`conda deactivate`
+```
+conda deactivate
+```
 
 ## Quickstart
 
@@ -94,11 +110,14 @@ Modify the config files describing your data `config/InputConfig.txt`
 
 ## Run STRspy
 
-`cd strspy`
+```
+cd strspy
 
-`bash ./STRspy_run_v1.0.sh -h`
+bash ./STRspy_run_v1.0.sh -h
 
-`USAGE: bash ./STRspy_run_v1.0.sh config/InputConfig.txt config/ToolsConfig.txt`
+USAGE: bash ./STRspy_run_v1.0.sh config/InputConfig.txt config/ToolsConfig.txt
+
+```
 
 ## Running with test datasets
 
@@ -106,13 +125,17 @@ The testset is provided `testset.tar.gz` with the package for the quick start, h
 
 ### Extracting tar.gz Files
 
-`tar -xvf demodata/testset.tar.gz`
+```
+tar -xvf demodata/testset.tar.gz
+```
 
 ### Note: don't forget to change the config files & run the commands as instructed above
 
 Compare your test results with pre-computed outputs here
 
-`tar -xvf demodata/test_results.tar.gz`
+```
+tar -xvf demodata/test_results.tar.gz
+```
 
 ## InputConfig.txt
 
@@ -136,6 +159,8 @@ OUTPUT_DIR : A empty directory to write the results
 
 ## ToolsConfig.txt
 
+```
+
 BEDTOOLS 	=	../user/path/bedtools
 
 MINIMAP 	=	../user/path/minimap2
@@ -145,6 +170,8 @@ SAMTOOLS 	=	../user/path/samtools
 XATLAS 		=	../user/path/xatlas
 
 PARALLEL 	=	../user/path/parallel
+
+```
 
 ## Note
 
