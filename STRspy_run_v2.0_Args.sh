@@ -177,7 +177,7 @@ echo -e "#PARALLEL 			:" $PARALLEL
 ########################
 
 if [[ $ParallelJob == "parallel" ]] || [[ $ParallelJob == "Parallel" ]] || [[ $ParallelJob == "PARALLEL" ]] ; then
-	if [[ -f "STRspy_Parallel_v1.1_Args.sh" ]]; then
+	if [[ -f "src/STRspy_Parallel_v2.0_Args.sh" ]]; then
 		echo -e "\n"
 		echo -e "\t\t  ~ ~ ~ ~ Running STRspy ~ ~ ~ ~	 "
 		echo -e "\t\tAnalysis date:" `date`
@@ -190,7 +190,7 @@ if [[ $ParallelJob == "parallel" ]] || [[ $ParallelJob == "Parallel" ]] || [[ $P
 		exit 1;
 	fi
 else
-	if [[ -f "STRspy_Normal_v1.1_Args.sh" ]]; then
+	if [[ -f "src/STRspy_Normal_v2.0_Args.sh" ]]; then
 		echo -e "\n"
 		echo -e "\t\t  ~ ~ ~ ~ Running STRspy ~ ~ ~ ~	 "
 		echo -e "\t\tAnalysis date:" `date`
