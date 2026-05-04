@@ -491,7 +491,8 @@ done
 for i in *.bed
 do
     bedname=$(echo $i | sed 's/.bed//g')
-    awk -v OFS="\t" '{print $1,$2-500,$3+500,$4}' $i > "$bedname".500bp.bed
+    #awk -v OFS="\t" '{print $1,$2-500,$3+500,$4}' $i > "$bedname".500bp.bed
+	awk -v OFS="\t" '{start=$2-500; if(start<0) start=0; print $1,start,$3+500,$4}' $i > "$bedname".500bp.bed
 done
 
 #echo -e "convert bed to fasta"
