@@ -473,7 +473,9 @@ done
 #rm -rf D5S818.bed ## need to take a look
 if [[ -f "vWA.bed" ]]; then
         ## all of the STRs belongs to chr12 but one OK330027.1 has at chr13, why ? who knows !
-        awk -v OFS="\t" '{print $1,$3,$4,$5}' vWA.bed > temp && mv temp vWA.bed
+        #awk -v OFS="\t" '{print $1,$3,$4,$5}' vWA.bed > temp && mv temp vWA.bed
+		## Bug 3 reported 
+		echo -e "chr12\t5983949\t5984049\tvWA" > vWA.bed
 fi
 
 if [[ -f "TPOX.bed" ]]; then
@@ -492,6 +494,7 @@ for i in *.bed
 do
     bedname=$(echo $i | sed 's/.bed//g')
     #awk -v OFS="\t" '{print $1,$2-500,$3+500,$4}' $i > "$bedname".500bp.bed
+	## Bug 2 reported 
 	awk -v OFS="\t" '{start=$2-500; if(start<0) start=0; print $1,start,$3+500,$4}' $i > "$bedname".500bp.bed
 done
 
@@ -588,12 +591,14 @@ do
         right=$(echo $line | awk -F " " '{print $3}')
         if [[ "$falocus" == "$locus" ]]; then
                 echo "match found:" "$falocus" "$locus"
-                cat "$i" | seqkit mutate -i 0:$left --quiet | seqkit mutate -i -1:$right --quiet > $locus"_finalDB.fa"
+                #cat "$i" | seqkit mutate -i 0:$left --quiet | seqkit mutate -i -1:$right --quiet > $locus"_finalDB.fa"
+				##Bug 4 — BuildDB outputs "_finalDB.fa" but STRspy expects .fa
+				cat "$i" | seqkit mutate -i 0:$left --quiet | seqkit mutate -i -1:$right --quiet > $locus".fa"
         fi
    done <All.flnaks
 done
 mkdir -p ../finalDB
-mv *_finalDB.fa ../finalDB
+mv *.fa ../finalDB
 mv *.bed ../finalDB
 
 # #echo -e "part third done"
